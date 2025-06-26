@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ancient System for Success & Peace - Transform in 72 Hours</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #000;
+            padding: 0.8rem 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+        }
+
+        .header h1 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 0;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            background: linear-gradient(45deg, #FFD700, #FFA500, #FFD700);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientMove 3s ease-in-out infinite;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            margin-bottom: 1.5rem;
+            color: #ccc;
+            font-weight: 300;
+        }
+
+        .video-placeholder {
+            background: #1a1a1a;
+            width: 100%;
+            max-width: 500px;
+            height: 250px;
+            margin: 1.5rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-size: 1rem;
+            color: #FFD700;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+        }
+
+        /* CTA Buttons */
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #000;
+            padding: 16px 32px;
+            text-decoration: none;
+            border-radius: 40px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 0.5rem;
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.3);
+            border: none;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Sticky Mobile CTA */
+        .sticky-mobile-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            padding: 12px 15px;
+            text-align: center;
+            z-index: 999;
+            display: none;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
+        }
+
+        .sticky-mobile-cta .cta-button {
+            margin: 0;
+            padding: 14px 24px;
+            font-size: 1rem;
+            width: 100%;
+            max-width: 280px;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 60px 0;
+            background: linear-gradient(180deg, #111 0%, #000 100%);
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 2rem;
+            text-align: center;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .big-text {
+            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+            font-weight: 600;
+            color: #FFD700;
+            text-align: center;
+            margin: 2rem 0;
+            line-height: 1.4;
+        }
+
+        .pain-list {
+            list-style: none;
+            margin: 2rem 0;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pain-list li {
+            margin: 1rem 0;
+            padding: 1.2rem;
+            background: #1a1a1a;
+            border-left: 3px solid #FFD700;
+            font-size: 1rem;
+            border-radius: 8px;
+        }
+
+        .pain-list li::before {
+            content: "→ ";
+            color: #FFD700;
+            font-weight: bold;
+        }
+
+        .quote-box {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 2rem;
+            margin: 2rem auto;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-style: italic;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            max-width: 600px;
+            position: relative;
+        }
+
+        .quote-box::before {
+            content: '"';
+            font-size: 4rem;
+            color: rgba(255, 215, 0, 0.2);
+            position: absolute;
+            top: -10px;
+            left: 15px;
+        }
+
+        /* Service Selection */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .service-card {
+            background: #1a1a1a;
+            border-radius: 16px;
+            padding: 30px 20px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: #FFD700;
+            box-shadow: 0 15px 30px rgba(255, 215, 0, 0.2);
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #FFD700;
+        }
+
+        .service-card .price {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .service-card .description {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+            color: #ccc;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .features-list li {
+            padding: 6px 0 6px 20px;
+            font-size: 0.95rem;
+            color: #fff;
+            position: relative;
+        }
+
+        .features-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #FFD700;
+            font-weight: bold;
+        }
+
+        /* Testimonials */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .testimonial {
+            background: #1a1a1a;
+            padding: 25px 20px;
+            border-radius: 12px;
+            border-left: 3px solid #FFD700;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: #FFD700;
+        }
+
+        /* Offer Stack */
+        .offer-stack {
+            background: #1a1a1a;
+            padding: 2rem 1.5rem;
+            margin: 2rem 0;
+            border-radius: 16px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .offer-item {
+            display: flex;
+            align-items: center;
+            margin: 1.5rem 0;
+            padding: 1.5rem 1rem;
+            background: #2a2a2a;
+            border-radius: 12px;
+        }
+
+        .offer-icon {
+            font-size: 2rem;
+            margin-right: 1rem;
+            min-width: 50px;
+            text-align: center;
+            color: #FFD700;
+        }
+
+        .offer-content h3 {
+            color: #FFD700;
+            margin-bottom: 0.3rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .value-badge {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #000;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 0.3rem;
+        }
+
+        /* Price Section */
+        .price-section {
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 1.5rem;
+            margin: 3rem 0;
+            border-radius: 16px;
+            text-align: center;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 1.5rem;
+            margin: 0.3rem 0;
+        }
+
+        .new-price {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0.5rem 0;
+        }
+
+        /* Mid CTA */
+        .mid-cta {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #000;
+            padding: 2.5rem 1.5rem;
+            margin: 3rem 0;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+
+        .mid-cta h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
+            font-weight: 800;
+        }
+
+        /* Guarantee Box */
+        .guarantee-box {
+            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+            color: white;
+            padding: 2rem 1.5rem;
+            margin: 2rem 0;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);
+        }
+
+        /* Footer CTA */
+        .footer-cta {
+            padding: 60px 0;
+            text-align: center;
+            background: linear-gradient(45deg, #FFD700, #FFA500, #FFD700);
+            background-size: 200% 200%;
+            animation: gradientMove 3s ease-in-out infinite;
+        }
+
+        .footer-cta * {
+            color: #000;
+        }
+
+        .footer-cta h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-cta .cta-button {
+            background: #000;
+            color: #FFD700;
+            font-size: 1.2rem;
+            padding: 20px 40px;
+        }
+
+        /* Booking Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #1a1a1a;
+            border-radius: 16px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 100%;
+            position: relative;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #fff;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-close:hover {
+            color: #FFD700;
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #FFD700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .modal-subtitle {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #ccc;
+            font-size: 1rem;
+        }
+
+        .booking-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            color: #FFD700;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 12px 15px;
+            border: 2px solid #333;
+            border-radius: 8px;
+            background: #2a2a2a;
+            color: #fff;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #FFD700;
+        }
+
+        .form-group textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #000;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+        }
+
+        .form-note {
+            font-size: 0.85rem;
+            color: #888;
+            text-align: center;
+            margin-top: 1rem;
+            line-height: 1.4;
+        }
+
+        /* Animations */
+        @keyframes gradientMove {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .hero {
+                min-height: auto;
+                padding: 40px 0;
+            }
+
+            .header h1 {
+                font-size: 0.8rem;
+            }
+
+            .sticky-mobile-cta {
+                display: block;
+            }
+
+            .container {
+                margin-bottom: 70px;
+            }
+
+            .service-card {
+                padding: 25px 15px;
+            }
+
+            .service-card h3 {
+                font-size: 1.5rem;
+            }
+
+            .service-card .price {
+                font-size: 2rem;
+            }
+
+            .offer-item {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.2rem;
+            }
+
+            .offer-icon {
+                margin-right: 0;
+                margin-bottom: 0.5rem;
+            }
+
+            .new-price {
+                font-size: 2.5rem;
+            }
+
+            .quote-box {
+                padding: 1.5rem;
+                font-size: 1.1rem;
+            }
+
+            .pain-list li {
+                padding: 1rem;
+                font-size: 0.95rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .big-text {
+                font-size: 1.1rem;
+            }
+
+            .cta-button {
+                padding: 14px 28px;
+                font-size: 1rem;
+            }
+
+            .testimonial {
+                padding: 20px 15px;
+            }
+
+            .features-list li {
+                font-size: 0.9rem;
+                padding: 5px 0 5px 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero .subtitle {
+                font-size: 0.95rem;
+            }
+
+            .video-placeholder {
+                height: 200px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>The Ancient System 99% of Professionals Don't Know...</h1>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Stop Wasting Years Trying to "Find Yourself"</h1>
+                <p class="subtitle">Instantly Decode Your Strengths, Blind Spots & Hidden Potential in One Session</p>
+                
+                <div style="margin: 2rem 0;">
+                    <a href="#" onclick="openModal('chart')" class="cta-button">🔮 Unlock Your Blueprint Now</a>
+                    <p style="margin-top: 0.8rem; font-size: 0.9rem; opacity: 0.8;">⏰ Only 2 Spots This Month</p>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 12px; margin-top: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    <p style="font-size: 1.1rem; color: #FFD700; font-weight: 600; margin-bottom: 0.5rem;">What Others Spend 10+ Years Discovering Through:</p>
+                    <p style="font-size: 1rem;">❌ Therapy sessions (£5,000+)<br>
+                    ❌ Self-help seminars (£3,000+)<br>
+                    ❌ Trial and error (Priceless time lost)<br>
+                    <span style="color: #FFD700; font-weight: bold;">✓ You'll Know in 2 Hours</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sticky Mobile CTA -->
+    <div class="sticky-mobile-cta">
+        <a href="#" onclick="openModal('chart')" class="cta-button">Transform Your Life Now</a>
+    </div>
+
+    <!-- Problem Identification -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">STILL SEARCHING FOR YOUR "TRUE SELF"?</h2>
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem;">You've read the books, done the personality tests, maybe even tried therapy...</p>
+            
+            <ul class="pain-list">
+                <li>Years of journaling, meditating, and "soul searching" but still unclear about your true strengths</li>
+                <li>Constantly second-guessing decisions because you don't fully understand your core capabilities</li>
+                <li>Watching others confidently leverage their talents while you're still figuring yours out</li>
+                <li>Thousands spent on courses and coaches, yet your blind spots keep sabotaging your success</li>
+            </ul>
+
+            <p class="big-text">Most people die never truly knowing their full potential - because they're using the wrong map.</p>
+        </div>
+    </section>
+
+    <!-- Mid CTA -->
+    <section class="mid-cta">
+        <div class="container">
+            <h3>Stop Guessing. Start Knowing.</h3>
+            <p style="font-size: 1rem; margin-bottom: 1.5rem;">While others spend decades "finding themselves", you'll have total clarity today.</p>
+            <a href="#" class="cta-button" onclick="openModal('chart')" style="background: #000; color: #FFD700;">🚀 Decode Your Blueprint</a>
+        </div>
+    </section>
+
+    <!-- Solution Explanation -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">YOUR COMPLETE PERSONAL BLUEPRINT - DECODED IN HOURS, NOT DECADES</h2>
+            
+            <div class="quote-box">
+                "Millionaires don't use astrology; billionaires do."<br>
+                <span style="font-size: 1rem; opacity: 0.8; margin-top: 0.5rem; display: block;">—J.P. Morgan</span>
+            </div>
+
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem;">While others spend years in therapy trying to understand themselves, successful leaders use cosmic blueprints for instant clarity.</p>
+
+            <p class="big-text">In one session, you'll understand:<br>
+            <span style="font-size: 1.1rem; font-weight: normal;">✓ Your natural genius zones (stop forcing what doesn't fit)<br>
+            ✓ Hidden weaknesses that silently sabotage you<br>
+            ✓ Optimal timing for major moves<br>
+            ✓ Why certain patterns keep repeating</span></p>
+            
+            <p style="text-align: center; font-size: 1.2rem; margin-top: 2rem; color: #FFD700; font-weight: 600;">
+                What therapists charge £10,000+ to help you "discover" over years...<br>
+                Your cosmic blueprint reveals instantly.
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="content-section">
+        <div class="container">
+            <h2 class="section-title">Choose Your Transformation</h2>
+            
+            <div class="services-grid">
+                <!-- Strategic Coaching -->
+                <div class="service-card">
+                    <h3>Strategic Cosmic Coaching</h3>
+                    <div class="price">Apply to Learn More</div>
+                    <p class="description">
+                        <strong style="color: #FFD700;">Skip 10+ years of self-discovery.</strong> In just 6 weeks, gain crystal clarity on your strengths, vulnerabilities, opportunities, and threats to your success.
+                        <br><br>
+                        <strong style="color: #FFD700;">📋 Application Required | For professionals earning £5k+/month</strong>
+                    </p>
+                    <ul class="features-list">
+                        <li>Complete Life Path Analysis</li>
+                        <li>Full Vedic Chart (12 Houses)</li>
+                        <li>Life Timing Analysis</li>
+                        <li>Relationship Compatibility</li>
+                        <li>90 Days WhatsApp Access</li>
+                        <li>Personalised Audio Recording</li>
+                        <li>Cosmic Remedies & Power Tools</li>
+                        <li>Strategic Timing Analysis</li>
+                    </ul>
+                    <a href="#" class="cta-button" onclick="openModal('coaching')">🔮 Apply Now</a>
+                </div>
+
+                <!-- Complete Chart Reading -->
+                <div class="service-card">
+                    <h3>Complete Chart Analysis</h3>
+                    <div class="price">£491</div>
+                    <p class="description">
+                        <strong style="color: #FFD700;">2 hours that save you 20 years.</strong> Finally understand your natural advantages, hidden blockers, perfect opportunities, and what threatens your growth - no more guessing.
+                    </p>
+                    <ul class="features-list">
+                        <li>Complete Life Path Analysis</li>
+                        <li>Full Vedic Chart (12 Houses)</li>
+                        <li>Life Timing Analysis</li>
+                        <li>Relationship Compatibility</li>
+                        <li>90 Days WhatsApp Access</li>
+                        <li>Personalised Audio Recording</li>
+                        <li>Cosmic Remedies & Power Tools</li>
+                        <li>Strategic Timing Analysis</li>
+                    </ul>
+                    <a href="#" class="cta-button" onclick="openModal('chart')">🌟 Book Chart Reading</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">When You Align Your Blueprint</h2>
+
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <p class="testimonial-text">"Revenue increased 3x in 60 days without changing my business model"</p>
+                    <p class="testimonial-author">- Sarah, Consultant</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"Finally broke through my £10k/month ceiling after being stuck for 2 years"</p>
+                    <p class="testimonial-author">- Michael, Agency Owner</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"Partnership conflicts resolved naturally - everyone aligned perfectly"</p>
+                    <p class="testimonial-author">- David, Tech Founder</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offer Stack -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">What You Get</h2>
+            
+            <div class="offer-stack">
+                <div class="offer-item">
+                    <div class="offer-icon">📊</div>
+                    <div class="offer-content">
+                        <h3>Complete Blueprint Analysis</h3>
+                        <span class="value-badge">Value £997</span>
+                    </div>
+                </div>
+                
+                <div class="offer-item">
+                    <div class="offer-icon">💬</div>
+                    <div class="offer-content">
+                        <h3>90 Days Support Access</h3>
+                        <span class="value-badge">Value £497</span>
+                    </div>
+                </div>
+                
+                <div class="offer-item">
+                    <div class="offer-icon">🎯</div>
+                    <div class="offer-content">
+                        <h3>Strategic Timing Calendar</h3>
+                        <span class="value-badge">Value £297</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="price-section">
+                <h3 style="color: #FFD700; margin-bottom: 1rem;">The Cost of Not Knowing Yourself:</h3>
+                <p style="text-align: left; margin-bottom: 1rem;">
+                    💸 Years of therapy: £5,000-15,000<br>
+                    💸 Wrong career moves: £50,000+ in lost income<br>
+                    💸 Failed relationships: Emotional cost immeasurable<br>
+                    💸 Missed opportunities: Your dreams unrealized
+                </p>
+                <p style="margin: 1.5rem 0; font-size: 1.2rem; color: #FFD700; font-weight: 600;">Your Complete Personal Blueprint:</p>
+                <p class="new-price">Only £491</p>
+                <p style="margin-bottom: 1.5rem; font-size: 0.9rem;">Less than what most spend on a weekend workshop that teaches generic advice</p>
+                <a href="#" onclick="openModal('chart')" class="cta-button">Claim Your Transformation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee -->
+    <section class="content-section">
+        <div class="container">
+            <div class="guarantee-box">
+                <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">100% Transformation Guarantee</h3>
+                <p>If you don't experience a breakthrough within 30 days, I'll work with you until you do - at no extra charge.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section class="footer-cta">
+        <div class="container">
+            <h2>Your Breakthrough Awaits</h2>
+            <p>Stop swimming upstream. Align with your cosmic blueprint and watch success flow naturally.</p>
+            <a href="#" onclick="openModal('chart')" class="cta-button">Choose Your Transformation Path</a>
+        </div>
+    </section>
+
+    <!-- Booking Modals -->
+    <div id="bookingModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div id="modalContent">
+                <!-- Content will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(type) {
+            const modal = document.getElementById('bookingModal');
+            const modalContent = document.getElementById('modalContent');
+            
+            if (type === 'coaching') {
+                modalContent.innerHTML = `
+                    <h2 class="modal-title">Strategic Cosmic Coaching Application</h2>
+                    <p class="modal-subtitle">Ready to skip 10+ years of self-discovery? Let's see if you qualify for our exclusive 6-week transformation program.</p>
+                    
+                    <form class="booking-form" action="https://formspree.io/f/manjlggg" method="POST">
+                        <input type="hidden" name="form_type" value="coaching_application">
+                        
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="income">Current Monthly Income *</label>
+                            <select id="income" name="income" required>
+                                <option value="">Select range...</option>
+                                <option value="5k-10k">£5,000 - £10,000</option>
+                                <option value="10k-25k">£10,000 - £25,000</option>
+                                <option value="25k-50k">£25,000 - £50,000</option>
+                                <option value="50k+">£50,000+</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="business">Type of Business/Role *</label>
+                            <input type="text" id="business" name="business" placeholder="e.g., Consultant, Agency Owner, Entrepreneur" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="challenge">Biggest Challenge Right Now *</label>
+                            <textarea id="challenge" name="challenge" placeholder="What's the main obstacle preventing you from reaching your next level?" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="investment">Investment Readiness *</label>
+                            <select id="investment" name="investment" required>
+                                <option value="">Select...</option>
+                                <option value="ready">Ready to invest £2,000-5,000 for transformation</option>
+                                <option value="considering">Considering investment if right fit</option>
+                                <option value="need-info">Need more information first</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="submit-button">Submit Application</button>
+                        
+                        <p class="form-note">
+                            Your information is secure and private. We'll review your application and contact you within 24 hours if you're a good fit for our exclusive program.
+                        </p>
+                    </form>
+                `;
+            } else {
+                modalContent.innerHTML = `
+                    <h2 class="modal-title">Book Your Complete Chart Analysis</h2>
+                    <p class="modal-subtitle">Ready to decode your personal blueprint in just 2 hours? Let's get started with your transformation.</p>
+                    
+                    <form class="booking-form" action="https://formspree.io/f/manjlggg" method="POST">
+                        <input type="hidden" name="form_type" value="chart_reading">
+                        
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="birthdate">Date of Birth *</label>
+                            <input type="date" id="birthdate" name="birthdate" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="birthtime">Time of Birth (if known)</label>
+                            <input type="time" id="birthtime" name="birthtime" placeholder="HH:MM">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="birthplace">Place of Birth *</label>
+                            <input type="text" id="birthplace" name="birthplace" placeholder="City, Country" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="focus">Main Life Area to Focus On *</label>
+                            <select id="focus" name="focus" required>
+                                <option value="">Choose primary focus...</option>
+                                <option value="career">Career & Business Success</option>
+                                <option value="relationships">Relationships & Love</option>
+                                <option value="purpose">Life Purpose & Direction</option>
+                                <option value="timing">Strategic Timing for Decisions</option>
+                                <option value="overall">Complete Life Overview</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="questions">Specific Questions (Optional)</label>
+                            <textarea id="questions" name="questions" placeholder="Any specific areas you'd like insights on?"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-button">Book My Reading - £491</button>
+                        
+                        <p class="form-note">
+                            Secure booking. You'll receive confirmation within 2 hours and we'll schedule your 2-hour session at a time that works for you.
+                        </p>
+                    </form>
+                `;
+            }
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById('bookingModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when clicking outside
+        document.getElementById('bookingModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
