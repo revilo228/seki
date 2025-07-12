@@ -33,7 +33,7 @@
             box-sizing: border-box;
         }
 
-        /* Header */
+        /* Enhanced Header */
         .header {
             background: linear-gradient(135deg, #FFD700, #FFA500);
             color: #000;
@@ -52,7 +52,18 @@
             letter-spacing: 0.5px;
         }
 
-        /* Hero Section */
+        /* Social proof badge */
+        .social-proof-badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 5px;
+            display: inline-block;
+        }
+
+        /* Enhanced Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -61,6 +72,32 @@
             text-align: center;
             padding: 60px 0;
             background: radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+            position: relative;
+        }
+
+        /* Floating elements for visual interest */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 20%;
+            right: 15%;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(255, 165, 0, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite reverse;
         }
 
         .hero h1 {
@@ -74,6 +111,8 @@
             animation: gradientMove 3s ease-in-out infinite;
             margin-bottom: 1rem;
             line-height: 1.2;
+            position: relative;
+            z-index: 2;
         }
 
         .hero .subtitle {
@@ -81,10 +120,26 @@
             margin-bottom: 1.5rem;
             color: #ccc;
             font-weight: 300;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Enhanced scarcity indicator */
+        .scarcity-indicator {
+            background: linear-gradient(135deg, #FF4444, #CC0000);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 1rem 0;
+            display: inline-block;
+            animation: pulse 2s infinite;
+            box-shadow: 0 4px 15px rgba(255, 68, 68, 0.3);
         }
 
         .video-placeholder {
-            background: #1a1a1a;
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
             width: 100%;
             max-width: 500px;
             height: 250px;
@@ -96,61 +151,126 @@
             font-size: 1rem;
             color: #FFD700;
             border: 2px solid rgba(255, 215, 0, 0.3);
+            position: relative;
+            overflow: hidden;
         }
 
-        /* CTA Buttons */
+        .video-placeholder::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            animation: shine 3s infinite;
+        }
+
+        /* Enhanced CTA Buttons */
         .cta-button {
             display: inline-block;
             background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
             color: #000;
-            padding: 16px 32px;
+            padding: 18px 36px;
             text-decoration: none;
-            border-radius: 40px;
+            border-radius: 50px;
             font-size: 1.1rem;
             font-weight: 700;
             transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             margin: 0.5rem;
-            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.3);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
             border: none;
             cursor: pointer;
             white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
         }
 
         .cta-button:hover {
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(255, 215, 0, 0.5);
         }
 
-        /* Sticky Mobile CTA */
+        /* Enhanced Sticky Mobile CTA */
         .sticky-mobile-cta {
             position: fixed;
             bottom: 0;
             left: 0;
             right: 0;
             background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-            padding: 12px 15px;
+            padding: 15px;
             text-align: center;
             z-index: 999;
             display: none;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
+            animation: slideUp 0.5s ease-out;
         }
 
         .sticky-mobile-cta .cta-button {
             margin: 0;
-            padding: 14px 24px;
+            padding: 16px 28px;
             font-size: 1rem;
             width: 100%;
-            max-width: 280px;
+            max-width: 320px;
         }
 
-        /* Content Sections */
+        /* Trust indicators */
+        .trust-indicators {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        .trust-icon {
+            color: #32CD32;
+            font-size: 1.1rem;
+        }
+
+        /* Enhanced Content Sections */
         .content-section {
-            padding: 60px 0;
+            padding: 80px 0;
             background: linear-gradient(180deg, #111 0%, #000 100%);
             width: 100%;
             overflow-x: hidden;
+            position: relative;
+        }
+
+        .content-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.3), transparent);
         }
 
         .section-title {
@@ -162,6 +282,19 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #FFD700, #FFA500);
+            border-radius: 2px;
         }
 
         .big-text {
@@ -173,6 +306,7 @@
             line-height: 1.4;
         }
 
+        /* Enhanced pain points */
         .pain-list {
             list-style: none;
             margin: 2rem 0;
@@ -183,82 +317,111 @@
 
         .pain-list li {
             margin: 1rem 0;
-            padding: 1.2rem;
-            background: #1a1a1a;
-            border-left: 3px solid #FFD700;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            border-left: 4px solid #FFD700;
             font-size: 1rem;
             border-radius: 8px;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .pain-list li:hover {
+            transform: translateX(5px);
         }
 
         .pain-list li::before {
-            content: "→ ";
-            color: #FFD700;
+            content: "❌ ";
+            color: #FF4444;
             font-weight: bold;
+            font-size: 1.1rem;
         }
 
+        /* Enhanced quote box */
         .quote-box {
-            background: #1a1a1a;
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
             color: #fff;
-            padding: 2rem;
+            padding: 2.5rem;
             margin: 2rem auto;
-            border-radius: 12px;
+            border-radius: 16px;
             text-align: center;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-style: italic;
             border: 2px solid rgba(255, 215, 0, 0.3);
             max-width: 600px;
             position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .quote-box::before {
             content: '"';
-            font-size: 4rem;
+            font-size: 5rem;
             color: rgba(255, 215, 0, 0.2);
             position: absolute;
-            top: -10px;
-            left: 15px;
+            top: -15px;
+            left: 20px;
+            font-family: serif;
         }
 
-        /* Service Selection */
+        /* Enhanced Service Selection */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
             margin: 40px 0;
         }
 
         .service-card {
-            background: #1a1a1a;
-            border-radius: 16px;
-            padding: 30px 20px;
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            border-radius: 20px;
+            padding: 35px 25px;
             border: 2px solid transparent;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #FFD700, #FFA500);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
             border-color: #FFD700;
-            box-shadow: 0 15px 30px rgba(255, 215, 0, 0.2);
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
         }
 
         .service-card h3 {
-            font-size: 1.8rem;
+            font-size: 1.9rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
             color: #FFD700;
         }
 
         .service-card .price {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 900;
             color: #fff;
             margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .service-card .description {
             font-size: 1rem;
-            line-height: 1.5;
+            line-height: 1.6;
             margin-bottom: 1.5rem;
             color: #ccc;
         }
@@ -269,7 +432,7 @@
         }
 
         .features-list li {
-            padding: 6px 0 6px 20px;
+            padding: 8px 0 8px 25px;
             font-size: 0.95rem;
             color: #fff;
             position: relative;
@@ -279,30 +442,45 @@
             content: '✓';
             position: absolute;
             left: 0;
-            color: #FFD700;
+            color: #32CD32;
             font-weight: bold;
+            font-size: 1.1rem;
         }
 
-        /* Testimonials */
+        /* Enhanced Testimonials */
         .testimonial-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
             margin-top: 30px;
         }
 
         .testimonial {
-            background: #1a1a1a;
-            padding: 25px 20px;
-            border-radius: 12px;
-            border-left: 3px solid #FFD700;
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            padding: 30px 25px;
+            border-radius: 16px;
+            border-left: 4px solid #FFD700;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial::before {
+            content: '⭐⭐⭐⭐⭐';
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 0.8rem;
         }
 
         .testimonial-text {
             font-style: italic;
             margin-bottom: 1rem;
             font-size: 1rem;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         .testimonial-author {
@@ -310,115 +488,166 @@
             color: #FFD700;
         }
 
-        /* Offer Stack */
+        /* Enhanced Offer Stack */
         .offer-stack {
-            background: #1a1a1a;
-            padding: 2rem 1.5rem;
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            padding: 2.5rem 2rem;
             margin: 2rem 0;
-            border-radius: 16px;
+            border-radius: 20px;
             border: 2px solid rgba(255, 215, 0, 0.3);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
         }
 
         .offer-item {
             display: flex;
             align-items: center;
-            margin: 1.5rem 0;
-            padding: 1.5rem 1rem;
-            background: #2a2a2a;
-            border-radius: 12px;
+            margin: 2rem 0;
+            padding: 2rem 1.5rem;
+            background: linear-gradient(135deg, #2a2a2a, #3a3a3a);
+            border-radius: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .offer-item:hover {
+            transform: translateX(10px);
         }
 
         .offer-icon {
-            font-size: 2rem;
-            margin-right: 1rem;
-            min-width: 50px;
+            font-size: 2.5rem;
+            margin-right: 1.5rem;
+            min-width: 60px;
             text-align: center;
             color: #FFD700;
         }
 
         .offer-content h3 {
             color: #FFD700;
-            margin-bottom: 0.3rem;
-            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
             font-weight: 700;
         }
 
         .value-badge {
             background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
             color: #000;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
+            padding: 0.4rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
             font-weight: bold;
             display: inline-block;
-            margin-top: 0.3rem;
+            margin-top: 0.5rem;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
         }
 
-        /* Price Section */
+        /* Enhanced Price Section */
         .price-section {
-            background: #1a1a1a;
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
             color: white;
-            padding: 3rem 1.5rem;
+            padding: 3.5rem 2rem;
             margin: 3rem 0;
-            border-radius: 16px;
+            border-radius: 20px;
             text-align: center;
-            border: 2px solid rgba(255, 215, 0, 0.3);
+            border: 3px solid rgba(255, 215, 0, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .price-section::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #FFD700, #FFA500, #FFD700);
+            border-radius: 20px;
+            z-index: -1;
+            animation: gradientBorder 3s ease-in-out infinite;
         }
 
         .old-price {
             text-decoration: line-through;
             color: #888;
-            font-size: 1.5rem;
-            margin: 0.3rem 0;
+            font-size: 1.8rem;
+            margin: 0.5rem 0;
         }
 
         .new-price {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 900;
             background: linear-gradient(45deg, #FFD700, #FFA500);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin: 0.5rem 0;
+            margin: 1rem 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
-        /* Mid CTA */
+        /* Enhanced Mid CTA */
         .mid-cta {
             background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
             color: #000;
-            padding: 2.5rem 1.5rem;
-            margin: 3rem 0;
-            border-radius: 16px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
-        }
-
-        .mid-cta h3 {
-            font-size: 1.6rem;
-            margin-bottom: 0.8rem;
-            font-weight: 800;
-        }
-
-        /* Guarantee Box */
-        .guarantee-box {
-            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
-            color: white;
-            padding: 2rem 1.5rem;
-            margin: 2rem 0;
-            border-radius: 16px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);
-        }
-
-        /* Special Coaching Guarantee */
-        .coaching-guarantee {
-            background: linear-gradient(135deg, #FF4444 0%, #CC0000 100%);
-            color: white;
             padding: 3rem 2rem;
             margin: 3rem 0;
             border-radius: 20px;
             text-align: center;
-            box-shadow: 0 15px 40px rgba(255, 68, 68, 0.4);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mid-cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shine 4s infinite;
+        }
+
+        .mid-cta h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Enhanced Guarantee Box */
+        .guarantee-box {
+            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+            color: white;
+            padding: 2.5rem 2rem;
+            margin: 2rem 0;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(76, 175, 80, 0.4);
+            position: relative;
+        }
+
+        .guarantee-box::before {
+            content: '🛡️';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            background: #2e7d32;
+            padding: 10px;
+            border-radius: 50%;
+        }
+
+        /* Enhanced Special Coaching Guarantee */
+        .coaching-guarantee {
+            background: linear-gradient(135deg, #FF4444 0%, #CC0000 100%);
+            color: white;
+            padding: 3.5rem 2.5rem;
+            margin: 3rem 0;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(255, 68, 68, 0.5);
             border: 3px solid rgba(255, 255, 255, 0.2);
             position: relative;
             overflow: hidden;
@@ -436,142 +665,170 @@
         }
 
         .coaching-guarantee h3 {
-            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
             font-weight: 900;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+            position: relative;
+            z-index: 1;
         }
 
         .coaching-guarantee p {
-            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-            line-height: 1.6;
-            margin-bottom: 1rem;
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
             position: relative;
             z-index: 1;
         }
 
         .guarantee-highlight {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.25);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
             border: 2px solid rgba(255, 255, 255, 0.3);
             position: relative;
             z-index: 1;
+            backdrop-filter: blur(10px);
         }
 
         .guarantee-highlight strong {
-            font-size: 1.2em;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            font-size: 1.3em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
-        /* Footer CTA */
+        /* Enhanced Footer CTA */
         .footer-cta {
-            padding: 60px 0;
+            padding: 80px 0;
             text-align: center;
             background: linear-gradient(45deg, #FFD700, #FFA500, #FFD700);
             background-size: 200% 200%;
             animation: gradientMove 3s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="rgba(0,0,0,0.1)"><polygon points="0,0 1000,80 1000,100 0,100"/></svg>');
+            background-size: cover;
         }
 
         .footer-cta * {
             color: #000;
+            position: relative;
+            z-index: 1;
         }
 
         .footer-cta h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
+            font-size: clamp(2rem, 4vw, 3.5rem);
             font-weight: 900;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
 
         .footer-cta p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            max-width: 500px;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+            font-weight: 500;
         }
 
         .footer-cta .cta-button {
             background: #000;
             color: #FFD700;
-            font-size: 1.2rem;
-            padding: 20px 40px;
+            font-size: 1.3rem;
+            padding: 22px 45px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
-        /* Booking Modal */
+        /* Enhanced Booking Modal */
         .modal-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.95);
             display: none;
             justify-content: center;
             align-items: center;
             z-index: 10000;
             padding: 20px;
+            backdrop-filter: blur(5px);
         }
 
         .modal-overlay.active {
             display: flex;
+            animation: fadeIn 0.3s ease-out;
         }
 
         .modal-content {
-            background: #1a1a1a;
-            border-radius: 16px;
-            padding: 2rem;
-            max-width: 500px;
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            border-radius: 20px;
+            padding: 2.5rem;
+            max-width: 550px;
             width: 100%;
             position: relative;
             border: 2px solid rgba(255, 215, 0, 0.3);
             max-height: 90vh;
             overflow-y: auto;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+            animation: slideIn 0.4s ease-out;
         }
 
         .modal-close {
             position: absolute;
-            top: 15px;
-            right: 20px;
+            top: 20px;
+            right: 25px;
             background: none;
             border: none;
-            font-size: 1.5rem;
+            font-size: 2rem;
             color: #fff;
             cursor: pointer;
             padding: 0;
-            width: 30px;
-            height: 30px;
+            width: 35px;
+            height: 35px;
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: all 0.3s ease;
         }
 
         .modal-close:hover {
             color: #FFD700;
+            transform: scale(1.1);
         }
 
         .modal-title {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 800;
             color: #FFD700;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             text-align: center;
         }
 
         .modal-subtitle {
             text-align: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             color: #ccc;
-            font-size: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.5;
         }
 
         .booking-form {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 1.5rem;
         }
 
         .form-group {
@@ -581,21 +838,21 @@
 
         .form-group label {
             color: #FFD700;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
 
         .form-group input,
         .form-group select,
         .form-group textarea {
-            padding: 12px 15px;
-            border: 2px solid #333;
-            border-radius: 8px;
+            padding: 15px 18px;
+            border: 2px solid #444;
+            border-radius: 10px;
             background: #2a2a2a;
             color: #fff;
             font-size: 1rem;
-            transition: border-color 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .form-group input:focus,
@@ -603,41 +860,48 @@
         .form-group textarea:focus {
             outline: none;
             border-color: #FFD700;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
         }
 
         .form-group textarea {
-            min-height: 80px;
+            min-height: 100px;
             resize: vertical;
         }
 
         .submit-button {
             background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
             color: #000;
-            padding: 15px 30px;
+            padding: 18px 35px;
             border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
+            border-radius: 10px;
+            font-size: 1.2rem;
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
-            margin-top: 1rem;
-        }
-
-        .submit-button:hover {
-            transform: translateY(-2px);
+            margin-top: 1.5rem;
             box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
         }
 
-        .form-note {
-            font-size: 0.85rem;
-            color: #888;
-            text-align: center;
-            margin-top: 1rem;
-            line-height: 1.4;
+        .submit-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 215, 0, 0.5);
         }
 
-        /* Animations */
+        .form-note {
+            font-size: 0.9rem;
+            color: #999;
+            text-align: center;
+            margin-top: 1.5rem;
+            line-height: 1.5;
+        }
+
+        /* Enhanced Animations */
         @keyframes gradientMove {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes gradientBorder {
             0%, 100% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
         }
@@ -645,6 +909,31 @@
         @keyframes shine {
             0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
             100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px) scale(0.9); opacity: 0; }
+            to { transform: translateY(0) scale(1); opacity: 1; }
         }
 
         /* Mobile Optimizations */
@@ -671,68 +960,68 @@
             }
 
             .container {
-                margin-bottom: 70px;
+                margin-bottom: 80px;
                 padding: 0 10px;
                 max-width: 100%;
             }
 
             .service-card {
-                padding: 25px 15px;
+                padding: 30px 20px;
                 width: 100%;
                 box-sizing: border-box;
             }
 
             .service-card h3 {
-                font-size: 1.5rem;
+                font-size: 1.6rem;
                 word-wrap: break-word;
             }
 
             .service-card .price {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
 
             .offer-item {
                 flex-direction: column;
                 text-align: center;
-                padding: 1.2rem;
+                padding: 1.5rem;
                 width: 100%;
                 box-sizing: border-box;
             }
 
             .offer-icon {
                 margin-right: 0;
-                margin-bottom: 0.5rem;
+                margin-bottom: 1rem;
             }
 
             .new-price {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
 
             .quote-box {
-                padding: 1.5rem;
-                font-size: 1.1rem;
+                padding: 2rem;
+                font-size: 1.2rem;
                 width: 100%;
                 box-sizing: border-box;
             }
 
             .pain-list li {
-                padding: 1rem;
-                font-size: 0.95rem;
+                padding: 1.2rem;
+                font-size: 1rem;
                 word-wrap: break-word;
             }
 
             .section-title {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
                 word-wrap: break-word;
                 hyphens: auto;
             }
 
             .big-text {
-                font-size: 1.1rem;
+                font-size: 1.2rem;
             }
 
             .cta-button {
-                padding: 14px 28px;
+                padding: 16px 32px;
                 font-size: 1rem;
                 white-space: normal;
                 text-align: center;
@@ -742,36 +1031,42 @@
             }
 
             .testimonial {
-                padding: 20px 15px;
+                padding: 25px 20px;
             }
 
             .features-list li {
-                font-size: 0.9rem;
-                padding: 5px 0 5px 18px;
+                font-size: 0.95rem;
+                padding: 6px 0 6px 20px;
                 word-wrap: break-word;
             }
 
             .coaching-guarantee {
-                padding: 2rem 1.5rem;
+                padding: 2.5rem 1.5rem;
                 width: 100%;
                 box-sizing: border-box;
             }
 
             .coaching-guarantee h3 {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
                 word-wrap: break-word;
             }
 
             .coaching-guarantee p {
-                font-size: 1rem;
+                font-size: 1.1rem;
                 word-wrap: break-word;
             }
 
             .modal-content {
-                margin: 10px;
-                max-width: calc(100vw - 20px);
-                width: calc(100vw - 20px);
+                margin: 15px;
+                max-width: calc(100vw - 30px);
+                width: calc(100vw - 30px);
                 box-sizing: border-box;
+                padding: 2rem;
+            }
+
+            .trust-indicators {
+                flex-direction: column;
+                gap: 15px;
             }
         }
 
@@ -783,13 +1078,13 @@
             }
 
             .hero h1 {
-                font-size: 1.8rem;
+                font-size: 2rem;
                 word-wrap: break-word;
                 hyphens: auto;
             }
 
             .hero .subtitle {
-                font-size: 0.95rem;
+                font-size: 1rem;
             }
 
             .video-placeholder {
@@ -804,10 +1099,19 @@
             }
 
             .cta-button {
-                font-size: 0.9rem;
-                padding: 12px 20px;
+                font-size: 0.95rem;
+                padding: 14px 24px;
                 white-space: normal;
                 line-height: 1.3;
+            }
+
+            .modal-content {
+                padding: 1.5rem;
+                margin: 10px;
+            }
+
+            .modal-title {
+                font-size: 1.6rem;
             }
         }
     </style>
@@ -824,9 +1128,27 @@
                 <h1>Stop Wasting Years Trying to "Find Yourself"</h1>
                 <p class="subtitle">Instantly Decode Your Strengths, Blind Spots & Hidden Potential in One Session</p>
                 
+                <div class="scarcity-indicator">
+                    🔥 Only 2 Spots Available This Month
+                </div>
+                
                 <div style="margin: 2rem 0;">
                     <a href="#" onclick="openModal('chart')" class="cta-button">🔮 Unlock Your Blueprint Now</a>
-                    <p style="margin-top: 0.8rem; font-size: 0.9rem; opacity: 0.8;">⏰ Only 2 spots this month</p>
+                </div>
+                
+                <div class="trust-indicators">
+                    <div class="trust-item">
+                        <span class="trust-icon">⚡</span>
+                        <span>2-Hour Session</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-icon">🎯</span>
+                        <span>Strategic Clarity</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-icon">🔒</span>
+                        <span>Secure Booking</span>
+                    </div>
                 </div>
                 
                 <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 12px; margin-top: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
@@ -859,15 +1181,6 @@
             </ul>
 
             <p class="big-text">Most people die never truly knowing their full potential - because they're using the wrong map.</p>
-        </div>
-    </section>
-
-    <!-- Mid CTA -->
-    <section class="mid-cta">
-        <div class="container">
-            <h3>Stop Guessing. Start Knowing.</h3>
-            <p style="font-size: 1rem; margin-bottom: 1.5rem;">While others spend decades "finding themselves", you'll have total clarity today.</p>
-            <a href="#" class="cta-button" onclick="openModal('chart')" style="background: #000; color: #FFD700;">🚀 Decode Your Blueprint</a>
         </div>
     </section>
 
@@ -972,6 +1285,7 @@
                     <div class="offer-icon">📊</div>
                     <div class="offer-content">
                         <h3>Complete Strategic Analysis</h3>
+                        <p>Deep dive into your natural strengths, blind spots, and optimal operating style</p>
                         <span class="value-badge">Value £997</span>
                     </div>
                 </div>
@@ -980,6 +1294,7 @@
                     <div class="offer-icon">💬</div>
                     <div class="offer-content">
                         <h3>90 Days Direct Access</h3>
+                        <p>Text/email support for implementation questions and strategic guidance</p>
                         <span class="value-badge">Value £497</span>
                     </div>
                 </div>
@@ -988,7 +1303,17 @@
                     <div class="offer-icon">🎯</div>
                     <div class="offer-content">
                         <h3>Timing Strategy Calendar</h3>
+                        <p>Personalized calendar showing optimal timing for major decisions</p>
                         <span class="value-badge">Value £297</span>
+                    </div>
+                </div>
+                
+                <div class="offer-item">
+                    <div class="offer-icon">🔧</div>
+                    <div class="offer-content">
+                        <h3>Custom Optimization Tools</h3>
+                        <p>Personalized remedies and tools to enhance your natural advantages</p>
+                        <span class="value-badge">Value £197</span>
                     </div>
                 </div>
             </div>
@@ -1002,9 +1327,33 @@
                     💸 Working against your design: Burnout & plateaus
                 </p>
                 <p style="margin: 1.5rem 0; font-size: 1.2rem; color: #FFD700; font-weight: 600;">Your Complete Strategic Blueprint:</p>
+                <div class="old-price">Normal Value: £1,988</div>
                 <p class="new-price">£491</p>
                 <p style="margin-bottom: 1.5rem; font-size: 0.9rem;">Less than most business consultants charge for a single strategy call</p>
                 <a href="#" onclick="openModal('chart')" class="cta-button">Get My Blueprint</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Urgency Section -->
+    <section class="content-section" style="background: linear-gradient(135deg, #1a1a1a, #2a2a2a);">
+        <div class="container">
+            <h2 class="section-title">Why You Must Act Now</h2>
+            
+            <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+                <p style="font-size: 1.2rem; margin-bottom: 2rem; color: #FFD700;">Every day you operate without this clarity:</p>
+                
+                <ul style="list-style: none; font-size: 1.1rem; margin-bottom: 2rem;">
+                    <li style="margin: 1rem 0; color: #FF4444;">❌ You make decisions based on incomplete information</li>
+                    <li style="margin: 1rem 0; color: #FF4444;">❌ You waste energy fighting against your natural design</li>
+                    <li style="margin: 1rem 0; color: #FF4444;">❌ You miss optimal timing windows for major moves</li>
+                    <li style="margin: 1rem 0; color: #FF4444;">❌ You struggle with partnerships that could work effortlessly</li>
+                </ul>
+                
+                <div style="background: rgba(255, 215, 0, 0.1); padding: 2rem; border-radius: 16px; border: 2px solid rgba(255, 215, 0, 0.3);">
+                    <p style="font-size: 1.3rem; font-weight: 600; color: #FFD700; margin-bottom: 1rem;">The cost of waiting another year:</p>
+                    <p style="font-size: 1.1rem;">Missed opportunities, wrong partnerships, and continued confusion about your true strengths. The blueprint that could change everything sits right here, waiting.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -1014,7 +1363,10 @@
         <div class="container">
             <h2>Stop Operating on Guesswork</h2>
             <p>Get the strategic clarity that separates high performers from everyone else.</p>
-            <a href="#" onclick="openModal('chart')" class="cta-button">Get My Blueprint Now</a>
+            <div style="margin: 2rem 0;">
+                <a href="#" onclick="openModal('chart')" class="cta-button">Get Your Blueprint Now</a>
+            </div>
+            <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.8;">⚡ Instant access • 🛡️ Satisfaction guaranteed • 🔒 Secure payment</p>
         </div>
     </section>
 
@@ -1037,7 +1389,7 @@
                 modalContent.innerHTML = `
                     <h2 class="modal-title">Elite Performance Coaching Application</h2>
                     <p class="modal-subtitle">Ready to eliminate guesswork from your strategy? Let's see if you qualify for our elite 6-week program.</p>
-                    <div style="background: linear-gradient(135deg, #FF4444 0%, #CC0000 100%); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; text-align: center;">
+                    <div style="background: linear-gradient(135deg, #FF4444 0%, #CC0000 100%); color: white; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; text-align: center;">
                         <strong>💰 PERFORMANCE GUARANTEE:</strong> Make your investment back in 3 months or get FREE coaching until you do!
                     </div>
                     
@@ -1183,6 +1535,30 @@
             if (e.key === 'Escape') {
                 closeModal();
             }
+        });
+
+        // Show sticky CTA after scroll
+        window.addEventListener('scroll', function() {
+            const stickyMobileCta = document.querySelector('.sticky-mobile-cta');
+            if (window.scrollY > 500) {
+                stickyMobileCta.style.display = 'block';
+            } else {
+                stickyMobileCta.style.display = 'none';
+            }
+        });
+
+        // Add smooth scrolling for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
         });
     </script>
 </body>
