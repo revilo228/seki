@@ -11,18 +11,26 @@
             box-sizing: border-box;
         }
 
+        html {
+            overflow-x: hidden;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
             background: #000;
             color: #fff;
             overflow-x: hidden;
             line-height: 1.6;
+            width: 100%;
+            max-width: 100vw;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 15px;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         /* Header */
@@ -141,6 +149,8 @@
         .content-section {
             padding: 60px 0;
             background: linear-gradient(180deg, #111 0%, #000 100%);
+            width: 100%;
+            overflow-x: hidden;
         }
 
         .section-title {
@@ -400,6 +410,63 @@
             box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);
         }
 
+        /* Special Coaching Guarantee */
+        .coaching-guarantee {
+            background: linear-gradient(135deg, #FF4444 0%, #CC0000 100%);
+            color: white;
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(255, 68, 68, 0.4);
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .coaching-guarantee::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shine 3s infinite;
+        }
+
+        .coaching-guarantee h3 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .coaching-guarantee p {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .guarantee-highlight {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .guarantee-highlight strong {
+            font-size: 1.2em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
         /* Footer CTA */
         .footer-cta {
             padding: 60px 0;
@@ -575,11 +642,24 @@
             50% { background-position: 100% 50%; }
         }
 
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
         /* Mobile Optimizations */
         @media (max-width: 768px) {
+            html, body {
+                overflow-x: hidden;
+                width: 100%;
+                position: relative;
+            }
+
             .hero {
                 min-height: auto;
                 padding: 40px 0;
+                width: 100%;
+                overflow-x: hidden;
             }
 
             .header h1 {
@@ -592,14 +672,19 @@
 
             .container {
                 margin-bottom: 70px;
+                padding: 0 10px;
+                max-width: 100%;
             }
 
             .service-card {
                 padding: 25px 15px;
+                width: 100%;
+                box-sizing: border-box;
             }
 
             .service-card h3 {
                 font-size: 1.5rem;
+                word-wrap: break-word;
             }
 
             .service-card .price {
@@ -610,6 +695,8 @@
                 flex-direction: column;
                 text-align: center;
                 padding: 1.2rem;
+                width: 100%;
+                box-sizing: border-box;
             }
 
             .offer-icon {
@@ -624,15 +711,20 @@
             .quote-box {
                 padding: 1.5rem;
                 font-size: 1.1rem;
+                width: 100%;
+                box-sizing: border-box;
             }
 
             .pain-list li {
                 padding: 1rem;
                 font-size: 0.95rem;
+                word-wrap: break-word;
             }
 
             .section-title {
                 font-size: 1.6rem;
+                word-wrap: break-word;
+                hyphens: auto;
             }
 
             .big-text {
@@ -642,6 +734,11 @@
             .cta-button {
                 padding: 14px 28px;
                 font-size: 1rem;
+                white-space: normal;
+                text-align: center;
+                width: auto;
+                max-width: 100%;
+                box-sizing: border-box;
             }
 
             .testimonial {
@@ -651,16 +748,44 @@
             .features-list li {
                 font-size: 0.9rem;
                 padding: 5px 0 5px 18px;
+                word-wrap: break-word;
+            }
+
+            .coaching-guarantee {
+                padding: 2rem 1.5rem;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .coaching-guarantee h3 {
+                font-size: 1.6rem;
+                word-wrap: break-word;
+            }
+
+            .coaching-guarantee p {
+                font-size: 1rem;
+                word-wrap: break-word;
+            }
+
+            .modal-content {
+                margin: 10px;
+                max-width: calc(100vw - 20px);
+                width: calc(100vw - 20px);
+                box-sizing: border-box;
             }
         }
 
         @media (max-width: 480px) {
             .services-grid {
                 grid-template-columns: 1fr;
+                width: 100%;
+                box-sizing: border-box;
             }
 
             .hero h1 {
                 font-size: 1.8rem;
+                word-wrap: break-word;
+                hyphens: auto;
             }
 
             .hero .subtitle {
@@ -670,6 +795,19 @@
             .video-placeholder {
                 height: 200px;
                 font-size: 0.9rem;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .container {
+                padding: 0 8px;
+            }
+
+            .cta-button {
+                font-size: 0.9rem;
+                padding: 12px 20px;
+                white-space: normal;
+                line-height: 1.3;
             }
         }
     </style>
@@ -688,7 +826,7 @@
                 
                 <div style="margin: 2rem 0;">
                     <a href="#" onclick="openModal('chart')" class="cta-button">🔮 Unlock Your Blueprint Now</a>
-                    <p style="margin-top: 0.8rem; font-size: 0.9rem; opacity: 0.8;">⏰ Only 2 Spots This Month</p>
+                    <p style="margin-top: 0.8rem; font-size: 0.9rem; opacity: 0.8;">⏰ Only 2 spots this month</p>
                 </div>
                 
                 <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 12px; margin-top: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
@@ -704,7 +842,7 @@
 
     <!-- Sticky Mobile CTA -->
     <div class="sticky-mobile-cta">
-        <a href="#" onclick="openModal('chart')" class="cta-button">Transform Your Life Now</a>
+        <a href="#" onclick="openModal('chart')" class="cta-button">🔮 Unlock Your Blueprint</a>
     </div>
 
     <!-- Problem Identification -->
@@ -736,24 +874,24 @@
     <!-- Solution Explanation -->
     <section class="content-section">
         <div class="container">
-            <h2 class="section-title">YOUR COMPLETE PERSONAL BLUEPRINT - DECODED IN HOURS, NOT DECADES</h2>
+            <h2 class="section-title">Here's The System That Changes Everything</h2>
             
             <div class="quote-box">
                 "Millionaires don't use astrology; billionaires do."<br>
                 <span style="font-size: 1rem; opacity: 0.8; margin-top: 0.5rem; display: block;">—J.P. Morgan</span>
             </div>
 
-            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem;">While others spend years in therapy trying to understand themselves, successful leaders use cosmic blueprints for instant clarity.</p>
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem;">The elite have been using this for decades. They just don't talk about it publicly.</p>
 
-            <p class="big-text">In one session, you'll understand:<br>
-            <span style="font-size: 1.1rem; font-weight: normal;">✓ Your natural genius zones (stop forcing what doesn't fit)<br>
-            ✓ Hidden weaknesses that silently sabotage you<br>
-            ✓ Optimal timing for major moves<br>
-            ✓ Why certain patterns keep repeating</span></p>
+            <p class="big-text">In one session, you'll understand exactly:<br>
+            <span style="font-size: 1.1rem; font-weight: normal;">✓ Your zone of natural genius (stop forcing what doesn't work)<br>
+            ✓ Hidden patterns sabotaging your growth<br>
+            ✓ Optimal timing for major decisions<br>
+            ✓ Why certain opportunities feel "off"</span></p>
             
             <p style="text-align: center; font-size: 1.2rem; margin-top: 2rem; color: #FFD700; font-weight: 600;">
-                What therapists charge £10,000+ to help you "discover" over years...<br>
-                Your cosmic blueprint reveals instantly.
+                What costs £50k+ in business coaching and years of trial and error...<br>
+                Your blueprint reveals in 2 hours.
             </p>
         </div>
     </section>
@@ -761,72 +899,65 @@
     <!-- Services Section -->
     <section id="services" class="content-section">
         <div class="container">
-            <h2 class="section-title">Choose Your Transformation</h2>
+            <h2 class="section-title">Here's What's Available</h2>
             
             <div class="services-grid">
                 <!-- Strategic Coaching -->
                 <div class="service-card">
-                    <h3>Strategic Cosmic Coaching</h3>
-                    <div class="price">Apply to Learn More</div>
+                    <h3>Elite Performance Coaching</h3>
+                    <div class="price">Application Required</div>
                     <p class="description">
-                        <strong style="color: #FFD700;">Skip 10+ years of self-discovery.</strong> In just 6 weeks, gain crystal clarity on your strengths, vulnerabilities, opportunities, and threats to your success.
+                        <strong style="color: #FFD700;">For serious operators only.</strong> 6 weeks of intensive alignment work to eliminate guesswork and maximize your natural advantages.
                         <br><br>
-                        <strong style="color: #FFD700;">📋 Application Required | For professionals earning £5k+/month</strong>
+                        <strong style="color: #FFD700;">Application Required | Minimum £10k/month income</strong>
+                        <br><br>
+                        <strong style="color: #32CD32; font-size: 1.1em;">FREE Vedic & Numerology Reading Included</strong>
                     </p>
                     <ul class="features-list">
-                        <li>Complete Life Path Analysis</li>
-                        <li>Full Vedic Chart (12 Houses)</li>
-                        <li>Life Timing Analysis</li>
-                        <li>Relationship Compatibility</li>
-                        <li>90 Days WhatsApp Access</li>
-                        <li>Personalised Audio Recording</li>
-                        <li>Cosmic Remedies & Power Tools</li>
-                        <li>Strategic Timing Analysis</li>
+                        <li>Complete Strategic Blueprint Analysis</li>
+                        <li>Full Chart Decode (All 12 Houses)</li>
+                        <li>Timing Strategy for Major Decisions</li>
+                        <li>Team & Partnership Compatibility</li>
+                        <li>90 Days Direct Access</li>
+                        <li>Custom Strategy Guide</li>
+                        <li>Optimization Tools & Remedies</li>
+                        <li>Quarterly Timing Updates</li>
                     </ul>
-                    <a href="#" class="cta-button" onclick="openModal('coaching')">🔮 Apply Now</a>
+                    <a href="#" class="cta-button" onclick="openModal('coaching')">🎯 Apply Now</a>
                 </div>
 
                 <!-- Complete Chart Reading -->
                 <div class="service-card">
-                    <h3>Complete Chart Analysis</h3>
+                    <h3>Complete Blueprint Analysis</h3>
                     <div class="price">£491</div>
                     <p class="description">
-                        <strong style="color: #FFD700;">2 hours that save you 20 years.</strong> Finally understand your natural advantages, hidden blockers, perfect opportunities, and what threatens your growth - no more guessing.
+                        <strong style="color: #FFD700;">2 hours that save you 2 years.</strong> Stop operating on assumptions. Get the data on your natural design and how to leverage it.
                     </p>
                     <ul class="features-list">
                         <li>Complete Life Path Analysis</li>
                         <li>Full Vedic Chart (12 Houses)</li>
                         <li>Life Timing Analysis</li>
                         <li>Relationship Compatibility</li>
-                        <li>90 Days WhatsApp Access</li>
-                        <li>Personalised Audio Recording</li>
                         <li>Cosmic Remedies & Power Tools</li>
                         <li>Strategic Timing Analysis</li>
                     </ul>
-                    <a href="#" class="cta-button" onclick="openModal('chart')">🌟 Book Chart Reading</a>
+                    <a href="#" class="cta-button" onclick="openModal('chart')">Book Analysis</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Results Section -->
+    <!-- COACHING GUARANTEE SECTION -->
     <section class="content-section">
         <div class="container">
-            <h2 class="section-title">When You Align Your Blueprint</h2>
-
-            <div class="testimonial-grid">
-                <div class="testimonial">
-                    <p class="testimonial-text">"Revenue increased 3x in 60 days without changing my business model"</p>
-                    <p class="testimonial-author">- Sarah, Consultant</p>
+            <div class="coaching-guarantee">
+                <h3>💰 MY PERFORMANCE GUARANTEE 💰</h3>
+                <div class="guarantee-highlight">
+                    <p><strong>If you don't make your investment back within 3 months of our Elite Performance Coaching, I'll keep coaching you for FREE until you do.</strong></p>
                 </div>
-                <div class="testimonial">
-                    <p class="testimonial-text">"Finally broke through my £10k/month ceiling after being stuck for 2 years"</p>
-                    <p class="testimonial-author">- Michael, Agency Owner</p>
-                </div>
-                <div class="testimonial">
-                    <p class="testimonial-text">"Partnership conflicts resolved naturally - everyone aligned perfectly"</p>
-                    <p class="testimonial-author">- David, Tech Founder</p>
-                </div>
+                <p>Simple as that. If the strategic insights, timing optimization, and alignment work don't generate at least your investment back in new income, opportunities, or strategic wins within 90 days, you get unlimited follow-up sessions at zero cost.</p>
+                <p><strong>No time limits. No loopholes. No BS.</strong></p>
+                <p style="font-size: 1.1rem; margin-top: 1.5rem;">I'm betting my time and reputation on your success. Because when you're properly aligned, results are inevitable.</p>
             </div>
         </div>
     </section>
@@ -834,13 +965,13 @@
     <!-- Offer Stack -->
     <section class="content-section">
         <div class="container">
-            <h2 class="section-title">What You Get</h2>
+            <h2 class="section-title">What You Actually Get</h2>
             
             <div class="offer-stack">
                 <div class="offer-item">
                     <div class="offer-icon">📊</div>
                     <div class="offer-content">
-                        <h3>Complete Blueprint Analysis</h3>
+                        <h3>Complete Strategic Analysis</h3>
                         <span class="value-badge">Value £997</span>
                     </div>
                 </div>
@@ -848,7 +979,7 @@
                 <div class="offer-item">
                     <div class="offer-icon">💬</div>
                     <div class="offer-content">
-                        <h3>90 Days Support Access</h3>
+                        <h3>90 Days Direct Access</h3>
                         <span class="value-badge">Value £497</span>
                     </div>
                 </div>
@@ -856,34 +987,24 @@
                 <div class="offer-item">
                     <div class="offer-icon">🎯</div>
                     <div class="offer-content">
-                        <h3>Strategic Timing Calendar</h3>
+                        <h3>Timing Strategy Calendar</h3>
                         <span class="value-badge">Value £297</span>
                     </div>
                 </div>
             </div>
 
             <div class="price-section">
-                <h3 style="color: #FFD700; margin-bottom: 1rem;">The Cost of Not Knowing Yourself:</h3>
+                <h3 style="color: #FFD700; margin-bottom: 1rem;">The Real Cost of Operating Blind:</h3>
                 <p style="text-align: left; margin-bottom: 1rem;">
-                    💸 Years of therapy: £5,000-15,000<br>
-                    💸 Wrong career moves: £50,000+ in lost income<br>
-                    💸 Failed relationships: Emotional cost immeasurable<br>
-                    💸 Missed opportunities: Your dreams unrealized
+                    💸 Wrong strategic decisions: £50,000+ in lost opportunities<br>
+                    💸 Misaligned partnerships: Months of wasted time<br>
+                    💸 Poor timing on launches: Revenue left on table<br>
+                    💸 Working against your design: Burnout & plateaus
                 </p>
-                <p style="margin: 1.5rem 0; font-size: 1.2rem; color: #FFD700; font-weight: 600;">Your Complete Personal Blueprint:</p>
-                <p class="new-price">Only £491</p>
-                <p style="margin-bottom: 1.5rem; font-size: 0.9rem;">Less than what most spend on a weekend workshop that teaches generic advice</p>
-                <a href="#" onclick="openModal('chart')" class="cta-button">Claim Your Transformation</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Guarantee -->
-    <section class="content-section">
-        <div class="container">
-            <div class="guarantee-box">
-                <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">100% Transformation Guarantee</h3>
-                <p>If you don't experience a breakthrough within 30 days, I'll work with you until you do - at no extra charge.</p>
+                <p style="margin: 1.5rem 0; font-size: 1.2rem; color: #FFD700; font-weight: 600;">Your Complete Strategic Blueprint:</p>
+                <p class="new-price">£491</p>
+                <p style="margin-bottom: 1.5rem; font-size: 0.9rem;">Less than most business consultants charge for a single strategy call</p>
+                <a href="#" onclick="openModal('chart')" class="cta-button">Get My Blueprint</a>
             </div>
         </div>
     </section>
@@ -891,9 +1012,9 @@
     <!-- Footer CTA -->
     <section class="footer-cta">
         <div class="container">
-            <h2>Your Breakthrough Awaits</h2>
-            <p>Stop swimming upstream. Align with your cosmic blueprint and watch success flow naturally.</p>
-            <a href="#" onclick="openModal('chart')" class="cta-button">Choose Your Transformation Path</a>
+            <h2>Stop Operating on Guesswork</h2>
+            <p>Get the strategic clarity that separates high performers from everyone else.</p>
+            <a href="#" onclick="openModal('chart')" class="cta-button">Get My Blueprint Now</a>
         </div>
     </section>
 
@@ -914,8 +1035,11 @@
             
             if (type === 'coaching') {
                 modalContent.innerHTML = `
-                    <h2 class="modal-title">Strategic Cosmic Coaching Application</h2>
-                    <p class="modal-subtitle">Ready to skip 10+ years of self-discovery? Let's see if you qualify for our exclusive 6-week transformation program.</p>
+                    <h2 class="modal-title">Elite Performance Coaching Application</h2>
+                    <p class="modal-subtitle">Ready to eliminate guesswork from your strategy? Let's see if you qualify for our elite 6-week program.</p>
+                    <div style="background: linear-gradient(135deg, #FF4444 0%, #CC0000 100%); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; text-align: center;">
+                        <strong>💰 PERFORMANCE GUARANTEE:</strong> Make your investment back in 3 months or get FREE coaching until you do!
+                    </div>
                     
                     <form class="booking-form" action="https://formspree.io/f/manjlggg" method="POST">
                         <input type="hidden" name="form_type" value="coaching_application">
@@ -952,16 +1076,16 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="challenge">Biggest Challenge Right Now *</label>
-                            <textarea id="challenge" name="challenge" placeholder="What's the main obstacle preventing you from reaching your next level?" required></textarea>
+                            <label for="challenge">Biggest Strategic Challenge Right Now *</label>
+                            <textarea id="challenge" name="challenge" placeholder="What's the main bottleneck preventing your next level of performance?" required></textarea>
                         </div>
                         
                         <div class="form-group">
                             <label for="investment">Investment Readiness *</label>
                             <select id="investment" name="investment" required>
                                 <option value="">Select...</option>
-                                <option value="ready">Ready to invest £2,000-5,000 for transformation</option>
-                                <option value="considering">Considering investment if right fit</option>
+                                <option value="ready">Ready to invest £2,000-5,000 for strategic clarity</option>
+                                <option value="considering">Considering investment if it's the right fit</option>
                                 <option value="need-info">Need more information first</option>
                             </select>
                         </div>
@@ -969,14 +1093,14 @@
                         <button type="submit" class="submit-button">Submit Application</button>
                         
                         <p class="form-note">
-                            Your information is secure and private. We'll review your application and contact you within 24 hours if you're a good fit for our exclusive program.
+                            Your information is private and secure. We'll review your application and contact you within 24 hours if you qualify for our elite program with performance guarantee.
                         </p>
                     </form>
                 `;
             } else {
                 modalContent.innerHTML = `
-                    <h2 class="modal-title">Book Your Complete Chart Analysis</h2>
-                    <p class="modal-subtitle">Ready to decode your personal blueprint in just 2 hours? Let's get started with your transformation.</p>
+                    <h2 class="modal-title">Book Your Strategic Blueprint Analysis</h2>
+                    <p class="modal-subtitle">Ready to decode your natural design in 2 hours? Let's get you the strategic clarity you need.</p>
                     
                     <form class="booking-form" action="https://formspree.io/f/manjlggg" method="POST">
                         <input type="hidden" name="form_type" value="chart_reading">
@@ -1012,26 +1136,26 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="focus">Main Life Area to Focus On *</label>
+                            <label for="focus">Primary Strategic Focus *</label>
                             <select id="focus" name="focus" required>
                                 <option value="">Choose primary focus...</option>
-                                <option value="career">Career & Business Success</option>
-                                <option value="relationships">Relationships & Love</option>
-                                <option value="purpose">Life Purpose & Direction</option>
-                                <option value="timing">Strategic Timing for Decisions</option>
-                                <option value="overall">Complete Life Overview</option>
+                                <option value="career">Business & Career Strategy</option>
+                                <option value="relationships">Partnership & Team Dynamics</option>
+                                <option value="purpose">Strategic Direction & Purpose</option>
+                                <option value="timing">Decision Timing & Opportunities</option>
+                                <option value="overall">Complete Strategic Overview</option>
                             </select>
                         </div>
                         
                         <div class="form-group">
-                            <label for="questions">Specific Questions (Optional)</label>
-                            <textarea id="questions" name="questions" placeholder="Any specific areas you'd like insights on?"></textarea>
+                            <label for="questions">Specific Strategic Questions (Optional)</label>
+                            <textarea id="questions" name="questions" placeholder="Any specific areas where you need strategic clarity?"></textarea>
                         </div>
                         
-                        <button type="submit" class="submit-button">Book My Reading - £491</button>
+                        <button type="submit" class="submit-button">Book My Analysis - £491</button>
                         
                         <p class="form-note">
-                            Secure booking. You'll receive confirmation within 2 hours and we'll schedule your 2-hour session at a time that works for you.
+                            Secure booking. You'll receive confirmation within 2 hours and we'll schedule your 2-hour strategic session at your convenience.
                         </p>
                     </form>
                 `;
