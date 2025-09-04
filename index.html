@@ -1664,8 +1664,8 @@
         }
 
         function sendUserDataToBackend(userData, serviceType) {
-            // Send to your backend or email service for fulfillment
-            fetch('YOUR_BACKEND_ENDPOINT', {
+            // Send to Formspree for fulfillment notification
+            fetch('https://formspree.io/f/manjlggg', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -1673,7 +1673,9 @@
                 body: JSON.stringify({
                     ...userData,
                     serviceType: serviceType,
-                    timestamp: new Date().toISOString()
+                    timestamp: new Date().toISOString(),
+                    subject: `New ${serviceType} purchase - Fulfillment needed`,
+                    orderStatus: 'PAID'
                 })
             })
             .then(response => response.json())
@@ -1682,6 +1684,7 @@
             })
             .catch(error => {
                 console.error('Error sending user data:', error);
+                // Fallback - could also send to another endpoint
             });
         }
         
