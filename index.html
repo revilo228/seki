@@ -1213,8 +1213,8 @@
     <section id="services" class="content-section">
         <div class="container">
             <h2 class="section-title">Here's What's Available</h2>
-
-<!-- Numerology Reading -->
+            <div class="services-grid">
+                <!-- Numerology Reading -->
                 <div class="service-card">
                     <h3>Numerology Power Reading</h3>
                     <div class="price">£50</div>
@@ -1234,25 +1234,6 @@
                     <a href="#" class="cta-button" onclick="openModal('numerology')">Get Reading</a>
                 </div>
 
-                <!-- Complete Chart Reading -->
-                <div class="service-card">
-                    <h3>Complete Blueprint Analysis</h3>
-                    <div class="price">£50</div>
-                    <p class="description">
-                        <strong style="color: #FFD700;">2 hours that save you 2 years.</strong> Stop operating on assumptions. Get the data on your natural design and how to leverage it.
-                    </p>
-                    <ul class="features-list">
-                        <li>Complete Life Path Analysis</li>
-                        <li>Full Vedic Chart (12 Houses)</li>
-                        <li>Life Timing Analysis</li>
-                        <li>Relationship Compatibility</li>
-                        <li>Cosmic Remedies & Power Tools</li>
-                        <li>Strategic Timing Analysis</li>
-                    </ul>
-                    <a href="#" class="cta-button" onclick="openModal('chart')">Book Analysis</a>
-                </div>
-            
-            <div class="services-grid">
                 <!-- Strategic Coaching -->
                 <div class="service-card">
                     <h3>Elite Performance Coaching</h3>
@@ -1274,7 +1255,7 @@
                         <li>Optimization Tools & Remedies</li>
                         <li>Quarterly Timing Updates</li>
                     </ul>
-                    <a href="#" class="cta-button" onclick="openModal('coaching')">🎯 Apply Now</a>
+                    <a href="#" class="cta-button" onclick="openModal('coaching')">Apply Now</a>
                 </div>
 
                 <!-- Complete Chart Reading -->
@@ -1408,69 +1389,6 @@
         </div>
     </section>
 
-    } else if (type === 'numerology') {
-    modalContent.innerHTML = `
-        <h2 class="modal-title">Book Your Numerology Power Reading</h2>
-        <p class="modal-subtitle">Get essential insights on your core patterns plus free Chinese Zodiac analysis. Perfect introduction to understanding your natural design.</p>
-        <div style="background: linear-gradient(135deg, #32CD32 0%, #228B22 100%); color: white; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; text-align: center;">
-            <strong>🎁 BONUS:</strong> FREE Chinese Zodiac Analysis + 30-Min Video Call Breakdown Included!
-        </div>
-        
-        <form class="booking-form" action="https://formspree.io/f/manjlggg" method="POST">
-            <input type="hidden" name="form_type" value="numerology_reading">
-            
-            <div class="form-group">
-                <label for="name">Full Name *</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="email">Email Address *</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="phone">Phone Number *</label>
-                <input type="tel" id="phone" name="phone" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="birthdate">Date of Birth *</label>
-                <input type="date" id="birthdate" name="birthdate" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="birthname">Full Birth Name (as on birth certificate) *</label>
-                <input type="text" id="birthname" name="birthname" placeholder="Complete name as it appears on your birth certificate" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="focus">Primary Focus Area *</label>
-                <select id="focus" name="focus" required>
-                    <option value="">Choose primary focus...</option>
-                    <option value="career">Career & Life Purpose</option>
-                    <option value="relationships">Relationships & Compatibility</option>
-                    <option value="timing">Personal Year & Timing</option>
-                    <option value="strengths">Core Strengths & Talents</option>
-                    <option value="overview">Complete Overview</option>
-                </select>
-            </div>
-            
-            <div class="form-group">
-                <label for="questions">Specific Questions (Optional)</label>
-                <textarea id="questions" name="questions" placeholder="Any specific areas you'd like insights on?"></textarea>
-            </div>
-            
-            <button type="submit" class="submit-button">Get My Reading - £50</button>
-            
-            <p class="form-note">
-                Secure booking. You'll receive your numerology report within 48 hours and we'll schedule your 30-minute breakdown call at your convenience. Chinese Zodiac analysis included free!
-            </p>
-        </form>
-    `;
-} else {
-    // Keep the existing chart reading modal code here
-    
     <!-- Booking Modals -->
     <div id="bookingModal" class="modal-overlay">
         <div class="modal-content">
