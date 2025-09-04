@@ -1406,9 +1406,10 @@
 
     <script>
         // Whop Embedded Checkout Integration
+        // Check if these should be plan_xxx instead of prod_xxx
         const WHOP_PLAN_IDS = {
-            numerology: 'prod_ncoJ3WYGnydiZ', // Numerology Reading
-            chart: 'prod_8mjAVICxUFkhe'       // Astrology Blueprint
+            numerology: 'prod_ncoJ3WYGnydiZ', // Try changing to plan_xxx if this doesn't work
+            chart: 'prod_8mjAVICxUFkhe'       // Try changing to plan_xxx if this doesn't work
         };
 
         function openModal(type) {
@@ -1782,18 +1783,27 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="birthtime">Time of Birth (if known)</label>
-                            <input type="time" id="birthtime" name="birthtime" placeholder="HH:MM">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="birthplace">Place of Birth *</label>
-                            <input type="text" id="birthplace" name="birthplace" placeholder="City, Country" required>
-                        </div>
-                        
-                        <div class="form-group">
                             <label for="focus">Primary Strategic Focus *</label>
                             <select id="focus" name="focus" required>
                                 <option value="">Choose primary focus...</option>
                                 <option value="career">Business & Career Strategy</option>
-                                <option value="relationships">
+                                <option value="relationships">Partnership & Team Dynamics</option>
+                                <option value="purpose">Strategic Direction & Purpose</option>
+                                <option value="timing">Decision Timing & Opportunities</option>
+                                <option value="overall">Complete Strategic Overview</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="questions">Specific Strategic Questions (Optional)</label>
+                            <textarea id="questions" name="questions" placeholder="Any specific areas where you need strategic clarity?"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-button">Book My Analysis - £230</button>
+                        
+                        <p class="form-note">
+                            Secure booking. You'll receive confirmation within 2 hours and we'll schedule your 2-hour strategic session at your convenience.
+                        </p>
+                    </form>
+                `;
+            }
