@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ancient System for Success & Peace - Transform in 72 Hours</title>
+    <script
+        async
+        defer
+        src="https://js.whop.com/static/checkout/loader.js"
+    ></script>
     <style>
         * {
             margin: 0;
@@ -776,7 +781,7 @@
             background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
             border-radius: 20px;
             padding: 2.5rem;
-            max-width: 550px;
+            max-width: 650px;
             width: 100%;
             position: relative;
             border: 2px solid rgba(255, 215, 0, 0.3);
@@ -1400,202 +1405,290 @@
     </div>
 
     <script>
-function openModal(type) {
-    const modal = document.getElementById('bookingModal');
-    const modalContent = document.getElementById('modalContent');
-    
-    if (type === 'coaching') {
-        modalContent.innerHTML = `
-            <h2 class="modal-title">Elite Performance Coaching Application</h2>
-            <p class="modal-subtitle">Ready to eliminate guesswork from your strategy? Let's see if you qualify for our elite 6-week program.</p>
-            <div style="background: linear-gradient(135deg, #FF4444 0%, #CC0000 100%); color: white; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; text-align: center;">
-                <strong>💰 PERFORMANCE GUARANTEE:</strong> Make your investment back in 3 months or get FREE coaching until you do!
-            </div>
+        // Whop Embedded Checkout Integration
+        const WHOP_PLAN_IDS = {
+            numerology: 'prod_ncoJ3WYGnydiZ', // Numerology Reading
+            chart: 'prod_8mjAVICxUFkhe'       // Astrology Blueprint
+        };
+
+        function openModal(type) {
+            const modal = document.getElementById('bookingModal');
+            const modalContent = document.getElementById('modalContent');
             
-            <form class="booking-form" action="https://formspree.io/f/manjlggg" method="POST">
-                <input type="hidden" name="form_type" value="coaching_application">
-                
-                <div class="form-group">
-                    <label for="name">Full Name *</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="phone">Phone Number *</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="income">Current Monthly Income *</label>
-                    <select id="income" name="income" required>
-                        <option value="">Select range...</option>
-                        <option value="5k-10k">£5,000 - £10,000</option>
-                        <option value="10k-25k">£10,000 - £25,000</option>
-                        <option value="25k-50k">£25,000 - £50,000</option>
-                        <option value="50k+">£50,000+</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="business">Type of Business/Role *</label>
-                    <input type="text" id="business" name="business" placeholder="e.g., Consultant, Agency Owner, Entrepreneur" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="challenge">Biggest Strategic Challenge Right Now *</label>
-                    <textarea id="challenge" name="challenge" placeholder="What's the main bottleneck preventing your next level of performance?" required></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label for="investment">Investment Readiness *</label>
-                    <select id="investment" name="investment" required>
-                        <option value="">Select...</option>
-                        <option value="ready">Ready to invest £2,000-5,000 for strategic clarity</option>
-                        <option value="considering">Considering investment if it's the right fit</option>
-                        <option value="need-info">Need more information first</option>
-                    </select>
-                </div>
-                
-                <button type="submit" class="submit-button">Submit Application</button>
-                
-                <p class="form-note">
-                    Your information is private and secure. We'll review your application and contact you within 24 hours if you qualify for our elite program with performance guarantee.
-                </p>
-            </form>
-        `;
-    } else if (type === 'numerology') {
-        modalContent.innerHTML = `
-            <h2 class="modal-title">Book Your Numerology Power Reading</h2>
-            <p class="modal-subtitle">Get essential insights on your core patterns plus free Chinese Zodiac analysis. Perfect introduction to understanding your natural design.</p>
-            <div style="background: linear-gradient(135deg, #32CD32 0%, #228B22 100%); color: white; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; text-align: center;">
-                <strong>🎁 BONUS:</strong> FREE Chinese Zodiac Analysis + 30-Min Video Call Breakdown Included!
-            </div>
+            if (type === 'coaching') {
+                modalContent.innerHTML = `
+                    <h2 class="modal-title">Elite Performance Coaching Application</h2>
+                    <p class="modal-subtitle">Ready to eliminate guesswork from your strategy? Let's see if you qualify for our elite 6-week program.</p>
+                    <div style="background: linear-gradient(135deg, #FF4444 0%, #CC0000 100%); color: white; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; text-align: center;">
+                        <strong>💰 PERFORMANCE GUARANTEE:</strong> Make your investment back in 3 months or get FREE coaching until you do!
+                    </div>
+                    
+                    <form class="booking-form" onsubmit="handleCoachingSubmit(event)">
+                        <input type="hidden" name="form_type" value="coaching_application">
+                        
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="income">Current Monthly Income *</label>
+                            <select id="income" name="income" required>
+                                <option value="">Select range...</option>
+                                <option value="5k-10k">£5,000 - £10,000</option>
+                                <option value="10k-25k">£10,000 - £25,000</option>
+                                <option value="25k-50k">£25,000 - £50,000</option>
+                                <option value="50k+">£50,000+</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="business">Type of Business/Role *</label>
+                            <input type="text" id="business" name="business" placeholder="e.g., Consultant, Agency Owner, Entrepreneur" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="challenge">Biggest Strategic Challenge Right Now *</label>
+                            <textarea id="challenge" name="challenge" placeholder="What's the main bottleneck preventing your next level of performance?" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="investment">Investment Readiness *</label>
+                            <select id="investment" name="investment" required>
+                                <option value="">Select...</option>
+                                <option value="ready">Ready to invest £2,000-5,000 for strategic clarity</option>
+                                <option value="considering">Considering investment if it's the right fit</option>
+                                <option value="need-info">Need more information first</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="submit-button">Submit Application</button>
+                        
+                        <p class="form-note">
+                            Your information is private and secure. We'll review your application and contact you within 24 hours if you qualify for our elite program with performance guarantee.
+                        </p>
+                    </form>
+                `;
+            } else if (type === 'numerology') {
+                modalContent.innerHTML = `
+                    <h2 class="modal-title">Book Your Numerology Power Reading</h2>
+                    <p class="modal-subtitle">Get essential insights on your core patterns plus free Chinese Zodiac analysis. Perfect introduction to understanding your natural design.</p>
+                    <div style="background: linear-gradient(135deg, #32CD32 0%, #228B22 100%); color: white; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; text-align: center;">
+                        <strong>🎁 BONUS:</strong> FREE Chinese Zodiac Analysis + 30-Min Video Call Breakdown Included!
+                    </div>
+                    
+                    <form class="booking-form" onsubmit="handleNumerologySubmit(event)">
+                        <input type="hidden" name="form_type" value="numerology_reading">
+                        
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="birthdate">Date of Birth *</label>
+                            <input type="date" id="birthdate" name="birthdate" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="birthname">Full Birth Name *</label>
+                            <input type="text" id="birthname" name="birthname" placeholder="Complete name as it appears on your birth certificate" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="focus">Primary Focus Area *</label>
+                            <select id="focus" name="focus" required>
+                                <option value="">Choose primary focus...</option>
+                                <option value="career">Career & Life Purpose</option>
+                                <option value="relationships">Partnership & Team Dynamics</option>
+                                <option value="purpose">Strategic Direction & Purpose</option>
+                                <option value="timing">Decision Timing & Opportunities</option>
+                                <option value="overall">Complete Strategic Overview</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="questions">Specific Strategic Questions (Optional)</label>
+                            <textarea id="questions" name="questions" placeholder="Any specific areas where you need strategic clarity?"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-button">Book My Analysis - £230</button>
+                        
+                        <p class="form-note">
+                            Secure booking. You'll receive confirmation within 2 hours and we'll schedule your 2-hour strategic session at your convenience.
+                        </p>
+                    </form>
+                `;
+            }
             
-            <form class="booking-form" action="https://formspree.io/f/manjlggg" method="POST">
-                <input type="hidden" name="form_type" value="numerology_reading">
-                
-                <div class="form-group">
-                    <label for="name">Full Name *</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="phone">Phone Number *</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="birthdate">Date of Birth *</label>
-                    <input type="date" id="birthdate" name="birthdate" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="birthname">Full Birth Name *</label>
-                    <input type="text" id="birthname" name="birthname" placeholder="Complete name as it appears on your birth certificate" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="focus">Primary Focus Area *</label>
-                    <select id="focus" name="focus" required>
-                        <option value="">Choose primary focus...</option>
-                        <option value="career">Career & Life Purpose</option>
-                        <option value="relationships">Relationships & Compatibility</option>
-                        <option value="timing">Personal Year & Timing</option>
-                        <option value="strengths">Core Strengths & Talents</option>
-                        <option value="overview">Complete Overview</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="questions">Specific Questions (Optional)</label>
-                    <textarea id="questions" name="questions" placeholder="Any specific areas you'd like insights on?"></textarea>
-                </div>
-                
-                <button type="submit" class="submit-button">Get My Reading - £50</button>
-                
-                <p class="form-note">
-                    Secure booking. You'll receive your numerology report within 48 hours and we'll schedule your 30-minute breakdown call at your convenience. Chinese Zodiac analysis included free!
-                </p>
-            </form>
-        `;
-    } else {
-        // Default to chart reading
-        modalContent.innerHTML = `
-            <h2 class="modal-title">Book Your Strategic Blueprint Analysis</h2>
-            <p class="modal-subtitle">Ready to decode your natural design in 2 hours? Let's get you the strategic clarity you need.</p>
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Handle form submissions and show embedded checkout
+        function handleNumerologySubmit(event) {
+            event.preventDefault();
             
-            <form class="booking-form" action="https://formspree.io/f/manjlggg" method="POST">
-                <input type="hidden" name="form_type" value="chart_reading">
+            // Collect form data
+            const formData = new FormData(event.target);
+            const userData = Object.fromEntries(formData);
+            
+            // Store user data for post-purchase processing
+            localStorage.setItem('numerology_user_data', JSON.stringify(userData));
+            
+            // Show checkout in modal
+            showWhopCheckout('numerology', userData);
+        }
+
+        function handleChartSubmit(event) {
+            event.preventDefault();
+            
+            // Collect form data
+            const formData = new FormData(event.target);
+            const userData = Object.fromEntries(formData);
+            
+            // Store user data for post-purchase processing
+            localStorage.setItem('chart_user_data', JSON.stringify(userData));
+            
+            // Show checkout in modal
+            showWhopCheckout('chart', userData);
+        }
+
+        function handleCoachingSubmit(event) {
+            event.preventDefault();
+            
+            // Collect form data
+            const formData = new FormData(event.target);
+            const userData = Object.fromEntries(formData);
+            
+            // Store application data
+            localStorage.setItem('coaching_application_data', JSON.stringify(userData));
+            
+            // Send application for review first
+            sendApplicationEmail(userData);
+        }
+
+        function showWhopCheckout(serviceType, userData) {
+            const modalContent = document.getElementById('modalContent');
+            const planId = WHOP_PLAN_IDS[serviceType];
+            
+            // Create checkout container
+            modalContent.innerHTML = `
+                <h2 class="modal-title">Complete Your Purchase</h2>
+                <p class="modal-subtitle">Secure checkout powered by Whop</p>
                 
-                <div class="form-group">
-                    <label for="name">Full Name *</label>
-                    <input type="text" id="name" name="name" required>
+                <div
+                    data-whop-checkout-plan-id="${planId}"
+                    data-whop-checkout-theme="dark"
+                    data-whop-checkout-hide-price="false"
+                    style="height: 600px; overflow: hidden; width: 100%; border-radius: 12px;"
+                ></div>
+                
+                <div style="text-align: center; margin-top: 1rem;">
+                    <button onclick="goBackToForm('${serviceType}')" style="background: none; border: 1px solid #ccc; color: #ccc; padding: 8px 16px; border-radius: 6px; cursor: pointer;">
+                        ← Back to Form
+                    </button>
                 </div>
-                
-                <div class="form-group">
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="phone">Phone Number *</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="birthdate">Date of Birth *</label>
-                    <input type="date" id="birthdate" name="birthdate" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="birthtime">Time of Birth (if known)</label>
-                    <input type="time" id="birthtime" name="birthtime" placeholder="HH:MM">
-                </div>
-                
-                <div class="form-group">
-                    <label for="birthplace">Place of Birth *</label>
-                    <input type="text" id="birthplace" name="birthplace" placeholder="City, Country" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="focus">Primary Strategic Focus *</label>
-                    <select id="focus" name="focus" required>
-                        <option value="">Choose primary focus...</option>
-                        <option value="career">Business & Career Strategy</option>
-                        <option value="relationships">Partnership & Team Dynamics</option>
-                        <option value="purpose">Strategic Direction & Purpose</option>
-                        <option value="timing">Decision Timing & Opportunities</option>
-                        <option value="overall">Complete Strategic Overview</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="questions">Specific Strategic Questions (Optional)</label>
-                    <textarea id="questions" name="questions" placeholder="Any specific areas where you need strategic clarity?"></textarea>
-                </div>
-                
-                <button type="submit" class="submit-button">Book My Analysis - £230</button>
-                
-                <p class="form-note">
-                    Secure booking. You'll receive confirmation within 2 hours and we'll schedule your 2-hour strategic session at your convenience.
-                </p>
-            </form>
-        `;
-    }
-    
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
+            `;
+            
+            // Initialize Whop checkout
+            if (window.WhopCheckout) {
+                window.WhopCheckout.init();
+            }
+        }
+
+        function goBackToForm(serviceType) {
+            // Reload the appropriate form
+            if (serviceType === 'numerology') {
+                openModal('numerology');
+            } else if (serviceType === 'chart') {
+                openModal('chart');
+            }
+        }
+
+        function sendApplicationEmail(userData) {
+            // Send coaching application to Formspree
+            fetch('https://formspree.io/f/manjlggg', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(userData)
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Application submitted! We\'ll review and contact you within 24 hours.');
+                    closeModal();
+                } else {
+                    alert('There was an error submitting your application. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error submitting your application. Please try again.');
+            });
+        }
+
+        // Handle post-purchase data collection (call this on a thank you page)
+        function processPostPurchaseData() {
+            // Check if we have stored user data
+            const numerologyData = localStorage.getItem('numerology_user_data');
+            const chartData = localStorage.getItem('chart_user_data');
+            
+            if (numerologyData) {
+                // Send the user data to your backend for fulfillment
+                sendUserDataToBackend(JSON.parse(numerologyData), 'numerology');
+                localStorage.removeItem('numerology_user_data');
+            }
+            
+            if (chartData) {
+                // Send the user data to your backend for fulfillment
+                sendUserDataToBackend(JSON.parse(chartData), 'chart');
+                localStorage.removeItem('chart_user_data');
+            }
+        }
+
+        function sendUserDataToBackend(userData, serviceType) {
+            // Send to your backend or email service for fulfillment
+            fetch('YOUR_BACKEND_ENDPOINT', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    ...userData,
+                    serviceType: serviceType,
+                    timestamp: new Date().toISOString()
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('User data sent for fulfillment:', data);
+            })
+            .catch(error => {
+                console.error('Error sending user data:', error);
+            });
+        }
         
         function closeModal() {
             const modal = document.getElementById('bookingModal');
@@ -1642,5 +1735,68 @@ function openModal(type) {
         });
     </script>
 </body>
-</html>
+</html>Relationships & Compatibility</option>
+                                <option value="timing">Personal Year & Timing</option>
+                                <option value="strengths">Core Strengths & Talents</option>
+                                <option value="overview">Complete Overview</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="questions">Specific Questions (Optional)</label>
+                            <textarea id="questions" name="questions" placeholder="Any specific areas you'd like insights on?"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-button">Get My Reading - £50</button>
+                        
+                        <p class="form-note">
+                            Secure booking. You'll receive your numerology report within 48 hours and we'll schedule your 30-minute breakdown call at your convenience. Chinese Zodiac analysis included free!
+                        </p>
+                    </form>
+                `;
+            } else {
+                // Default to chart reading
+                modalContent.innerHTML = `
+                    <h2 class="modal-title">Book Your Strategic Blueprint Analysis</h2>
+                    <p class="modal-subtitle">Ready to decode your natural design in 2 hours? Let's get you the strategic clarity you need.</p>
+                    
+                    <form class="booking-form" onsubmit="handleChartSubmit(event)">
+                        <input type="hidden" name="form_type" value="chart_reading">
+                        
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="birthdate">Date of Birth *</label>
+                            <input type="date" id="birthdate" name="birthdate" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="birthtime">Time of Birth (if known)</label>
+                            <input type="time" id="birthtime" name="birthtime" placeholder="HH:MM">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="birthplace">Place of Birth *</label>
+                            <input type="text" id="birthplace" name="birthplace" placeholder="City, Country" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="focus">Primary Strategic Focus *</label>
+                            <select id="focus" name="focus" required>
+                                <option value="">Choose primary focus...</option>
+                                <option value="career">Business & Career Strategy</option>
+                                <option value="relationships">
 
