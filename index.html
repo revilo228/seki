@@ -1214,7 +1214,7 @@
         </div>
     </section>
 
-    <!-- Services Section -->
+   <!-- Services Section -->
     <section id="services" class="content-section">
         <div class="container">
             <h2 class="section-title">Here's What's Available</h2>
@@ -1405,10 +1405,10 @@
     </div>
 
     <script>
-        // Whop Embedded Checkout Integration
+        // Plan IDs for Whop checkout
         const WHOP_PLAN_IDS = {
-            numerology: 'prod_ncoJ3WYGnydiZ',
-            chart: 'prod_8mjAVICxUFkhe'
+            numerology: 'plan_NiEZ8NyXNs72n',  // £50 numerology
+            chart: 'plan_EBqv6HKNJMR2H'        // £230 chart
         };
 
         function openModal(type) {
@@ -1527,187 +1527,10 @@
                             <textarea id="questions" name="questions" placeholder="Any specific areas where you need strategic clarity?"></textarea>
                         </div>
                         
-                        <button type="submit" class="submit-button">Book My Analysis - £230</button>
-                        
-                        <p class="form-note">
-                            Secure booking. You'll receive confirmation within 2 hours and we'll schedule your 2-hour strategic session at your convenience.
-                        </p>
-                    </form>
-                `;
-            }
-            
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-        
-        // Handle form submissions and show embedded checkout
-        function handleNumerologySubmit(event) {
-            event.preventDefault();
-            const formData = new FormData(event.target);
-            const userData = Object.fromEntries(formData);
-            localStorage.setItem('numerology_user_data', JSON.stringify(userData));
-            showWhopCheckout('numerology', userData);
-        }
-
-        function handleChartSubmit(event) {
-            event.preventDefault();
-            const formData = new FormData(event.target);
-            const userData = Object.fromEntries(formData);
-            localStorage.setItem('chart_user_data', JSON.stringify(userData));
-            showWhopCheckout('chart', userData);
-        }
-
-        function handleCoachingSubmit(event) {
-            event.preventDefault();
-            const formData = new FormData(event.target);
-            const userData = Object.fromEntries(formData);
-            localStorage.setItem('coaching_application_data', JSON.stringify(userData));
-            sendApplicationEmail(userData);
-        }
-
-        function showWhopCheckout(serviceType, userData) {
-            const modalContent = document.getElementById('modalContent');
-            const planId = WHOP_PLAN_IDS[serviceType];
-            
-            modalContent.innerHTML = `
-                <h2 class="modal-title">Complete Your Purchase</h2>
-                <p class="modal-subtitle">Secure checkout powered by Whop</p>
-                
-                <div
-                    data-whop-checkout-plan-id="${planId}"
-                    data-whop-checkout-theme="dark"
-                    data-whop-checkout-hide-price="false"
-                    style="height: 600px; overflow: hidden; width: 100%; border-radius: 12px;"
-                ></div>
-                
-                <div style="text-align: center; margin-top: 1rem;">
-                    <button onclick="goBackToForm('${serviceType}')" style="background: none; border: 1px solid #ccc; color: #ccc; padding: 8px 16px; border-radius: 6px; cursor: pointer;">
-                        ← Back to Form
-                    </button>
-                </div>
-            `;
-            
-            if (window.WhopCheckout) {
-                window.WhopCheckout.init();
-            }
-        }
-
-        function goBackToForm(serviceType) {
-            if (serviceType === 'numerology') {
-                openModal('numerology');
-            } else if (serviceType === 'chart') {
-                openModal('chart');
-            }
-        }
-
-        function sendApplicationEmail(userData) {
-            fetch('https://formspree.io/f/manjlggg', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(userData)
-            })
-            .then(response => {
-                if (response.ok) {
-                    alert('Application submitted! We\'ll review and contact you within 24 hours.');
-                    closeModal();
-                } else {
-                    alert('There was an error submitting your application. Please try again.');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('There was an error submitting your application. Please try again.');
-            });
-        }
-
-        function processPostPurchaseData() {
-            const numerologyData = localStorage.getItem('numerology_user_data');
-            const chartData = localStorage.getItem('chart_user_data');
-            
-            if (numerologyData) {
-                sendUserDataToBackend(JSON.parse(numerologyData), 'numerology');
-                localStorage.removeItem('numerology_user_data');
-            }
-            
-            if (chartData) {
-                sendUserDataToBackend(JSON.parse(chartData), 'chart');
-                localStorage.removeItem('chart_user_data');
-            }
-        }
-
-        function sendUserDataToBackend(userData, serviceType) {
-            fetch('https://formspree.io/f/manjlggg', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    ...userData,
-                    serviceType: serviceType,
-                    timestamp: new Date().toISOString(),
-                    subject: `New ${serviceType} purchase - Fulfillment needed`,
-                    orderStatus: 'PAID'
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('User data sent for fulfillment:', data);
-            })
-            .catch(error => {
-                console.error('Error sending user data:', error);
-            });
-        }
-        
-        function closeModal() {
-            const modal = document.getElementById('bookingModal');
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-        
-        document.getElementById('bookingModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeModal();
-            }
-        });
-        
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeModal();
-            }
-        });
-
-        window.addEventListener('scroll', function() {
-            const stickyMobileCta = document.querySelector('.sticky-mobile-cta');
-            if (window.scrollY > 500) {
-                stickyMobileCta.style.display = 'block';
-            } else {
-                stickyMobileCta.style.display = 'none';
-            }
-        });
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
-</body>
-</html> id="questions" name="questions" placeholder="Any specific areas where you need strategic clarity?"></textarea>
-                        </div>
-                        
                         <button type="submit" class="submit-button">Get My Reading - £50</button>
                         
                         <p class="form-note">
-                            Secure booking. You'll receive confirmation within 2 hours and we'll schedule your 2-hour strategic session at your convenience.
+                            Secure booking. You'll receive confirmation within 2 hours and we'll schedule your 30-minute breakdown call at your convenience.
                         </p>
                     </form>
                 `;
@@ -1766,4 +1589,1238 @@
                         
                         <div class="form-group">
                             <label for="questions">Specific Strategic Questions (Optional)</label>
-                            <textarea
+                            <textarea id="questions" name="questions" placeholder="Any specific areas where you need strategic clarity?"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-button">Book My Analysis - £230</button>
+                        
+                        <p class="form-note">
+                            Secure booking. You'll receive confirmation within 2 hours and we'll schedule your 2-hour strategic session at your convenience.
+                        </p>
+                    </form>
+                `;
+            }
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Handle form submissions and redirect to Whop checkout
+        function handleNumerologySubmit(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const userData = Object.fromEntries(formData);
+            
+            // Send user data for fulfillment
+            sendUserDataToBackend(userData, 'numerology');
+            
+            // Show checkout modal
+            showWhopCheckout('numerology', userData);
+        }
+
+        function handleChartSubmit(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const userData = Object.fromEntries(formData);
+            
+            // Send user data for fulfillment
+            sendUserDataToBackend(userData, 'chart');
+            
+            // Show checkout modal
+            showWhopCheckout('chart', userData);
+        }
+
+        function handleCoachingSubmit(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const userData = Object.fromEntries(formData);
+            
+            sendApplicationEmail(userData);
+        }
+
+        function showWhopCheckout(serviceType, userData) {
+            const modalContent = document.getElementById('modalContent');
+            const planId = WHOP_PLAN_IDS[serviceType];
+            
+            if (!planId) {
+                console.error('Plan ID not found for service type:', serviceType);
+                alert('Error: Service not configured properly. Please try again.');
+                return;
+            }
+            
+            modalContent.innerHTML = `
+                <h2 class="modal-title">Complete Your Purchase</h2>
+                <p class="modal-subtitle">You're being redirected to secure checkout</p>
+                
+                <div style="text-align: center; padding: 3rem 2rem; background: linear-gradient(135deg, #1a1a1a, #2a2a2a); border-radius: 12px; border: 2px solid rgba(255, 215, 0, 0.3);">
+                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">🔒</div>
+                    <h3 style="color: #FFD700; margin-bottom: 1.5rem;">Secure Checkout</h3>
+                    <p style="margin-bottom: 2rem; color: #ccc;">Click the button below to complete your purchase on Whop's secure checkout page.</p>
+                    
+                    <div style="margin: 1.5rem 0;">
+                        <a href="https://whop.com/checkout/${planId}" target="_blank" 
+                           style="display: inline-block; background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #000; padding: 18px 36px; text-decoration: none; border-radius: 10px; font-weight: 700; font-size: 1.2rem; margin: 0.5rem;">
+                            Complete Purchase - ${serviceType === 'numerology' ? '£50' : '£230'}
+                        </a>
+                    </div>
+                    
+                    <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255, 215, 0, 0.1); border-radius: 10px; border: 1px solid rgba(255, 215, 0, 0.3);">
+                        <p style="font-size: 0.95rem; color: #FFD700; margin-bottom: 0.5rem;"><strong>Your booking details have been saved!</strong></p>
+                        <p style="font-size: 0.9rem; color: #ccc;">After payment, you'll receive confirmation and scheduling instructions within 2 hours.</p>
+                    </div>
+                    
+                    <div style="margin-top: 1.5rem;">
+                        <button onclick="goBackToForm('${serviceType}')" class="back-button">
+                            ← Back to Form
+                        </button>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 1rem; color: #666; font-size: 0.8rem;">
+                    Plan ID: ${planId} | Service: ${serviceType}<br>
+                    Secure payment processing by Whop
+                </div>
+            `;
+        }
+
+        function goBackToForm(serviceType) {
+            if (serviceType === 'numerology') {
+                openModal('numerology');
+            } else if (serviceType === 'chart') {
+                openModal('chart');
+            }
+        }
+
+        function sendApplicationEmail(userData) {
+            const submitButton = document.querySelector('.submit-button');
+            const originalText = submitButton.textContent;
+            
+            submitButton.textContent = 'Submitting...';
+            submitButton.disabled = true;
+            
+            fetch('https://formspree.io/f/manjlggg', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    ...userData,
+                    subject: 'New Elite Coaching Application',
+                    timestamp: new Date().toISOString()
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Application submitted successfully! We\'ll review and contact you within 24 hours if you qualify.');
+                    closeModal();
+                } else {
+                    throw new Error('Network response was not ok');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error submitting your application. Please try again or contact support.');
+            })
+            .finally(() => {
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+            });
+        }
+
+        function sendUserDataToBackend(userData, serviceType) {
+            fetch('https://formspree.io/f/manjlggg', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    ...userData,
+                    serviceType: serviceType,
+                    timestamp: new Date().toISOString(),
+                    subject: `New ${serviceType} booking - Payment pending`,
+                    orderStatus: 'PENDING_PAYMENT',
+                    fulfillmentNote: 'User has submitted booking form and been redirected to checkout. Await payment confirmation.'
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log('Booking data sent for fulfillment preparation');
+                } else {
+                    console.error('Failed to send booking data');
+                }
+            })
+            .catch(error => {
+                console.error('Error sending booking data:', error);
+            });
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById('bookingModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Event listeners
+        document.getElementById('bookingModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Sticky mobile CTA behavior
+        window.addEventListener('scroll', function() {
+            const stickyMobileCta = document.querySelector('.sticky-mobile-cta');
+            if (stickyMobileCta) {
+                if (window.scrollY > 500) {
+                    stickyMobileCta.style.display = 'block';
+                } else {
+                    stickyMobileCta.style.display = 'none';
+                }
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Page initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Landing page loaded successfully - Direct checkout mode active');
+        });
+    </script>
+</body>
+</html>
+                <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ancient System for Success & Peace - Transform in 72 Hours</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+            line-height: 1.6;
+            width: 100%;
+            max-width: 100vw;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #000;
+            padding: 0.8rem 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+        }
+
+        .header h1 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 0;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 20%;
+            right: 15%;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(255, 165, 0, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            background: linear-gradient(45deg, #FFD700, #FFA500, #FFD700);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientMove 3s ease-in-out infinite;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            margin-bottom: 1.5rem;
+            color: #ccc;
+            font-weight: 300;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Scarcity indicator */
+        .scarcity-indicator {
+            background: linear-gradient(135deg, #FF4444, #CC0000);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 1rem 0;
+            display: inline-block;
+            animation: pulse 2s infinite;
+            box-shadow: 0 4px 15px rgba(255, 68, 68, 0.3);
+        }
+
+        /* CTA Buttons */
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #000;
+            padding: 18px 36px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 0.5rem;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+            border: none;
+            cursor: pointer;
+            white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(255, 215, 0, 0.5);
+        }
+
+        /* Sticky Mobile CTA */
+        .sticky-mobile-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            padding: 15px;
+            text-align: center;
+            z-index: 999;
+            display: none;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
+            animation: slideUp 0.5s ease-out;
+        }
+
+        .sticky-mobile-cta .cta-button {
+            margin: 0;
+            padding: 16px 28px;
+            font-size: 1rem;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        /* Trust indicators */
+        .trust-indicators {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        .trust-icon {
+            color: #32CD32;
+            font-size: 1.1rem;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 80px 0;
+            background: linear-gradient(180deg, #111 0%, #000 100%);
+            width: 100%;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .content-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.3), transparent);
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 2rem;
+            text-align: center;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #FFD700, #FFA500);
+            border-radius: 2px;
+        }
+
+        .big-text {
+            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+            font-weight: 600;
+            color: #FFD700;
+            text-align: center;
+            margin: 2rem 0;
+            line-height: 1.4;
+        }
+
+        /* Pain points */
+        .pain-list {
+            list-style: none;
+            margin: 2rem 0;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pain-list li {
+            margin: 1rem 0;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            border-left: 4px solid #FFD700;
+            font-size: 1rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .pain-list li:hover {
+            transform: translateX(5px);
+        }
+
+        .pain-list li::before {
+            content: "❌ ";
+            color: #FF4444;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Quote box */
+        .quote-box {
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            color: #fff;
+            padding: 2.5rem;
+            margin: 2rem auto;
+            border-radius: 16px;
+            text-align: center;
+            font-size: 1.3rem;
+            font-style: italic;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            max-width: 600px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .quote-box::before {
+            content: '"';
+            font-size: 5rem;
+            color: rgba(255, 215, 0, 0.2);
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            font-family: serif;
+        }
+
+        /* Service Selection */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            border-radius: 20px;
+            padding: 35px 25px;
+            border: 2px solid transparent;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #FFD700, #FFA500);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: #FFD700;
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
+        }
+
+        .service-card h3 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #FFD700;
+        }
+
+        .service-card .price {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .service-card .description {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            color: #ccc;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .features-list li {
+            padding: 8px 0 8px 25px;
+            font-size: 0.95rem;
+            color: #fff;
+            position: relative;
+        }
+
+        .features-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #32CD32;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Offer Stack */
+        .offer-stack {
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            padding: 2.5rem 2rem;
+            margin: 2rem 0;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .offer-item {
+            display: flex;
+            align-items: center;
+            margin: 2rem 0;
+            padding: 2rem 1.5rem;
+            background: linear-gradient(135deg, #2a2a2a, #3a3a3a);
+            border-radius: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .offer-item:hover {
+            transform: translateX(10px);
+        }
+
+        .offer-icon {
+            font-size: 2.5rem;
+            margin-right: 1.5rem;
+            min-width: 60px;
+            text-align: center;
+            color: #FFD700;
+        }
+
+        .offer-content h3 {
+            color: #FFD700;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .value-badge {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #000;
+            padding: 0.4rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 0.5rem;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        /* Price Section */
+        .price-section {
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            color: white;
+            padding: 3.5rem 2rem;
+            margin: 3rem 0;
+            border-radius: 20px;
+            text-align: center;
+            border: 3px solid rgba(255, 215, 0, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .price-section::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #FFD700, #FFA500, #FFD700);
+            border-radius: 20px;
+            z-index: -1;
+            animation: gradientBorder 3s ease-in-out infinite;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 1.8rem;
+            margin: 0.5rem 0;
+        }
+
+        .new-price {
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 1rem 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Coaching Guarantee */
+        .coaching-guarantee {
+            background: linear-gradient(135deg, #FF4444 0%, #CC0000 100%);
+            color: white;
+            padding: 3.5rem 2.5rem;
+            margin: 3rem 0;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(255, 68, 68, 0.5);
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .coaching-guarantee::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shine 3s infinite;
+        }
+
+        .coaching-guarantee h3 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 900;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+            position: relative;
+            z-index: 1;
+        }
+
+        .coaching-guarantee p {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .guarantee-highlight {
+            background: rgba(255, 255, 255, 0.25);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(10px);
+        }
+
+        .guarantee-highlight strong {
+            font-size: 1.3em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* Footer CTA */
+        .footer-cta {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(45deg, #FFD700, #FFA500, #FFD700);
+            background-size: 200% 200%;
+            animation: gradientMove 3s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="rgba(0,0,0,0.1)"><polygon points="0,0 1000,80 1000,100 0,100"/></svg>');
+            background-size: cover;
+        }
+
+        .footer-cta * {
+            color: #000;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-cta h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .footer-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 500;
+        }
+
+        .footer-cta .cta-button {
+            background: #000;
+            color: #FFD700;
+            font-size: 1.3rem;
+            padding: 22px 45px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            padding: 20px;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            border-radius: 20px;
+            padding: 2.5rem;
+            max-width: 650px;
+            width: 100%;
+            position: relative;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+            animation: slideIn 0.4s ease-out;
+            margin: auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #fff;
+            cursor: pointer;
+            padding: 0;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: #FFD700;
+            transform: scale(1.1);
+        }
+
+        .modal-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #FFD700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .modal-subtitle {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #ccc;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+
+        .booking-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            color: #FFD700;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 15px 18px;
+            border: 2px solid #444;
+            border-radius: 10px;
+            background: #2a2a2a;
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #FFD700;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #000;
+            padding: 18px 35px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1.5rem;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+        }
+
+        .submit-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 215, 0, 0.5);
+        }
+
+        .form-note {
+            font-size: 0.9rem;
+            color: #999;
+            text-align: center;
+            margin-top: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .back-button {
+            background: none;
+            border: 1px solid #ccc;
+            color: #ccc;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: rgba(255, 215, 0, 0.1);
+            border-color: #FFD700;
+            color: #FFD700;
+        }
+
+        /* Animations */
+        @keyframes gradientMove {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes gradientBorder {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px) scale(0.9); opacity: 0; }
+            to { transform: translateY(0) scale(1); opacity: 1; }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                min-height: auto;
+                padding: 40px 0;
+                text-align: center;
+            }
+
+            .hero .container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                text-align: center;
+            }
+
+            .hero-content {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .hero h1 {
+                text-align: center;
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero .subtitle {
+                text-align: center;
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .scarcity-indicator {
+                display: block;
+                text-align: center;
+                margin: 1rem auto;
+                width: fit-content;
+            }
+
+            .cta-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                text-align: center;
+            }
+
+            .cta-button {
+                display: block;
+                text-align: center;
+                margin: 0 auto;
+            }
+
+            .header h1 {
+                font-size: 0.8rem;
+            }
+
+            .sticky-mobile-cta {
+                display: block;
+            }
+
+            .container {
+                margin-bottom: 80px;
+                padding: 0 10px;
+            }
+
+            .service-card {
+                padding: 30px 20px;
+            }
+
+            .service-card h3 {
+                font-size: 1.6rem;
+            }
+
+            .service-card .price {
+                font-size: 2.2rem;
+            }
+
+            .offer-item {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem;
+            }
+
+            .offer-icon {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+
+            .new-price {
+                font-size: 2.8rem;
+            }
+
+            .quote-box {
+                padding: 2rem;
+                font-size: 1.2rem;
+            }
+
+            .pain-list li {
+                padding: 1.2rem;
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .big-text {
+                font-size: 1.2rem;
+            }
+
+            .cta-button {
+                padding: 16px 32px;
+                font-size: 1rem;
+                white-space: normal;
+                text-align: center;
+            }
+
+            .coaching-guarantee {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .coaching-guarantee h3 {
+                font-size: 1.8rem;
+            }
+
+            .coaching-guarantee p {
+                font-size: 1.1rem;
+            }
+
+            .modal-content {
+                margin: 15px;
+                max-width: calc(100vw - 30px);
+                width: calc(100vw - 30px);
+                padding: 2rem;
+            }
+
+            .trust-indicators {
+                flex-direction: column;
+                gap: 15px;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+
+            .container {
+                padding: 0 8px;
+            }
+
+            .cta-button {
+                font-size: 0.95rem;
+                padding: 14px 24px;
+                line-height: 1.3;
+            }
+
+            .modal-content {
+                padding: 1.5rem;
+                margin: 10px;
+            }
+
+            .modal-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>The Ancient System 99% of Professionals Don't Know...</h1>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-
