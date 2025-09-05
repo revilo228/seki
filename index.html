@@ -1406,10 +1406,9 @@
 
     <script>
         // Whop Embedded Checkout Integration
-        // Check if these should be plan_xxx instead of prod_xxx
         const WHOP_PLAN_IDS = {
-            numerology: 'prod_ncoJ3WYGnydiZ', // Try changing to plan_xxx if this doesn't work
-            chart: 'prod_8mjAVICxUFkhe'       // Try changing to plan_xxx if this doesn't work
+            numerology: 'prod_ncoJ3WYGnydiZ',
+            chart: 'prod_8mjAVICxUFkhe'
         };
 
         function openModal(type) {
@@ -1528,7 +1527,7 @@
                             <textarea id="questions" name="questions" placeholder="Any specific areas where you need strategic clarity?"></textarea>
                         </div>
                         
-                        <button type="submit" class="submit-button">Get My Reading - £50</button>
+                        <button type="submit" class="submit-button">Book My Analysis - £230</button>
                         
                         <p class="form-note">
                             Secure booking. You'll receive confirmation within 2 hours and we'll schedule your 2-hour strategic session at your convenience.
@@ -1544,43 +1543,25 @@
         // Handle form submissions and show embedded checkout
         function handleNumerologySubmit(event) {
             event.preventDefault();
-            
-            // Collect form data
             const formData = new FormData(event.target);
             const userData = Object.fromEntries(formData);
-            
-            // Store user data for post-purchase processing
             localStorage.setItem('numerology_user_data', JSON.stringify(userData));
-            
-            // Show checkout in modal
             showWhopCheckout('numerology', userData);
         }
 
         function handleChartSubmit(event) {
             event.preventDefault();
-            
-            // Collect form data
             const formData = new FormData(event.target);
             const userData = Object.fromEntries(formData);
-            
-            // Store user data for post-purchase processing
             localStorage.setItem('chart_user_data', JSON.stringify(userData));
-            
-            // Show checkout in modal
             showWhopCheckout('chart', userData);
         }
 
         function handleCoachingSubmit(event) {
             event.preventDefault();
-            
-            // Collect form data
             const formData = new FormData(event.target);
             const userData = Object.fromEntries(formData);
-            
-            // Store application data
             localStorage.setItem('coaching_application_data', JSON.stringify(userData));
-            
-            // Send application for review first
             sendApplicationEmail(userData);
         }
 
@@ -1588,7 +1569,6 @@
             const modalContent = document.getElementById('modalContent');
             const planId = WHOP_PLAN_IDS[serviceType];
             
-            // Create checkout container
             modalContent.innerHTML = `
                 <h2 class="modal-title">Complete Your Purchase</h2>
                 <p class="modal-subtitle">Secure checkout powered by Whop</p>
@@ -1607,14 +1587,12 @@
                 </div>
             `;
             
-            // Initialize Whop checkout
             if (window.WhopCheckout) {
                 window.WhopCheckout.init();
             }
         }
 
         function goBackToForm(serviceType) {
-            // Reload the appropriate form
             if (serviceType === 'numerology') {
                 openModal('numerology');
             } else if (serviceType === 'chart') {
@@ -1623,7 +1601,6 @@
         }
 
         function sendApplicationEmail(userData) {
-            // Send coaching application to Formspree
             fetch('https://formspree.io/f/manjlggg', {
                 method: 'POST',
                 headers: {
@@ -1645,27 +1622,22 @@
             });
         }
 
-        // Handle post-purchase data collection (call this on a thank you page)
         function processPostPurchaseData() {
-            // Check if we have stored user data
             const numerologyData = localStorage.getItem('numerology_user_data');
             const chartData = localStorage.getItem('chart_user_data');
             
             if (numerologyData) {
-                // Send the user data to your backend for fulfillment
                 sendUserDataToBackend(JSON.parse(numerologyData), 'numerology');
                 localStorage.removeItem('numerology_user_data');
             }
             
             if (chartData) {
-                // Send the user data to your backend for fulfillment
                 sendUserDataToBackend(JSON.parse(chartData), 'chart');
                 localStorage.removeItem('chart_user_data');
             }
         }
 
         function sendUserDataToBackend(userData, serviceType) {
-            // Send to Formspree for fulfillment notification
             fetch('https://formspree.io/f/manjlggg', {
                 method: 'POST',
                 headers: {
@@ -1685,7 +1657,6 @@
             })
             .catch(error => {
                 console.error('Error sending user data:', error);
-                // Fallback - could also send to another endpoint
             });
         }
         
@@ -1695,21 +1666,18 @@
             document.body.style.overflow = 'auto';
         }
         
-        // Close modal when clicking outside
         document.getElementById('bookingModal').addEventListener('click', function(e) {
             if (e.target === this) {
                 closeModal();
             }
         });
         
-        // Close modal with Escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closeModal();
             }
         });
 
-        // Show sticky CTA after scroll
         window.addEventListener('scroll', function() {
             const stickyMobileCta = document.querySelector('.sticky-mobile-cta');
             if (window.scrollY > 500) {
@@ -1719,7 +1687,6 @@
             }
         });
 
-        // Add smooth scrolling for better UX
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1734,30 +1701,23 @@
         });
     </script>
 </body>
-</html>Relationships & Compatibility</option>
-                                <option value="timing">Personal Year & Timing</option>
-                                <option value="strengths">Core Strengths & Talents</option>
-                                <option value="overview">Complete Overview</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="questions">Specific Questions (Optional)</label>
-                            <textarea id="questions" name="questions" placeholder="Any specific areas you'd like insights on?"></textarea>
+</html> id="questions" name="questions" placeholder="Any specific areas where you need strategic clarity?"></textarea>
                         </div>
                         
                         <button type="submit" class="submit-button">Get My Reading - £50</button>
                         
                         <p class="form-note">
-                            Secure booking. You'll receive your numerology report within 48 hours and we'll schedule your 30-minute breakdown call at your convenience. Chinese Zodiac analysis included free!
+                            Secure booking. You'll receive confirmation within 2 hours and we'll schedule your 2-hour strategic session at your convenience.
                         </p>
                     </form>
                 `;
-            } else {
-                // Default to chart reading
+            } else if (type === 'chart') {
                 modalContent.innerHTML = `
                     <h2 class="modal-title">Book Your Strategic Blueprint Analysis</h2>
-                    <p class="modal-subtitle">Ready to decode your natural design in 2 hours? Let's get you the strategic clarity you need.</p>
+                    <p class="modal-subtitle">Ready to decode your natural design in 2 hours? Get the strategic clarity that separates high performers from everyone else.</p>
+                    <div style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #000; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; text-align: center;">
+                        <strong>⚡ COMPLETE BLUEPRINT:</strong> 2 hours that save you 2 years of guesswork!
+                    </div>
                     
                     <form class="booking-form" onsubmit="handleChartSubmit(event)">
                         <input type="hidden" name="form_type" value="chart_reading">
@@ -1783,6 +1743,16 @@
                         </div>
                         
                         <div class="form-group">
+                            <label for="birthtime">Birth Time (if known)</label>
+                            <input type="time" id="birthtime" name="birthtime" placeholder="Helps with precision">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="birthplace">Birth City/Location *</label>
+                            <input type="text" id="birthplace" name="birthplace" placeholder="City, Country" required>
+                        </div>
+                        
+                        <div class="form-group">
                             <label for="focus">Primary Strategic Focus *</label>
                             <select id="focus" name="focus" required>
                                 <option value="">Choose primary focus...</option>
@@ -1796,14 +1766,4 @@
                         
                         <div class="form-group">
                             <label for="questions">Specific Strategic Questions (Optional)</label>
-                            <textarea id="questions" name="questions" placeholder="Any specific areas where you need strategic clarity?"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="submit-button">Book My Analysis - £230</button>
-                        
-                        <p class="form-note">
-                            Secure booking. You'll receive confirmation within 2 hours and we'll schedule your 2-hour strategic session at your convenience.
-                        </p>
-                    </form>
-                `;
-            }
+                            <textarea
