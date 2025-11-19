@@ -3,13 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ancient System for Success & Peace - Transform in 72 Hours</title>
+    <title>The 'Billionaire's Blueprint' - Unlock Your Potential for $37</title>
+    <!--
+    =================================================
+    == MICROSOFT CLARITY SCRIPT ==
+    =================================================
+    -->
     <script
-        async
-        defer
-        src="https://js.whop.com/static/checkout/loader.js"
-    ></script>
+type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "u7qcnghg1s");
+    </script>
     <style>
+        :root {
+            /* == BRAND AURA THEME == */
+            --color-primary: #FF33A1; /* Magenta/Pink */
+            --color-secondary: #FF9933; /* Orange */
+            --color-accent: #00E5E5;   /* Cyan */
+            
+            /* == NEW PREMIUM DARK MODE PALETTE (USER'S CHOICE) == */
+            --color-dark: #242424;   /* Section BG */
+            --color-gray: #2E2E2E;   /* Card BG */
+            --color-text: #ccc;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -18,2809 +38,1020 @@
 
         html {
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-            background: #000;
+            background: #1B1B1B; /* USER'S CHOICE */
             color: #fff;
             overflow-x: hidden;
             line-height: 1.6;
             width: 100%;
-            max-width: 100vw;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 15px;
-            width: 100%;
-            box-sizing: border-box;
+        }
+        
+        /* Gradient Background */
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientMove 3s ease-in-out infinite;
         }
 
-        /* Enhanced Header */
-        .header {
-            background: linear-gradient(135deg, #FFD700, #FFA500);
-            color: #000;
-            padding: 0.8rem 0;
+        /* == 1. STICKY HEADER (THE HOOK) == */
+        .sticky-header {
+            background: var(--color-dark);
+            color: #fff;
+            padding: 0.8rem 1rem;
             text-align: center;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+            border-bottom: 2px solid var(--color-primary);
         }
 
-        .header h1 {
-            font-size: 0.9rem;
+        .sticky-header h1 {
+            font-size: clamp(0.9rem, 2.5vw, 1.2rem);
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            color: var(--color-accent);
         }
 
-        /* Social proof badge */
-        .social-proof-badge {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-top: 5px;
-            display: inline-block;
-        }
-
-        /* Enhanced Hero Section */
+        /* == 2. HERO / VSL (THE CONVERSION ZONE) == */
         .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 60px 0;
-            background: radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
-            position: relative;
+            padding: 4rem 0;
         }
 
-        /* Floating elements for visual interest */
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 20%;
-            left: 10%;
-            width: 100px;
-            height: 100px;
-            background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 2.5rem;
+            align-items: flex-start;
         }
 
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: 20%;
-            right: 15%;
-            width: 150px;
-            height: 150px;
-            background: radial-gradient(circle, rgba(255, 165, 0, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: float 8s ease-in-out infinite reverse;
-        }
-
-        .hero h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
             font-weight: 900;
-            background: linear-gradient(45deg, #FFD700, #FFA500, #FFD700);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradientMove 3s ease-in-out infinite;
-            margin-bottom: 1rem;
             line-height: 1.2;
-            position: relative;
-            z-index: 2;
+            color: #fff;
         }
 
-        .hero .subtitle {
-            font-size: clamp(1rem, 2.5vw, 1.4rem);
-            margin-bottom: 1.5rem;
-            color: #ccc;
+        .hero-content h2 {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            color: var(--color-text);
             font-weight: 300;
-            position: relative;
-            z-index: 2;
+            margin: 1.5rem 0;
         }
 
-        /* Enhanced scarcity indicator */
-        .scarcity-indicator {
-            background: linear-gradient(135deg, #FF4444, #CC0000);
-            color: white;
-            padding: 12px 20px;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin: 1rem 0;
-            display: inline-block;
-            animation: pulse 2s infinite;
-            box-shadow: 0 4px 15px rgba(255, 68, 68, 0.3);
-        }
-
-        .video-placeholder {
-            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+        .vsl-placeholder {
             width: 100%;
-            max-width: 500px;
-            height: 250px;
-            margin: 1.5rem auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            aspect-ratio: 16 / 9;
+            background: var(--color-gray);
             border-radius: 12px;
-            font-size: 1rem;
-            color: #FFD700;
-            border: 2px solid rgba(255, 215, 0, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .video-placeholder::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.1), transparent);
-            animation: shine 3s infinite;
-        }
-
-        /* Enhanced CTA Buttons */
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-            color: #000;
-            padding: 18px 36px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin: 0.5rem;
-            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
-            border: none;
-            cursor: pointer;
-            white-space: nowrap;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 12px 35px rgba(255, 215, 0, 0.5);
-        }
-
-        /* Enhanced Sticky Mobile CTA */
-        .sticky-mobile-cta {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-            padding: 15px;
-            text-align: center;
-            z-index: 999;
-            display: none;
-            box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
-            animation: slideUp 0.5s ease-out;
-        }
-
-        .sticky-mobile-cta .cta-button {
-            margin: 0;
-            padding: 16px 28px;
-            font-size: 1rem;
-            width: 100%;
-            max-width: 320px;
-        }
-
-        /* Trust indicators */
-        .trust-indicators {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-
-        .trust-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.9rem;
-            color: #ccc;
-        }
-
-        .trust-icon {
-            color: #32CD32;
-            font-size: 1.1rem;
-        }
-
-        /* Enhanced Content Sections */
-        .content-section {
-            padding: 80px 0;
-            background: linear-gradient(180deg, #111 0%, #000 100%);
-            width: 100%;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        .content-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.3), transparent);
-        }
-
-        .section-title {
-            font-size: clamp(1.8rem, 4vw, 3rem);
-            font-weight: 800;
-            margin-bottom: 2rem;
-            text-align: center;
-            background: linear-gradient(45deg, #FFD700, #FFA500);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(90deg, #FFD700, #FFA500);
-            border-radius: 2px;
-        }
-
-        .big-text {
-            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-            font-weight: 600;
-            color: #FFD700;
-            text-align: center;
-            margin: 2rem 0;
-            line-height: 1.4;
-        }
-
-        /* Enhanced pain points */
-        .pain-list {
-            list-style: none;
-            margin: 2rem 0;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .pain-list li {
-            margin: 1rem 0;
-            padding: 1.5rem;
-            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-            border-left: 4px solid #FFD700;
-            font-size: 1rem;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-            position: relative;
-        }
-
-        .pain-list li:hover {
-            transform: translateX(5px);
-        }
-
-        .pain-list li::before {
-            content: "❌ ";
-            color: #FF4444;
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-
-        /* Enhanced quote box */
-        .quote-box {
-            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-            color: #fff;
-            padding: 2.5rem;
-            margin: 2rem auto;
-            border-radius: 16px;
-            text-align: center;
-            font-size: 1.3rem;
-            font-style: italic;
-            border: 2px solid rgba(255, 215, 0, 0.3);
-            max-width: 600px;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .quote-box::before {
-            content: '"';
-            font-size: 5rem;
-            color: rgba(255, 215, 0, 0.2);
-            position: absolute;
-            top: -15px;
-            left: 20px;
-            font-family: serif;
-        }
-
-        /* Enhanced Service Selection */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-        }
-
-        .service-card {
-            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-            border-radius: 20px;
-            padding: 35px 25px;
-            border: 2px solid transparent;
-            transition: all 0.4s ease;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #FFD700, #FFA500);
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
-        }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            border-color: #FFD700;
-            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
-        }
-
-        .service-card h3 {
-            font-size: 1.9rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: #FFD700;
-        }
-
-        .service-card .price {
-            font-size: 2.8rem;
-            font-weight: 900;
-            color: #fff;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .service-card .description {
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-            color: #ccc;
-        }
-
-        .features-list {
-            list-style: none;
-            margin-bottom: 1.5rem;
-        }
-
-        .features-list li {
-            padding: 8px 0 8px 25px;
-            font-size: 0.95rem;
-            color: #fff;
-            position: relative;
-        }
-
-        .features-list li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #32CD32;
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-
-        /* Enhanced Testimonials */
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .testimonial {
-            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-            padding: 30px 25px;
-            border-radius: 16px;
-            border-left: 4px solid #FFD700;
-            position: relative;
-            transition: transform 0.3s ease;
-        }
-
-        .testimonial:hover {
-            transform: translateY(-5px);
-        }
-
-        .testimonial::before {
-            content: '⭐⭐⭐⭐⭐';
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 0.8rem;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 1rem;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        .testimonial-author {
-            font-weight: 700;
-            color: #FFD700;
-        }
-
-        /* Enhanced Offer Stack */
-        .offer-stack {
-            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-            padding: 2.5rem 2rem;
-            margin: 2rem 0;
-            border-radius: 20px;
-            border: 2px solid rgba(255, 215, 0, 0.3);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-        }
-
-        .offer-item {
-            display: flex;
-            align-items: center;
-            margin: 2rem 0;
-            padding: 2rem 1.5rem;
-            background: linear-gradient(135deg, #2a2a2a, #3a3a3a);
-            border-radius: 16px;
-            transition: transform 0.3s ease;
-        }
-
-        .offer-item:hover {
-            transform: translateX(10px);
-        }
-
-        .offer-icon {
-            font-size: 2.5rem;
-            margin-right: 1.5rem;
-            min-width: 60px;
-            text-align: center;
-            color: #FFD700;
-        }
-
-        .offer-content h3 {
-            color: #FFD700;
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-            font-weight: 700;
-        }
-
-        .value-badge {
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-            color: #000;
-            padding: 0.4rem 1rem;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 0.5rem;
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
-        }
-
-        /* Enhanced Price Section */
-        .price-section {
-            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-            color: white;
-            padding: 3.5rem 2rem;
-            margin: 3rem 0;
-            border-radius: 20px;
-            text-align: center;
-            border: 3px solid rgba(255, 215, 0, 0.4);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            position: relative;
-        }
-
-        .price-section::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, #FFD700, #FFA500, #FFD700);
-            border-radius: 20px;
-            z-index: -1;
-            animation: gradientBorder 3s ease-in-out infinite;
-        }
-
-        .old-price {
-            text-decoration: line-through;
-            color: #888;
-            font-size: 1.8rem;
-            margin: 0.5rem 0;
-        }
-
-        .new-price {
-            font-size: 3.5rem;
-            font-weight: 900;
-            background: linear-gradient(45deg, #FFD700, #FFA500);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin: 1rem 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        /* Enhanced Mid CTA */
-        .mid-cta {
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-            color: #000;
-            padding: 3rem 2rem;
-            margin: 3rem 0;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .mid-cta::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            animation: shine 4s infinite;
-        }
-
-        .mid-cta h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            font-weight: 800;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Enhanced Guarantee Box */
-        .guarantee-box {
-            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
-            color: white;
-            padding: 2.5rem 2rem;
-            margin: 2rem 0;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 15px 35px rgba(76, 175, 80, 0.4);
-            position: relative;
-        }
-
-        .guarantee-box::before {
-            content: '🛡️';
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 2rem;
-            background: #2e7d32;
-            padding: 10px;
-            border-radius: 50%;
-        }
-
-        /* Enhanced Special Coaching Guarantee */
-        .coaching-guarantee {
-            background: linear-gradient(135deg, #FF4444 0%, #CC0000 100%);
-            color: white;
-            padding: 3.5rem 2.5rem;
-            margin: 3rem 0;
-            border-radius: 25px;
-            text-align: center;
-            box-shadow: 0 20px 50px rgba(255, 68, 68, 0.5);
-            border: 3px solid rgba(255, 255, 255, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .coaching-guarantee::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            animation: shine 3s infinite;
-        }
-
-        .coaching-guarantee h3 {
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
-            font-weight: 900;
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
-            position: relative;
-            z-index: 1;
-        }
-
-        .coaching-guarantee p {
-            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .guarantee-highlight {
-            background: rgba(255, 255, 255, 0.25);
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 2rem 0;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            position: relative;
-            z-index: 1;
-            backdrop-filter: blur(10px);
-        }
-
-        .guarantee-highlight strong {
-            font-size: 1.3em;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        /* Enhanced Footer CTA */
-        .footer-cta {
-            padding: 80px 0;
-            text-align: center;
-            background: linear-gradient(45deg, #FFD700, #FFA500, #FFD700);
-            background-size: 200% 200%;
-            animation: gradientMove 3s ease-in-out infinite;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .footer-cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="rgba(0,0,0,0.1)"><polygon points="0,0 1000,80 1000,100 0,100"/></svg>');
-            background-size: cover;
-        }
-
-        .footer-cta * {
-            color: #000;
-            position: relative;
-            z-index: 1;
-        }
-
-        .footer-cta h2 {
-            font-size: clamp(2rem, 4vw, 3.5rem);
-            font-weight: 900;
-            margin-bottom: 2rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .footer-cta p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            font-weight: 500;
-        }
-
-        .footer-cta .cta-button {
-            background: #000;
-            color: #FFD700;
-            font-size: 1.3rem;
-            padding: 22px 45px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Enhanced Booking Modal */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 10000;
-            padding: 20px;
-            backdrop-filter: blur(5px);
-        }
-
-        .modal-overlay.active {
-            display: flex;
-            animation: fadeIn 0.3s ease-out;
-        }
-
-        .modal-content {
-            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-            border-radius: 20px;
-            padding: 2.5rem;
-            max-width: 650px;
-            width: 100%;
-            position: relative;
-            border: 2px solid rgba(255, 215, 0, 0.3);
-            max-height: 90vh;
-            overflow-y: auto;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
-            animation: slideIn 0.4s ease-out;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 20px;
-            right: 25px;
-            background: none;
-            border: none;
-            font-size: 2rem;
-            color: #fff;
-            cursor: pointer;
-            padding: 0;
-            width: 35px;
-            height: 35px;
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
+            border: 2px solid var(--color-accent);
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .vsl-placeholder::before {
+            content: '▶';
+            font-size: 3rem;
+            color: var(--color-primary);
+            opacity: 0.8;
             transition: all 0.3s ease;
         }
-
-        .modal-close:hover {
-            color: #FFD700;
+        
+        .vsl-placeholder:hover::before {
+            opacity: 1;
             transform: scale(1.1);
         }
 
-        .modal-title {
-            font-size: 2rem;
-            font-weight: 800;
-            color: #FFD700;
-            margin-bottom: 1.5rem;
-            text-align: center;
+        .vsl-placeholder p {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--color-primary);
         }
-
-        .modal-subtitle {
+        
+        /* == CROWD PROOF (TRUST ANCHOR) == */
+        .crowd-proof {
+            background: var(--color-gray);
+            border: 2px solid var(--color-accent);
+            padding: 1rem;
+            border-radius: 12px;
             text-align: center;
-            margin-bottom: 2rem;
-            color: #ccc;
+            margin-top: 1.5rem;
+        }
+        
+        .crowd-proof p {
             font-size: 1.1rem;
-            line-height: 1.5;
+            font-weight: 600;
+            color: #fff;
+        }
+        
+        .crowd-proof .highlight {
+            color: var(--color-accent);
         }
 
-        .booking-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
+        /* == 2-STEP ORDER FORM (THE ACTION) == */
+        .order-form {
+            background: var(--color-gray);
+            border-radius: 16px;
+            border: 2px solid var(--color-primary);
+            padding: 2rem;
+            position: sticky;
+            top: 100px;
+        }
+        
+        .order-form h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .order-form .price {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--color-accent);
+            margin-bottom: 0.5rem;
+        }
+        
+        .order-form .price span {
+            font-size: 1.5rem;
+            text-decoration: line-through;
+            color: #777;
+            margin-right: 0.5rem;
+        }
+
+        /* URGENCY TIMER */
+        .urgency-timer {
+            background: linear-gradient(135deg, #FF4444 0%, #CC0000 100%);
+            color: white;
+            padding: 0.8rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .urgency-timer p {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        #countdown {
+            font-size: 1.3rem;
+            font-weight: 700;
         }
 
         .form-group {
             display: flex;
             flex-direction: column;
+            margin-bottom: 1rem;
         }
 
         .form-group label {
-            color: #FFD700;
-            margin-bottom: 0.8rem;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
 
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            padding: 15px 18px;
-            border: 2px solid #444;
-            border-radius: 10px;
+        .form-group input {
+            padding: 12px 15px;
+            border: 2px solid #333;
+            border-radius: 8px;
             background: #2a2a2a;
             color: #fff;
             font-size: 1rem;
-            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus {
+             outline: none;
+            border-color: var(--color-primary);
         }
 
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #FFD700;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
-        }
-
-        .form-group textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-
-        .submit-button {
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-            color: #000;
-            padding: 18px 35px;
-            border: none;
-            border-radius: 10px;
+        .cta-button {
+            display: block;
+            width: 100%;
+            background: var(--gradient-bg);
+            color: #fff;
+            padding: 16px;
+            text-decoration: none;
+            border-radius: 8px;
             font-size: 1.2rem;
             font-weight: 700;
-            cursor: pointer;
             transition: all 0.3s ease;
-            margin-top: 1.5rem;
-            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+            text-transform: uppercase;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(255, 51, 161, 0.3);
         }
 
-        .submit-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(255, 215, 0, 0.5);
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 51, 161, 0.4);
         }
 
-        .form-note {
-            font-size: 0.9rem;
-            color: #999;
+        .guarantee-badge {
             text-align: center;
             margin-top: 1.5rem;
-            line-height: 1.5;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        .guarantee-badge svg {
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+            color: var(--color-accent);
+            margin-right: 5px;
         }
 
-        /* Enhanced Animations */
+        /* Payment Step (Hidden by default) */
+        #payment-step {
+            display: none;
+        }
+        
+        .payment-placeholder {
+            height: 150px;
+            background: #2a2a2a;
+            border: 2px dashed #444;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-style: italic;
+        }
+
+        /* == 3. "US VS. THEM" (THE FRAME) == */
+        .us-vs-them {
+            background: var(--color-dark);
+            padding: 4rem 0;
+            border-top: 1px solid #333;
+        }
+        
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .section-title.gradient-text {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientMove 3s ease-in-out infinite;
+        }
+        
+        .us-vs-them p {
+            font-size: 1.2rem;
+            color: var(--color-text);
+            max-width: 800px;
+            margin: 0 auto 1.5rem auto;
+            text-align: center;
+            line-height: 1.7;
+        }
+        
+        .us-vs-them p strong {
+            color: #fff;
+        }
+
+        /* NEW: 3-Column Grid for Us vs. Them */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 3rem;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .comparison-card {
+            background: var(--color-gray);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #333;
+        }
+        
+        .comparison-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #aaa;
+        }
+        
+        .comparison-card ul {
+            list-style: none;
+        }
+        
+        .comparison-card li {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: #aaa;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .comparison-card li::before {
+            content: '❌';
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+        
+        .comparison-card.us h3 {
+            color: var(--color-primary);
+        }
+
+        .comparison-card.us li {
+            color: #fff;
+        }
+        
+        .comparison-card.us {
+            border: 2px solid var(--color-primary);
+            box-shadow: 0 0 20px rgba(255, 51, 161, 0.3);
+        }
+
+        .comparison-card.us li::before {
+            content: '✅';
+            color: var(--color-accent);
+        }
+
+
+        /* == 4. MY STORY (THE RELATABILITY) == */
+        .story-section {
+            padding: 4rem 0;
+            background: #1B1B1B; /* Match body */
+        }
+        
+        .story-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        
+        .story-image-placeholder {
+            width: 300px;
+            height: 300px;
+            background: var(--color-gray);
+            border-radius: 50%;
+            border: 4px solid var(--color-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: #888;
+        }
+        
+        .story-content h3 {
+            font-size: 1.8rem;
+            color: var(--color-accent);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .story-content p {
+            font-size: 1.1rem;
+            color: var(--color-text);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        /* == 5. OFFER STACK (THE VALUE) == */
+        .offer-stack-section {
+            padding: 4rem 0;
+            background: var(--color-dark);
+        }
+        
+        .offer-stack-section p.subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--color-text);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .offer-stack {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .offer-item {
+            display: flex;
+            align-items: center;
+            margin: 1rem 0;
+            padding: 1.5rem;
+            background: var(--color-gray);
+            border-radius: 12px;
+            border-left: 4px solid var(--color-primary);
+        }
+        
+        .offer-icon {
+            font-size: 2rem;
+            margin-right: 1.5rem;
+            min-width: 50px;
+            text-align: center;
+        }
+
+        .offer-content h3 {
+            color: #fff;
+            margin-bottom: 0.3rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+        
+        /* UPGRADED: Full gradient value badge */
+        .value-badge {
+            background: var(--gradient-bg);
+            color: #fff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-left: 10px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .total-value {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .total-value span {
+            text-decoration: line-through;
+            color: #888;
+            font-weight: 400;
+        }
+        
+        .total-value .final-price {
+            font-size: 2.5rem;
+            color: var(--color-accent);
+        }
+        
+        .final-cta-button {
+            display: block;
+            width: 100%;
+            max-width: 400px;
+            margin: 2rem auto 0 auto;
+            background: var(--gradient-bg);
+            color: #fff;
+            padding: 16px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(255, 51, 161, 0.3);
+        }
+
+        /* == 6. GUARANTEE (RISK REVERSAL) == */
+        .guarantee-section {
+            padding: 4rem 0;
+            background: #1B1B1B; /* Match body */
+        }
+        
+        .guarantee-box {
+            background: var(--color-gray);
+            border: 2px solid var(--color-accent);
+            border-radius: 16px;
+            padding: 2.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .guarantee-box h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+        }
+        
+        .guarantee-box p {
+            font-size: 1.1rem;
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+        
+        /* NEW: Guarantee Signature Block */
+        .guarantee-signature {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            border-top: 1px solid #333;
+            padding-top: 2rem;
+        }
+        
+        .guarantee-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: var(--color-gray);
+            border: 2px solid var(--color-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: #888;
+        }
+        
+        .guarantee-text {
+            text-align: left;
+            font-style: italic;
+            color: #fff;
+        }
+        
+        .guarantee-text img {
+            height: 40px;
+            filter: invert(1);
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+        }
+        
+        .guarantee-text p {
+            font-size: 1.1rem;
+            margin: 0;
+            line-height: 1.4;
+        }
+        
+        .guarantee-text span {
+            font-size: 0.9rem;
+            color: var(--color-text);
+        }
+
+        /* == NEW: SOCIAL PROOF POPUP == */
+        .social-proof-popup {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: var(--color-gray);
+            border-radius: 8px;
+            border: 1px solid var(--color-primary);
+            padding: 1rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 1001;
+            
+            /* Start hidden and off-screen */
+            opacity: 0;
+            transform: translateY(20px);
+            visibility: hidden;
+            
+            transition: all 0.5s ease-in-out;
+        }
+
+        .social-proof-popup.show {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+        }
+
+        .popup-icon {
+            font-size: 1.5rem;
+        }
+
+        .popup-text p {
+            font-size: 0.9rem;
+            color: #fff;
+            margin: 0;
+            line-height: 1.3;
+        }
+        
+        .popup-text p strong {
+            color: var(--color-accent);
+        }
+        
+        .popup-text span {
+            font-size: 0.8rem;
+            color: #aaa;
+        }
+
+        /* == 7. ASCENSION (HIGH-TICKET OFFERS) == */
+        /* ENTIRE SECTION DELETED. THIS PAGE HAS ONE GOAL. */
+
+        /* == MODAL STYLES == */
+        /* ALL MODAL STYLES DELETED. */
+
+
+        /* == RESPONSIVENESS == */
+        @media (max-width: 992px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .order-form {
+                position: static;
+                margin-top: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .story-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .story-image-placeholder {
+                width: 200px;
+                height: 200px;
+                margin: 0 auto 1.5rem auto;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .hero-content h2 {
+                font-size: 1rem;
+            }
+            .order-form {
+                padding: 1.5rem;
+            }
+            .offer-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            .offer-icon {
+                margin: 0 0 1rem 0;
+            }
+        }
+
         @keyframes gradientMove {
             0%, 100% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
         }
-
-        @keyframes gradientBorder {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        @keyframes shine {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        @keyframes slideUp {
-            from { transform: translateY(100%); }
-            to { transform: translateY(0); }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes slideIn {
-            from { transform: translateY(-50px) scale(0.9); opacity: 0; }
-            to { transform: translateY(0) scale(1); opacity: 1; }
-        }
-
-        /* Mobile Optimizations */
-        @media (max-width: 768px) {
-            html, body {
-                overflow-x: hidden;
-                width: 100%;
-                position: relative;
-            }
-
-            .hero {
-                min-height: auto;
-                padding: 40px 0;
-                width: 100%;
-                overflow-x: hidden;
-            }
-
-            .header h1 {
-                font-size: 0.8rem;
-            }
-
-            .sticky-mobile-cta {
-                display: block;
-            }
-
-            .container {
-                margin-bottom: 80px;
-                padding: 0 10px;
-                max-width: 100%;
-            }
-
-            .service-card {
-                padding: 30px 20px;
-                width: 100%;
-                box-sizing: border-box;
-            }
-
-            .service-card h3 {
-                font-size: 1.6rem;
-                word-wrap: break-word;
-            }
-
-            .service-card .price {
-                font-size: 2.2rem;
-            }
-
-            .offer-item {
-                flex-direction: column;
-                text-align: center;
-                padding: 1.5rem;
-                width: 100%;
-                box-sizing: border-box;
-            }
-
-            .offer-icon {
-                margin-right: 0;
-                margin-bottom: 1rem;
-            }
-
-            .new-price {
-                font-size: 2.8rem;
-            }
-
-            .quote-box {
-                padding: 2rem;
-                font-size: 1.2rem;
-                width: 100%;
-                box-sizing: border-box;
-            }
-
-            .pain-list li {
-                padding: 1.2rem;
-                font-size: 1rem;
-                word-wrap: break-word;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-                word-wrap: break-word;
-                hyphens: auto;
-            }
-
-            .big-text {
-                font-size: 1.2rem;
-            }
-
-            .cta-button {
-                padding: 16px 32px;
-                font-size: 1rem;
-                white-space: normal;
-                text-align: center;
-                width: auto;
-                max-width: 100%;
-                box-sizing: border-box;
-            }
-
-            .testimonial {
-                padding: 25px 20px;
-            }
-
-            .features-list li {
-                font-size: 0.95rem;
-                padding: 6px 0 6px 20px;
-                word-wrap: break-word;
-            }
-
-            .coaching-guarantee {
-                padding: 2.5rem 1.5rem;
-                width: 100%;
-                box-sizing: border-box;
-            }
-
-            .coaching-guarantee h3 {
-                font-size: 1.8rem;
-                word-wrap: break-word;
-            }
-
-            .coaching-guarantee p {
-                font-size: 1.1rem;
-                word-wrap: break-word;
-            }
-
-            .modal-content {
-                margin: 15px;
-                max-width: calc(100vw - 30px);
-                width: calc(100vw - 30px);
-                box-sizing: border-box;
-                padding: 2rem;
-            }
-
-            .trust-indicators {
-                flex-direction: column;
-                gap: 15px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .services-grid {
-                grid-template-columns: 1fr;
-                width: 100%;
-                box-sizing: border-box;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-                word-wrap: break-word;
-                hyphens: auto;
-            }
-
-            .hero .subtitle {
-                font-size: 1rem;
-            }
-
-            .video-placeholder {
-                height: 200px;
-                font-size: 0.9rem;
-                width: 100%;
-                box-sizing: border-box;
-            }
-
-            .container {
-                padding: 0 8px;
-            }
-
-            .cta-button {
-                font-size: 0.95rem;
-                padding: 14px 24px;
-                white-space: normal;
-                line-height: 1.3;
-            }
-
-            .modal-content {
-                padding: 1.5rem;
-                margin: 10px;
-            }
-
-            .modal-title {
-                font-size: 1.6rem;
-            }
-        }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>The Ancient System 99% of Professionals Don't Know...</h1>
+
+    <!-- == 1. STICKY HEADER (THE HOOK) == -->
+    <div class="sticky-header">
+        <h1>Tired of 'Crystal & Incense' Astrology? Get The System For Financial Freedom.</h1>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- == 2. HERO / VSL (THE CONVERSION ZONE) == -->
+    <section class="hero" id="top">
         <div class="container">
-            <div class="hero-content">
-                <h1>Stop Wasting Years Trying to "Find Yourself"</h1>
-                <p class="subtitle">Instantly Decode Your Strengths, Blind Spots & Hidden Potential in One Session</p>
+            <div class="hero-grid">
                 
-                <div class="scarcity-indicator">
-                    🔥 Only 2 Spots Available This Month
-                </div>
-                
-                <div style="margin: 2rem 0;">
-                    <a href="#" onclick="openModal('chart')" class="cta-button">🔮 Unlock Your Blueprint Now</a>
-                </div>
-                
-                <div class="trust-indicators">
-                    <div class="trust-item">
-                        <span class="trust-icon">⚡</span>
-                        <span>2-Hour Session</span>
+                <!-- LEFT COLUMN: THE SELL -->
+                <div class="hero-content">
+                    <h1>Stop Guessing. Start *Achieving*.</h1>
+                    <!-- UPDATED H2 - MORE SPECIFIC TO DATA -->
+                    <h2>How To Use The 'Billionaire's Blueprint' (Vedic + Numerology) To Build Financial Freedom, Find Your Ideal Career, and Master Your Investments.</h2>
+                    
+                    <!-- VSL PLACEHOLDER -->
+                    <div class="vsl-placeholder" onclick="alert('Video player would go here!')">
+                        <p>Watch This 5-Min VSL (Mandatory)</p>
                     </div>
-                    <div class="trust-item">
-                        <span class="trust-icon">🎯</span>
-                        <span>Strategic Clarity</span>
-                    </div>
-                    <div class="trust-item">
-                        <span class="trust-icon">🔒</span>
-                        <span>Secure Booking</span>
+
+                    <!-- CROWD PROOF (TRUST ANCHOR) -->
+                    <div class="crowd-proof">
+                        <p>Join <span class="highlight">900+</span> Active Members & <span class="highlight">18,000+</span> Followers Who Get It.</p>
                     </div>
                 </div>
                 
-                <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 12px; margin-top: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                    <p style="font-size: 1.1rem; color: #FFD700; font-weight: 600; margin-bottom: 0.5rem;">What Others Spend 10+ Years Discovering Through:</p>
-                    <p style="font-size: 1rem;">❌ Therapy sessions (£5,000+)<br>
-                    ❌ Self-help seminars (£3,000+)<br>
-                    ❌ Trial and error (Priceless time lost)<br>
-                    <span style="color: #FFD700; font-weight: bold;">✓ You'll Know in 2 Hours</span></p>
+                <!-- RIGHT COLUMN: THE ACTION (2-STEP FORM) -->
+                <div class="order-form">
+                    <h3>Get Instant Access</h3>
+                    <div class="price"><span>£1,000+</span> $37</div>
+                    
+                    <!-- URGENCY TIMER -->
+                    <div class="urgency-timer">
+                        <p>Charter Member Rate Expires In:</p>
+                        <div id="countdown">00:00:00</div>
+                    </div>
+                    
+                    <!-- STEP 1: CONTACT INFO -->
+                    <div id="contact-step">
+                        <form onsubmit="return goToPayment();">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <button type="submit" class="cta-button">Next: Payment</button>
+                        </form>
+                    </div>
+                    
+                    <!-- STEP 2: PAYMENT (Hidden) -->
+                    <div id="payment-step">
+                        <p style="text-align: center; margin-bottom: 1rem; color: #ccc;">Complete your secure purchase:</p>
+                        <!-- This is a placeholder for your Stripe/Payment Element -->
+                        <div class="payment-placeholder">
+                            [Stripe/Payment Element Here]
+                        </div>
+                        <button class="cta-button" style="margin-top: 1.5rem;" onclick="alert('Purchase complete!')">Pay $37</button>
+                        <a href="#" onclick="return goToContact();" style="color: #888; text-align: center; display: block; margin-top: 1rem; font-size: 0.9rem;">&laquo; Back to details</a>
+                    </div>
+                    
+                    <div class="guarantee-badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 1.944A11.954 11.954 0 002.75 12.134c.142.341.322.668.526.965.202.296.42.578.658.84.238.261.494.507.764.737.27.23.556.446.856.647.3.199.615.384.943.553.328.168.668.32.997.47.37.167.75.318.113.45.38.132.76.246 1.14.341.38.094.75.17 1.13.228.38.058.75.099 1.13.12.38.02.75.028 1.13.028s.75-.007 1.13-.028c.38-.02.75-.062 1.13-.12.38-.058.75-.134 1.13-.228.38-.095.76-.21 1.14-.34.38-.133.76-.282 1.13-.45.33-.169.66-.32.99-.47.33-.17.65-.35.94-.55.3-.2.58-.42.85-.65.27-.23.53-.47.76-.73.24-.26.46-.54.66-.84.2-.3.38-.62.52-1 .28-1.2.4-2.4.4-3.6 0-4.5-3.6-8-8-8zm-1.13 12.323l-3.2-3.2a.75.75 0 011.06-1.06l2.67 2.67 5.53-5.53a.75.75 0 011.06 1.06l-6.06 6.06a.75.75 0 01-1.06 0z" clip-rule="evenodd" /></svg>
+                        100% "No-BS" Money-Back Guarantee
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Sticky Mobile CTA -->
-    <div class="sticky-mobile-cta">
-        <a href="#" onclick="openModal('chart')" class="cta-button">🔮 Unlock Your Blueprint</a>
-    </div>
-
-    <!-- Problem Identification -->
-    <section class="content-section">
+    
+    <!-- == 3. "US VS. THEM" (THE FRAME) == -->
+    <section class="us-vs-them">
         <div class="container">
-            <h2 class="section-title">STILL SEARCHING FOR YOUR "TRUE SELF"?</h2>
-            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem;">You've read the books, done the personality tests, maybe even tried therapy...</p>
+            <h2 class="section-title gradient-text">This Isn't Your Girlfriend's Astrology.</h2>
+            <p>I'm not the "crystal-loving, manifest-it" astrologer who tells you to "claim" energy from a TikTok video. That's a joke.</p>
+            <!-- UPDATED "US" STATEMENT - DATA-DRIVEN -->
+            <p><strong>I am the guy who uses this system to make you money, to make you more efficient, to find your *purpose*, and to build your *financial freedom*.</strong> This is about real, tangible, strategic results.</p>
             
-            <ul class="pain-list">
-                <li>Years of journaling, meditating, and "soul searching" but still unclear about your true strengths</li>
-                <li>Constantly second-guessing decisions because you don't fully understand your core capabilities</li>
-                <li>Watching others confidently leverage their talents while you're still figuring yours out</li>
-                <li>Thousands spent on courses and coaches, yet your blind spots keep sabotaging your success</li>
-            </ul>
-
-            <p class="big-text">Most people die never truly knowing their full potential - because they're using the wrong map.</p>
-        </div>
-    </section>
-
-    <!-- Solution Explanation -->
-    <section class="content-section">
-        <div class="container">
-            <h2 class="section-title">Here's The System That Changes Everything</h2>
-            
-            <div class="quote-box">
-                "Millionaires don't use astrology; billionaires do."<br>
-                <span style="font-size: 1rem; opacity: 0.8; margin-top: 0.5rem; display: block;">—J.P. Morgan</span>
-            </div>
-
-            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem;">The elite have been using this for decades. They just don't talk about it publicly.</p>
-
-            <p class="big-text">In one session, you'll understand exactly:<br>
-            <span style="font-size: 1.1rem; font-weight: normal;">✓ Your zone of natural genius (stop forcing what doesn't work)<br>
-            ✓ Hidden patterns sabotaging your growth<br>
-            ✓ Optimal timing for major decisions<br>
-            ✓ Why certain opportunities feel "off"</span></p>
-            
-            <p style="text-align: center; font-size: 1.2rem; margin-top: 2rem; color: #FFD700; font-weight: 600;">
-                What costs £50k+ in business coaching and years of trial and error...<br>
-                Your blueprint reveals in 2 hours.
-            </p>
-        </div>
-    </section>
-
-   <!-- Services Section -->
-    <section id="services" class="content-section">
-        <div class="container">
-            <h2 class="section-title">Here's What's Available</h2>
-            <div class="services-grid">
-                <!-- Numerology Reading -->
-                <div class="service-card">
-                    <h3>Numerology Power Reading</h3>
-                    <div class="price">£50</div>
-                    <p class="description">
-                        <strong style="color: #FFD700;">Quick clarity on your core patterns.</strong> Essential numerology insights plus free Chinese Zodiac analysis to understand your natural strengths.
-                        <br><br>
-                        <strong style="color: #32CD32; font-size: 1.1em;">FREE Chinese Zodiac Analysis Included</strong>
-                    </p>
-                    <ul class="features-list">
-                        <li>Life Path Number Analysis</li>
-                        <li>Personal Year & Timing Insights</li>
-                        <li>Relationship Compatibility Numbers</li>
-                        <li>Strategic Timing Analysis</li>
-                        <li>FREE Chinese Zodiac Profile</li>
-                        <li>30-Min Video Call Breakdown</li>
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h3>The "Crystal Girl" Way</h3>
+                    <ul>
+                        <li>Vague "Sun Sign" nonsense</li>
+                        <li>Tells you to "manifest"</li>
+                        <li>Focuses on crystals & incense</li>
+                        <li>Leaves you hopeful, but broke</li>
                     </ul>
-                    <a href="#" class="cta-button" onclick="openModal('numerology')">Get Reading</a>
                 </div>
-
-                <!-- Strategic Coaching -->
-                <div class="service-card">
-                    <h3>Elite Performance Coaching</h3>
-                    <div class="price">Application Required</div>
-                    <p class="description">
-                        <strong style="color: #FFD700;">For serious operators only.</strong> 6 weeks of intensive alignment work to eliminate guesswork and maximize your natural advantages.
-                        <br><br>
-                        <strong style="color: #FFD700;">Application Required | Minimum £10k/month income</strong>
-                        <br><br>
-                        <strong style="color: #32CD32; font-size: 1.1em;">FREE Vedic & Numerology Reading Included</strong>
-                    </p>
-                    <ul class="features-list">
-                        <li>Complete Strategic Blueprint Analysis</li>
-                        <li>Full Chart Decode (All 12 Houses)</li>
-                        <li>Timing Strategy for Major Decisions</li>
-                        <li>Team & Partnership Compatibility</li>
-                        <li>90 Days Direct Access</li>
-                        <li>Custom Strategy Guide</li>
-                        <li>Optimization Tools & Remedies</li>
-                        <li>Quarterly Timing Updates</li>
+                
+                <!-- NEW "FINANCE BRO" COLUMN -->
+                <div class="comparison-card">
+                    <h3>The "Finance Bro" Way</h3>
+                    <ul>
+                        <li>"Soulless" spreadsheets</li>
+                        <li>Ignores intuition & timing</li>
+                        <li>Burns you out in 2 years</li>
+                        <li>Leaves you rich, but empty</li>
                     </ul>
-                    <a href="#" class="cta-button" onclick="openModal('coaching')">Apply Now</a>
                 </div>
-
-                <!-- Complete Chart Reading -->
-                <div class="service-card">
-                    <h3>Complete Blueprint Analysis</h3>
-                    <div class="price">£230</div>
-                    <p class="description">
-                        <strong style="color: #FFD700;">2 hours that save you 2 years.</strong> Stop operating on assumptions. Get the data on your natural design and how to leverage it.
-                    </p>
-                    <ul class="features-list">
-                        <li>Complete Life Path Analysis</li>
-                        <li>Full Vedic Chart (12 Houses)</li>
-                        <li>Life Timing Analysis</li>
-                        <li>Relationship Compatibility</li>
-                        <li>Cosmic Remedies & Power Tools</li>
-                        <li>Strategic Timing Analysis</li>
+                
+                <div class="comparison-card us">
+                    <h3>The "Billionaire's" Way</h3>
+                    <!-- UPDATED BULLETS - DIRECTLY FROM YOUR POLLS -->
+                    <ul>
+                        <li>Find Your Perfect Career Path</li>
+                        <li>Master Investment Timing</li>
+                        <li>Build Your Purpose-Driven Business</li>
+                        <li>Achieve *True* Financial Freedom</li>
                     </ul>
-                    <a href="#" class="cta-button" onclick="openModal('chart')">Book Analysis</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- COACHING GUARANTEE SECTION -->
-    <section class="content-section">
+    <!-- == 4. MY STORY (THE RELATABILITY) == -->
+    <section class="story-section">
         <div class="container">
-            <div class="coaching-guarantee">
-                <h3>💰 MY PERFORMANCE GUARANTEE 💰</h3>
-                <div class="guarantee-highlight">
-                    <p><strong>If you don't make your investment back within 3 months of our Elite Performance Coaching, I'll keep coaching you for FREE until you do.</strong></p>
+            <div class="story-grid">
+                <div class="story-image-placeholder">
+                    [Your Photo Here]
                 </div>
-                <p>Simple as that. If the strategic insights, timing optimization, and alignment work don't generate at least your investment back in new income, opportunities, or strategic wins within 90 days, you get unlimited follow-up sessions at zero cost.</p>
-                <p><strong>No time limits. No loopholes. No BS.</strong></p>
-                <p style="font-size: 1.1rem; margin-top: 1.5rem;">I'm betting my time and reputation on your success. Because when you're properly aligned, results are inevitable.</p>
+                <div class="story-content">
+                    <h3 class="gradient-text">I'm Not Supposed To Be Here.</h3>
+                    <!-- UPDATED: "Hackney" to "London" for broader appeal -->
+                    <p>I'm just a normal guy from London. Divorced parents, bottom set at school, uni dropout. The "system" wrote me off.</p>
+                    <p>But while everyone else was following the "safe" path, I was reverse-engineering the path of billionaires. And I found the one thing they *all* used: a strategic understanding of *timing* and *potential*.</p>
+                    <p>This isn't a "gift." It's a system. I used it to build my audience, my business, and my life. Now I'm giving you the keys. I'm not "gifted" - I just have the right map. This is that map.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Offer Stack -->
-    <section class="content-section">
+    <!-- == 5. OFFER STACK (THE VALUE) == -->
+    <section class="offer-stack-section">
         <div class="container">
-            <h2 class="section-title">What You Actually Get</h2>
+            <h2 class="section-title gradient-text">Here's What You Get For $37</h2>
+            <p class="subtitle">You're not just "joining a Skool." You're getting the complete strategic blueprint for a fraction of the cost.</p>
             
             <div class="offer-stack">
                 <div class="offer-item">
-                    <div class="offer-icon">📊</div>
+                    <div class="offer-icon">📚</div>
                     <div class="offer-content">
-                        <h3>Complete Strategic Analysis</h3>
-                        <p>Deep dive into your natural strengths, blind spots, and optimal operating style</p>
-                        <span class="value-badge">Value £997</span>
+                        <h3>The "Billionaire's Blueprint" Course</h3>
+                        <p>The core system (Vedic + Numerology) to find your "WHY".</p>
                     </div>
+                    <span class="value-badge">VALUE: £497</span>
                 </div>
-                
+                <div class="offer-item">
+                    <div class="offer-icon">🤝</div>
+                    <div class="offer-content">
+                        <h3>Private Skool Community</h3>
+                        <p>Access to me and 900+ other high-performers.</p>
+                    </div>
+                    <span class="value-badge">VALUE: £97/mo</span>
+                </div>
                 <div class="offer-item">
                     <div class="offer-icon">💬</div>
                     <div class="offer-content">
-                        <h3>90 Days Direct Access</h3>
-                        <p>Text/email support for implementation questions and strategic guidance</p>
-                        <span class="value-badge">Value £497</span>
+                        <h3>Weekly Live Q&A Calls</h3>
+                        <p>Get your personal questions answered by me. Live.</p>
                     </div>
+                    <span class="value-badge">VALUE: £497/mo</span>
                 </div>
-                
                 <div class="offer-item">
-                    <div class="offer-icon">🎯</div>
+                    <div class="offer-icon">🛠️</div>
                     <div class="offer-content">
-                        <h3>Timing Strategy Calendar</h3>
-                        <p>Personalized calendar showing optimal timing for major decisions</p>
-                        <span class="value-badge">Value £297</span>
+                        <h3>Toolkit & Resource Library</h3>
+                        <p>My personal templates, checklists, and tools.</p>
                     </div>
-                </div>
-                
-                <div class="offer-item">
-                    <div class="offer-icon">🔧</div>
-                    <div class="offer-content">
-                        <h3>Custom Optimization Tools</h3>
-                        <p>Personalized remedies and tools to enhance your natural advantages</p>
-                        <span class="value-badge">Value £197</span>
-                    </div>
+                    <span class="value-badge">VALUE: £197</span>
                 </div>
             </div>
-
-            <div class="price-section">
-                <h3 style="color: #FFD700; margin-bottom: 1rem;">The Real Cost of Operating Blind:</h3>
-                <p style="text-align: left; margin-bottom: 1rem;">
-                    💸 Wrong strategic decisions: £50,000+ in lost opportunities<br>
-                    💸 Misaligned partnerships: Months of wasted time<br>
-                    💸 Poor timing on launches: Revenue left on table<br>
-                    💸 Working against your design: Burnout & plateaus
-                </p>
-                <p style="margin: 1.5rem 0; font-size: 1.2rem; color: #FFD700; font-weight: 600;">Your Complete Strategic Blueprint:</p>
-                <div class="old-price">Normal Value: £1,988</div>
-                <p class="new-price">£230</p>
-                <p style="margin-bottom: 1.5rem; font-size: 0.9rem;">Less than most business consultants charge for a single strategy call</p>
-                <a href="#" onclick="openModal('chart')" class="cta-button">Get My Blueprint</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Urgency Section -->
-    <section class="content-section" style="background: linear-gradient(135deg, #1a1a1a, #2a2a2a);">
-        <div class="container">
-            <h2 class="section-title">Why You Must Act Now</h2>
             
-            <div style="text-align: center; max-width: 700px; margin: 0 auto;">
-                <p style="font-size: 1.2rem; margin-bottom: 2rem; color: #FFD700;">Every day you operate without this clarity:</p>
+            <div class="total-value">
+                <p>Total Value: <span>£1,000+</span></p>
+                <p>Get It All Today For <span class="final-price">$37</span></p>
+            </div>
+            <a href="#top" class="final-cta-button">Join Now for $37</a>
+        </div>
+    </section>
+    
+    <!-- == 6. GUARANTEE (RISK REVERSAL) == -->
+    <section class="guarantee-section">
+        <div class="container">
+            <div class="guarantee-box">
+                <h2 class="gradient-text">The "No-BS" Guarantee</h2>
+                <p>My reputation is on the line. If you join the Skool, go through the blueprint, and don't feel it's the single most actionable $37 you have *ever* spent on your future, I'll refund 100% of your money. No questions, no hassle.</p>
                 
-                <ul style="list-style: none; font-size: 1.1rem; margin-bottom: 2rem;">
-                    <li style="margin: 1rem 0; color: #FF4444;">❌ You make decisions based on incomplete information</li>
-                    <li style="margin: 1rem 0; color: #FF4444;">❌ You waste energy fighting against your natural design</li>
-                    <li style="margin: 1rem 0; color: #FF4444;">❌ You miss optimal timing windows for major moves</li>
-                    <li style="margin: 1rem 0; color: #FF4444;">❌ You struggle with partnerships that could work effortlessly</li>
-                </ul>
-                
-                <div style="background: rgba(255, 215, 0, 0.1); padding: 2rem; border-radius: 16px; border: 2px solid rgba(255, 215, 0, 0.3);">
-                    <p style="font-size: 1.3rem; font-weight: 600; color: #FFD700; margin-bottom: 1rem;">The cost of waiting another year:</p>
-                    <p style="font-size: 1.1rem;">Missed opportunities, wrong partnerships, and continued confusion about your true strengths. The blueprint that could change everything sits right here, waiting.</p>
+                <!-- NEW: Guarantee Signature Block -->
+                <div class="guarantee-signature">
+                    <div class="guarantee-photo">[Your Photo]</div>
+                    <div class="guarantee-text">
+                        <!-- Placeholder for a signature image -->
+                        <img src="https://placehold.co/200x60/2E2E2E/ffffff?text=Your+Signature&font=caveat" alt="Your Signature">
+                        <p>Rafy</p>
+                        <span>Creator, 'Billionaire's Blueprint'</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+    
+    <!-- 
+    =================================================
+    == SECTION 7 (ASCENSION LADDER) - DELETED ==
+    This page has ONE job. Sell the $37 SLO.
+    We sell the high-ticket offers on the Thank You Page.
+    =================================================
+    -->
 
-    <!-- Footer CTA -->
-    <section class="footer-cta">
-        <div class="container">
-            <h2>Stop Operating on Guesswork</h2>
-            <p>Get the strategic clarity that separates high performers from everyone else.</p>
-            <div style="margin: 2rem 0;">
-                <a href="#" onclick="openModal('chart')" class="cta-button">Get Your Blueprint Now</a>
-            </div>
-            <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.8;">⚡ Instant access • 🛡️ Satisfaction guaranteed • 🔒 Secure payment</p>
-        </div>
-    </section>
-
-    <!-- Booking Modals -->
-    <div id="bookingModal" class="modal-overlay">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">&times;</button>
-            <div id="modalContent">
-                <!-- Content will be dynamically inserted here -->
-            </div>
+    <!-- == NEW: SOCIAL PROOF POPUP HTML == -->
+    <div class="social-proof-popup" id="social-proof-popup">
+        <div class="popup-icon">🔥</div>
+        <div class="popup-text" id="popup-text">
+            <p><strong>Someone</strong> from <strong>somewhere</strong> just joined!</p>
+            <span>a moment ago</span>
         </div>
     </div>
 
+    <!-- == BOOKING MODALS - DELETED == -->
+
     <script>
-        // Plan IDs for Whop checkout
-        const WHOP_PLAN_IDS = {
-            numerology: 'plan_NiEZ8NyXNs72n',  // £50 numerology
-            chart: 'plan_EBqv6HKNJMR2H'        // £230 chart
+        // === 2-STEP FORM LOGIC ===
+        function goToPayment() {
+            // Add validation here
+            document.getElementById('contact-step').style.display = 'none';
+            document.getElementById('payment-step').style.display = 'block';
+            return false; // Prevents form submission
+        }
+
+        function goToContact() {
+            document.getElementById('payment-step').style.display = 'none';
+            document.getElementById('contact-step').style.display = 'block';
+            return false;
+        }
+
+        // === 48-HOUR COUNTDOWN TIMER ===
+        function startTimer(duration, display) {
+            let timer = duration, hours, minutes, seconds;
+            setInterval(function () {
+                hours = parseInt(timer / 3600, 10);
+                minutes = parseInt((timer % 3600) / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                hours = hours < 10 ? "0" + hours : hours;
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = hours + ":" + minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    timer = 0;
+                    display.textContent = "OFFER EXPIRED";
+                    // You could also hide the form or change the price here
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            // Set timer to 48 hours (48 * 60 * 60 = 172800 seconds)
+            // We'll use a shorter time for demo purposes (e.g., 2 hours = 7200)
+            // Let's use 48 hours.
+            const fortyEightHours = 48 * 60 * 60;
+            const display = document.getElementById('countdown');
+            startTimer(fortyEightHours, display);
         };
-
-        function openModal(type) {
-            const modal = document.getElementById('bookingModal');
-            const modalContent = document.getElementById('modalContent');
-            
-            if (type === 'coaching') {
-                modalContent.innerHTML = `
-                    <h2 class="modal-title">Elite Performance Coaching Application</h2>
-                    <p class="modal-subtitle">Ready to eliminate guesswork from your strategy? Let's see if you qualify for our elite 6-week program.</p>
-                    <div style="background: linear-gradient(135deg, #FF4444 0%, #CC0000 100%); color: white; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; text-align: center;">
-                        <strong>💰 PERFORMANCE GUARANTEE:</strong> Make your investment back in 3 months or get FREE coaching until you do!
-                    </div>
-                    
-                    <form class="booking-form" onsubmit="handleCoachingSubmit(event)">
-                        <input type="hidden" name="form_type" value="coaching_application">
-                        
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="income">Current Monthly Income *</label>
-                            <select id="income" name="income" required>
-                                <option value="">Select range...</option>
-                                <option value="5k-10k">£5,000 - £10,000</option>
-                                <option value="10k-25k">£10,000 - £25,000</option>
-                                <option value="25k-50k">£25,000 - £50,000</option>
-                                <option value="50k+">£50,000+</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="business">Type of Business/Role *</label>
-                            <input type="text" id="business" name="business" placeholder="e.g., Consultant, Agency Owner, Entrepreneur" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="challenge">Biggest Strategic Challenge Right Now *</label>
-                            <textarea id="challenge" name="challenge" placeholder="What's the main bottleneck preventing your next level of performance?" required></textarea>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="investment">Investment Readiness *</label>
-                            <select id="investment" name="investment" required>
-                                <option value="">Select...</option>
-                                <option value="ready">Ready to invest £2,000-5,000 for strategic clarity</option>
-                                <option value="considering">Considering investment if it's the right fit</option>
-                                <option value="need-info">Need more information first</option>
-                            </select>
-                        </div>
-                        
-                        <button type="submit" class="submit-button">Submit Application</button>
-                        
-                        <p class="form-note">
-                            Your information is private and secure. We'll review your application and contact you within 24 hours if you qualify for our elite program with performance guarantee.
-                        </p>
-                    </form>
-                `;
-            } else if (type === 'numerology') {
-                modalContent.innerHTML = `
-                    <h2 class="modal-title">Book Your Numerology Power Reading</h2>
-                    <p class="modal-subtitle">Get essential insights on your core patterns plus free Chinese Zodiac analysis. Perfect introduction to understanding your natural design.</p>
-                    <div style="background: linear-gradient(135deg, #32CD32 0%, #228B22 100%); color: white; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; text-align: center;">
-                        <strong>🎁 BONUS:</strong> FREE Chinese Zodiac Analysis + 30-Min Video Call Breakdown Included!
-                    </div>
-                    
-                    <form class="booking-form" onsubmit="handleNumerologySubmit(event)">
-                        <input type="hidden" name="form_type" value="numerology_reading">
-                        
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="birthdate">Date of Birth *</label>
-                            <input type="date" id="birthdate" name="birthdate" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="focus">Primary Focus Area *</label>
-                            <select id="focus" name="focus" required>
-                                <option value="">Choose primary focus...</option>
-                                <option value="career">Career & Life Purpose</option>
-                                <option value="relationships">Relationships & Compatibility</option>
-                                <option value="timing">Personal Year & Timing</option>
-                                <option value="strengths">Core Strengths & Talents</option>
-                                <option value="overview">Complete Overview</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="questions">Specific Strategic Questions (Optional)</label>
-                            <textarea id="questions" name="questions" placeholder="Any specific areas where you need strategic clarity?"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="submit-button">Get My Reading - £50</button>
-                        
-                        <p class="form-note">
-                            Secure booking. You'll receive confirmation within 2 hours and we'll schedule your 30-minute breakdown call at your convenience.
-                        </p>
-                    </form>
-                `;
-            } else if (type === 'chart') {
-                modalContent.innerHTML = `
-                    <h2 class="modal-title">Book Your Strategic Blueprint Analysis</h2>
-                    <p class="modal-subtitle">Ready to decode your natural design in 2 hours? Get the strategic clarity that separates high performers from everyone else.</p>
-                    <div style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #000; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; text-align: center;">
-                        <strong>⚡ COMPLETE BLUEPRINT:</strong> 2 hours that save you 2 years of guesswork!
-                    </div>
-                    
-                    <form class="booking-form" onsubmit="handleChartSubmit(event)">
-                        <input type="hidden" name="form_type" value="chart_reading">
-                        
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="birthdate">Date of Birth *</label>
-                            <input type="date" id="birthdate" name="birthdate" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="birthtime">Birth Time (if known)</label>
-                            <input type="time" id="birthtime" name="birthtime" placeholder="Helps with precision">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="birthplace">Birth City/Location *</label>
-                            <input type="text" id="birthplace" name="birthplace" placeholder="City, Country" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="focus">Primary Strategic Focus *</label>
-                            <select id="focus" name="focus" required>
-                                <option value="">Choose primary focus...</option>
-                                <option value="career">Business & Career Strategy</option>
-                                <option value="relationships">Partnership & Team Dynamics</option>
-                                <option value="purpose">Strategic Direction & Purpose</option>
-                                <option value="timing">Decision Timing & Opportunities</option>
-                                <option value="overall">Complete Strategic Overview</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="questions">Specific Strategic Questions (Optional)</label>
-                            <textarea id="questions" name="questions" placeholder="Any specific areas where you need strategic clarity?"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="submit-button">Book My Analysis - £230</button>
-                        
-                        <p class="form-note">
-                            Secure booking. You'll receive confirmation within 2 hours and we'll schedule your 2-hour strategic session at your convenience.
-                        </p>
-                    </form>
-                `;
-            }
-            
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
         
-        // Handle form submissions and redirect to Whop checkout
-        function handleNumerologySubmit(event) {
-            event.preventDefault();
-            const formData = new FormData(event.target);
-            const userData = Object.fromEntries(formData);
-            
-            // Send user data for fulfillment
-            sendUserDataToBackend(userData, 'numerology');
-            
-            // Show checkout modal
-            showWhopCheckout('numerology', userData);
-        }
+        // === MODAL LOGIC (FOR HIGH-TICKET) ===
+        // DELETED. NO MODALS.
 
-        function handleChartSubmit(event) {
-            event.preventDefault();
-            const formData = new FormData(event.target);
-            const userData = Object.fromEntries(formData);
-            
-            // Send user data for fulfillment
-            sendUserDataToBackend(userData, 'chart');
-            
-            // Show checkout modal
-            showWhopCheckout('chart', userData);
-        }
+        // === NEW: SOCIAL PROOF POPUP LOGIC ===
+        (function() {
+            const purchases = [
+                { name: 'Jean', location: 'France' },
+                { name: 'Paul', location: 'England' },
+                { name: 'Mike', location: 'New York' },
+                { name: 'Sarah', location: 'London' },
+                { name: 'Alex', location: 'Germany' },
+                { name: 'David', location: 'Manchester' },
+                { name: 'Fatima', location: 'Dubai' },
+                { name: 'Chris', location: 'Australia' },
+                { name: 'Daniel', location: 'Canada' },
+                { name: 'Liam', location: 'Ireland' }
+            ];
 
-        function handleCoachingSubmit(event) {
-            event.preventDefault();
-            const formData = new FormData(event.target);
-            const userData = Object.fromEntries(formData);
-            
-            sendApplicationEmail(userData);
-        }
+            const popup = document.getElementById('social-proof-popup');
+            const popupText = document.getElementById('popup-text');
+            let lastIndex = -1;
 
-        function showWhopCheckout(serviceType, userData) {
-            const modalContent = document.getElementById('modalContent');
-            const planId = WHOP_PLAN_IDS[serviceType];
-            
-            if (!planId) {
-                console.error('Plan ID not found for service type:', serviceType);
-                alert('Error: Service not configured properly. Please try again.');
-                return;
-            }
-            
-            modalContent.innerHTML = `
-                <h2 class="modal-title">Complete Your Purchase</h2>
-                <p class="modal-subtitle">You're being redirected to secure checkout</p>
+            function showRandomPurchase() {
+                let randomIndex = Math.floor(Math.random() * purchases.length);
                 
-                <div style="text-align: center; padding: 3rem 2rem; background: linear-gradient(135deg, #1a1a1a, #2a2a2a); border-radius: 12px; border: 2px solid rgba(255, 215, 0, 0.3);">
-                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">🔒</div>
-                    <h3 style="color: #FFD700; margin-bottom: 1.5rem;">Secure Checkout</h3>
-                    <p style="margin-bottom: 2rem; color: #ccc;">Click the button below to complete your purchase on Whop's secure checkout page.</p>
-                    
-                    <div style="margin: 1.5rem 0;">
-                        <a href="https://whop.com/checkout/${planId}" target="_blank" 
-                           style="display: inline-block; background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #000; padding: 18px 36px; text-decoration: none; border-radius: 10px; font-weight: 700; font-size: 1.2rem; margin: 0.5rem;">
-                            Complete Purchase - ${serviceType === 'numerology' ? '£50' : '£230'}
-                        </a>
-                    </div>
-                    
-                    <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255, 215, 0, 0.1); border-radius: 10px; border: 1px solid rgba(255, 215, 0, 0.3);">
-                        <p style="font-size: 0.95rem; color: #FFD700; margin-bottom: 0.5rem;"><strong>Your booking details have been saved!</strong></p>
-                        <p style="font-size: 0.9rem; color: #ccc;">After payment, you'll receive confirmation and scheduling instructions within 2 hours.</p>
-                    </div>
-                    
-                    <div style="margin-top: 1.5rem;">
-                        <button onclick="goBackToForm('${serviceType}')" class="back-button">
-                            ← Back to Form
-                        </button>
-                    </div>
-                </div>
-                
-                <div style="text-align: center; margin-top: 1rem; color: #666; font-size: 0.8rem;">
-                    Plan ID: ${planId} | Service: ${serviceType}<br>
-                    Secure payment processing by Whop
-                </div>
-            `;
-        }
-
-        function goBackToForm(serviceType) {
-            if (serviceType === 'numerology') {
-                openModal('numerology');
-            } else if (serviceType === 'chart') {
-                openModal('chart');
-            }
-        }
-
-        function sendApplicationEmail(userData) {
-            const submitButton = document.querySelector('.submit-button');
-            const originalText = submitButton.textContent;
-            
-            submitButton.textContent = 'Submitting...';
-            submitButton.disabled = true;
-            
-            fetch('https://formspree.io/f/manjlggg', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    ...userData,
-                    subject: 'New Elite Coaching Application',
-                    timestamp: new Date().toISOString()
-                })
-            })
-            .then(response => {
-                if (response.ok) {
-                    alert('Application submitted successfully! We\'ll review and contact you within 24 hours if you qualify.');
-                    closeModal();
-                } else {
-                    throw new Error('Network response was not ok');
+                // Ensure we don't show the same one twice in a row
+                if (randomIndex === lastIndex) {
+                    randomIndex = (randomIndex + 1) % purchases.length;
                 }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('There was an error submitting your application. Please try again or contact support.');
-            })
-            .finally(() => {
-                submitButton.textContent = originalText;
-                submitButton.disabled = false;
-            });
-        }
+                lastIndex = randomIndex;
 
-        function sendUserDataToBackend(userData, serviceType) {
-            fetch('https://formspree.io/f/manjlggg', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    ...userData,
-                    serviceType: serviceType,
-                    timestamp: new Date().toISOString(),
-                    subject: `New ${serviceType} booking - Payment pending`,
-                    orderStatus: 'PENDING_PAYMENT',
-                    fulfillmentNote: 'User has submitted booking form and been redirected to checkout. Await payment confirmation.'
-                })
-            })
-            .then(response => {
-                if (response.ok) {
-                    console.log('Booking data sent for fulfillment preparation');
-                } else {
-                    console.error('Failed to send booking data');
-                }
-            })
-            .catch(error => {
-                console.error('Error sending booking data:', error);
-            });
-        }
-        
-        function closeModal() {
-            const modal = document.getElementById('bookingModal');
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-        
-        // Event listeners
-        document.getElementById('bookingModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeModal();
+                const purchase = purchases[randomIndex];
+                const timeAgo = Math.floor(Math.random() * 10) + 1; // 1-10 minutes ago
+
+                popupText.innerHTML = `
+                    <p><strong>${purchase.name}</strong> from <strong>${purchase.location}</strong> just joined!</p>
+                    <span>${timeAgo} minutes ago</span>
+                `;
+
+                popup.classList.add('show');
+
+                // Hide the popup after 4 seconds
+                setTimeout(() => {
+                    popup.classList.remove('show');
+                }, 4000);
             }
-        });
-        
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeModal();
-            }
-        });
 
-        // Sticky mobile CTA behavior
-        window.addEventListener('scroll', function() {
-            const stickyMobileCta = document.querySelector('.sticky-mobile-cta');
-            if (stickyMobileCta) {
-                if (window.scrollY > 500) {
-                    stickyMobileCta.style.display = 'block';
-                } else {
-                    stickyMobileCta.style.display = 'none';
-                }
-            }
-        });
+            // Start the loop
+            // First popup after 7 seconds
+            setTimeout(showRandomPurchase, 7000);
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Page initialization
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('Landing page loaded successfully - Direct checkout mode active');
-        });
+            // Subsequent popups every 12 seconds
+            setInterval(showRandomPurchase, 12000);
+        })();
     </script>
 </body>
 </html>
-                <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ancient System for Success & Peace - Transform in 72 Hours</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            overflow-x: hidden;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-            background: #000;
-            color: #fff;
-            overflow-x: hidden;
-            line-height: 1.6;
-            width: 100%;
-            max-width: 100vw;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        /* Header */
-        .header {
-            background: linear-gradient(135deg, #FFD700, #FFA500);
-            color: #000;
-            padding: 0.8rem 0;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
-        }
-
-        .header h1 {
-            font-size: 0.9rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 60px 0;
-            background: radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
-            position: relative;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 20%;
-            left: 10%;
-            width: 100px;
-            height: 100px;
-            background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: 20%;
-            right: 15%;
-            width: 150px;
-            height: 150px;
-            background: radial-gradient(circle, rgba(255, 165, 0, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: float 8s ease-in-out infinite reverse;
-        }
-
-        .hero h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 900;
-            background: linear-gradient(45deg, #FFD700, #FFA500, #FFD700);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradientMove 3s ease-in-out infinite;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero .subtitle {
-            font-size: clamp(1rem, 2.5vw, 1.4rem);
-            margin-bottom: 1.5rem;
-            color: #ccc;
-            font-weight: 300;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Scarcity indicator */
-        .scarcity-indicator {
-            background: linear-gradient(135deg, #FF4444, #CC0000);
-            color: white;
-            padding: 12px 20px;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin: 1rem 0;
-            display: inline-block;
-            animation: pulse 2s infinite;
-            box-shadow: 0 4px 15px rgba(255, 68, 68, 0.3);
-        }
-
-        /* CTA Buttons */
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-            color: #000;
-            padding: 18px 36px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin: 0.5rem;
-            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
-            border: none;
-            cursor: pointer;
-            white-space: nowrap;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 12px 35px rgba(255, 215, 0, 0.5);
-        }
-
-        /* Sticky Mobile CTA */
-        .sticky-mobile-cta {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-            padding: 15px;
-            text-align: center;
-            z-index: 999;
-            display: none;
-            box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
-            animation: slideUp 0.5s ease-out;
-        }
-
-        .sticky-mobile-cta .cta-button {
-            margin: 0;
-            padding: 16px 28px;
-            font-size: 1rem;
-            width: 100%;
-            max-width: 320px;
-        }
-
-        /* Trust indicators */
-        .trust-indicators {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-
-        .trust-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.9rem;
-            color: #ccc;
-        }
-
-        .trust-icon {
-            color: #32CD32;
-            font-size: 1.1rem;
-        }
-
-        /* Content Sections */
-        .content-section {
-            padding: 80px 0;
-            background: linear-gradient(180deg, #111 0%, #000 100%);
-            width: 100%;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        .content-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.3), transparent);
-        }
-
-        .section-title {
-            font-size: clamp(1.8rem, 4vw, 3rem);
-            font-weight: 800;
-            margin-bottom: 2rem;
-            text-align: center;
-            background: linear-gradient(45deg, #FFD700, #FFA500);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(90deg, #FFD700, #FFA500);
-            border-radius: 2px;
-        }
-
-        .big-text {
-            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-            font-weight: 600;
-            color: #FFD700;
-            text-align: center;
-            margin: 2rem 0;
-            line-height: 1.4;
-        }
-
-        /* Pain points */
-        .pain-list {
-            list-style: none;
-            margin: 2rem 0;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .pain-list li {
-            margin: 1rem 0;
-            padding: 1.5rem;
-            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-            border-left: 4px solid #FFD700;
-            font-size: 1rem;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-            position: relative;
-        }
-
-        .pain-list li:hover {
-            transform: translateX(5px);
-        }
-
-        .pain-list li::before {
-            content: "❌ ";
-            color: #FF4444;
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-
-        /* Quote box */
-        .quote-box {
-            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-            color: #fff;
-            padding: 2.5rem;
-            margin: 2rem auto;
-            border-radius: 16px;
-            text-align: center;
-            font-size: 1.3rem;
-            font-style: italic;
-            border: 2px solid rgba(255, 215, 0, 0.3);
-            max-width: 600px;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .quote-box::before {
-            content: '"';
-            font-size: 5rem;
-            color: rgba(255, 215, 0, 0.2);
-            position: absolute;
-            top: -15px;
-            left: 20px;
-            font-family: serif;
-        }
-
-        /* Service Selection */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-        }
-
-        .service-card {
-            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-            border-radius: 20px;
-            padding: 35px 25px;
-            border: 2px solid transparent;
-            transition: all 0.4s ease;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #FFD700, #FFA500);
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
-        }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            border-color: #FFD700;
-            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
-        }
-
-        .service-card h3 {
-            font-size: 1.9rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: #FFD700;
-        }
-
-        .service-card .price {
-            font-size: 2.8rem;
-            font-weight: 900;
-            color: #fff;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .service-card .description {
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-            color: #ccc;
-        }
-
-        .features-list {
-            list-style: none;
-            margin-bottom: 1.5rem;
-        }
-
-        .features-list li {
-            padding: 8px 0 8px 25px;
-            font-size: 0.95rem;
-            color: #fff;
-            position: relative;
-        }
-
-        .features-list li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #32CD32;
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-
-        /* Offer Stack */
-        .offer-stack {
-            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-            padding: 2.5rem 2rem;
-            margin: 2rem 0;
-            border-radius: 20px;
-            border: 2px solid rgba(255, 215, 0, 0.3);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-        }
-
-        .offer-item {
-            display: flex;
-            align-items: center;
-            margin: 2rem 0;
-            padding: 2rem 1.5rem;
-            background: linear-gradient(135deg, #2a2a2a, #3a3a3a);
-            border-radius: 16px;
-            transition: transform 0.3s ease;
-        }
-
-        .offer-item:hover {
-            transform: translateX(10px);
-        }
-
-        .offer-icon {
-            font-size: 2.5rem;
-            margin-right: 1.5rem;
-            min-width: 60px;
-            text-align: center;
-            color: #FFD700;
-        }
-
-        .offer-content h3 {
-            color: #FFD700;
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-            font-weight: 700;
-        }
-
-        .value-badge {
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-            color: #000;
-            padding: 0.4rem 1rem;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 0.5rem;
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
-        }
-
-        /* Price Section */
-        .price-section {
-            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-            color: white;
-            padding: 3.5rem 2rem;
-            margin: 3rem 0;
-            border-radius: 20px;
-            text-align: center;
-            border: 3px solid rgba(255, 215, 0, 0.4);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            position: relative;
-        }
-
-        .price-section::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, #FFD700, #FFA500, #FFD700);
-            border-radius: 20px;
-            z-index: -1;
-            animation: gradientBorder 3s ease-in-out infinite;
-        }
-
-        .old-price {
-            text-decoration: line-through;
-            color: #888;
-            font-size: 1.8rem;
-            margin: 0.5rem 0;
-        }
-
-        .new-price {
-            font-size: 3.5rem;
-            font-weight: 900;
-            background: linear-gradient(45deg, #FFD700, #FFA500);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin: 1rem 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        /* Coaching Guarantee */
-        .coaching-guarantee {
-            background: linear-gradient(135deg, #FF4444 0%, #CC0000 100%);
-            color: white;
-            padding: 3.5rem 2.5rem;
-            margin: 3rem 0;
-            border-radius: 25px;
-            text-align: center;
-            box-shadow: 0 20px 50px rgba(255, 68, 68, 0.5);
-            border: 3px solid rgba(255, 255, 255, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .coaching-guarantee::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            animation: shine 3s infinite;
-        }
-
-        .coaching-guarantee h3 {
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
-            font-weight: 900;
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
-            position: relative;
-            z-index: 1;
-        }
-
-        .coaching-guarantee p {
-            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .guarantee-highlight {
-            background: rgba(255, 255, 255, 0.25);
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 2rem 0;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            position: relative;
-            z-index: 1;
-            backdrop-filter: blur(10px);
-        }
-
-        .guarantee-highlight strong {
-            font-size: 1.3em;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        /* Footer CTA */
-        .footer-cta {
-            padding: 80px 0;
-            text-align: center;
-            background: linear-gradient(45deg, #FFD700, #FFA500, #FFD700);
-            background-size: 200% 200%;
-            animation: gradientMove 3s ease-in-out infinite;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .footer-cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="rgba(0,0,0,0.1)"><polygon points="0,0 1000,80 1000,100 0,100"/></svg>');
-            background-size: cover;
-        }
-
-        .footer-cta * {
-            color: #000;
-            position: relative;
-            z-index: 1;
-        }
-
-        .footer-cta h2 {
-            font-size: clamp(2rem, 4vw, 3.5rem);
-            font-weight: 900;
-            margin-bottom: 2rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .footer-cta p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            font-weight: 500;
-        }
-
-        .footer-cta .cta-button {
-            background: #000;
-            color: #FFD700;
-            font-size: 1.3rem;
-            padding: 22px 45px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Modal */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 10000;
-            padding: 20px;
-            backdrop-filter: blur(5px);
-        }
-
-        .modal-overlay.active {
-            display: flex;
-            animation: fadeIn 0.3s ease-out;
-        }
-
-        .modal-content {
-            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-            border-radius: 20px;
-            padding: 2.5rem;
-            max-width: 650px;
-            width: 100%;
-            position: relative;
-            border: 2px solid rgba(255, 215, 0, 0.3);
-            max-height: 90vh;
-            overflow-y: auto;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
-            animation: slideIn 0.4s ease-out;
-            margin: auto;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            position: fixed;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 20px;
-            right: 25px;
-            background: none;
-            border: none;
-            font-size: 2rem;
-            color: #fff;
-            cursor: pointer;
-            padding: 0;
-            width: 35px;
-            height: 35px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .modal-close:hover {
-            color: #FFD700;
-            transform: scale(1.1);
-        }
-
-        .modal-title {
-            font-size: 2rem;
-            font-weight: 800;
-            color: #FFD700;
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .modal-subtitle {
-            text-align: center;
-            margin-bottom: 2rem;
-            color: #ccc;
-            font-size: 1.1rem;
-            line-height: 1.5;
-        }
-
-        .booking-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form-group label {
-            color: #FFD700;
-            margin-bottom: 0.8rem;
-            font-weight: 600;
-            font-size: 1rem;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            padding: 15px 18px;
-            border: 2px solid #444;
-            border-radius: 10px;
-            background: #2a2a2a;
-            color: #fff;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #FFD700;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
-        }
-
-        .form-group textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-
-        .submit-button {
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-            color: #000;
-            padding: 18px 35px;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 1.5rem;
-            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
-        }
-
-        .submit-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(255, 215, 0, 0.5);
-        }
-
-        .form-note {
-            font-size: 0.9rem;
-            color: #999;
-            text-align: center;
-            margin-top: 1.5rem;
-            line-height: 1.5;
-        }
-
-        .back-button {
-            background: none;
-            border: 1px solid #ccc;
-            color: #ccc;
-            padding: 8px 16px;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .back-button:hover {
-            background: rgba(255, 215, 0, 0.1);
-            border-color: #FFD700;
-            color: #FFD700;
-        }
-
-        /* Animations */
-        @keyframes gradientMove {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        @keyframes gradientBorder {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        @keyframes shine {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        @keyframes slideUp {
-            from { transform: translateY(100%); }
-            to { transform: translateY(0); }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes slideIn {
-            from { transform: translateY(-50px) scale(0.9); opacity: 0; }
-            to { transform: translateY(0) scale(1); opacity: 1; }
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .hero {
-                min-height: auto;
-                padding: 40px 0;
-                text-align: center;
-            }
-
-            .hero .container {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 100%;
-                text-align: center;
-            }
-
-            .hero-content {
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-            }
-
-            .hero h1 {
-                text-align: center;
-                width: 100%;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .hero .subtitle {
-                text-align: center;
-                width: 100%;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .scarcity-indicator {
-                display: block;
-                text-align: center;
-                margin: 1rem auto;
-                width: fit-content;
-            }
-
-            .cta-container {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 100%;
-                text-align: center;
-            }
-
-            .cta-button {
-                display: block;
-                text-align: center;
-                margin: 0 auto;
-            }
-
-            .header h1 {
-                font-size: 0.8rem;
-            }
-
-            .sticky-mobile-cta {
-                display: block;
-            }
-
-            .container {
-                margin-bottom: 80px;
-                padding: 0 10px;
-            }
-
-            .service-card {
-                padding: 30px 20px;
-            }
-
-            .service-card h3 {
-                font-size: 1.6rem;
-            }
-
-            .service-card .price {
-                font-size: 2.2rem;
-            }
-
-            .offer-item {
-                flex-direction: column;
-                text-align: center;
-                padding: 1.5rem;
-            }
-
-            .offer-icon {
-                margin-right: 0;
-                margin-bottom: 1rem;
-            }
-
-            .new-price {
-                font-size: 2.8rem;
-            }
-
-            .quote-box {
-                padding: 2rem;
-                font-size: 1.2rem;
-            }
-
-            .pain-list li {
-                padding: 1.2rem;
-                font-size: 1rem;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-            }
-
-            .big-text {
-                font-size: 1.2rem;
-            }
-
-            .cta-button {
-                padding: 16px 32px;
-                font-size: 1rem;
-                white-space: normal;
-                text-align: center;
-            }
-
-            .coaching-guarantee {
-                padding: 2.5rem 1.5rem;
-            }
-
-            .coaching-guarantee h3 {
-                font-size: 1.8rem;
-            }
-
-            .coaching-guarantee p {
-                font-size: 1.1rem;
-            }
-
-            .modal-content {
-                margin: 15px;
-                max-width: calc(100vw - 30px);
-                width: calc(100vw - 30px);
-                padding: 2rem;
-            }
-
-            .trust-indicators {
-                flex-direction: column;
-                gap: 15px;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero .subtitle {
-                font-size: 1rem;
-            }
-
-            .container {
-                padding: 0 8px;
-            }
-
-            .cta-button {
-                font-size: 0.95rem;
-                padding: 14px 24px;
-                line-height: 1.3;
-            }
-
-            .modal-content {
-                padding: 1.5rem;
-                margin: 10px;
-            }
-
-            .modal-title {
-                font-size: 1.6rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="header">
-        <h1>The Ancient System 99% of Professionals Don't Know...</h1>
-    </div>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-
