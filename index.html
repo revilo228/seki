@@ -11,6 +11,9 @@
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "u7qcnghg1s");
     </script>
+    <script src="https://fast.wistia.com/embed/medias/1mjtycwa3l.jsonp" async></script>
+    <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+    
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         :root {
@@ -103,27 +106,18 @@
             position: relative;
         }
 
-        .vsl-placeholder {
-            aspect-ratio: 16 / 9;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            cursor: pointer;
-            background: #000;
+        /* Wistia Responsive Wrapper */
+        .wistia_responsive_padding {
+            padding: 56.25% 0 0 0;
             position: relative;
         }
-
-        .vsl-placeholder::before {
-            content: '▶';
-            font-size: 4rem;
-            color: var(--color-primary);
-            opacity: 0.9;
-            transition: transform 0.3s ease;
-        }
-
-        .vsl-placeholder:hover::before {
-            transform: scale(1.1);
+        
+        .wistia_responsive_wrapper {
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
         }
 
         .vsl-caption {
@@ -479,9 +473,14 @@
 
         <section class="vsl-section">
             <div class="vsl-wrapper">
-                <div class="vsl-placeholder" onclick="alert('Play VSL: Which Product is Right for You?')">
-                    <p style="color: #fff; font-weight: 700; z-index: 2; font-size: 1.5rem;">WATCH THIS FIRST</p>
-                    <p style="color: var(--color-accent); font-size: 1rem; z-index: 2;">(Which path should you take?)</p>
+                <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
+                    <div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
+                        <div class="wistia_embed wistia_async_1mjtycwa3l videoFoam=true" style="height:100%;position:relative;width:100%">
+                            <div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;">
+                                <img src="https://fast.wistia.com/embed/medias/1mjtycwa3l/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt="" aria-hidden="true" onload="this.parentNode.style.opacity=1;" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <p class="vsl-caption">Don't guess. Let me explain exactly who each option is for.</p>
@@ -584,7 +583,7 @@
                 <ul class="feature-list">
                     <li>Karmic Purpose & "True Calling" Analysis</li>
                     <li>Timing: When to push for Promotion</li>
-                    <li>"Should I Switch Career?" Chart Analysis</li>
+                    <li>"Should I Switch Careers?" Chart Analysis</li>
                     <li>Specific Vedic Career Remedies</li>
                     <li>Professional Statistical Analysis</li>
                 </ul>
