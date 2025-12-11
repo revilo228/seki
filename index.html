@@ -362,55 +362,19 @@
             box-shadow: 0 0 20px rgba(0, 229, 229, 0.4);
         }
         
-        /* PRIMARY BUTTON (For Featured Card) - The "Coloured Rectangle" */
+        /* PRIMARY BUTTON (For Featured Card) */
         .cta-button.primary {
-            background: var(--gradient-bg); /* Full Gradient Background */
-            border: none; /* Remove border */
-            color: #fff; /* White text */
-            box-shadow: 0 4px 15px rgba(255, 51, 161, 0.3); /* Initial Glow */
+            background: var(--gradient-bg);
+            border: none;
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(255, 51, 161, 0.3);
         }
         
         .cta-button.primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 51, 161, 0.6); /* Stronger Glow on Hover */
+            box-shadow: 0 8px 25px rgba(255, 51, 161, 0.6);
         }
 
-        /* Social Proof Section */
-        .proof-section {
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 2rem;
-        }
-
-        .proof-grid {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        .proof-item {
-            background: var(--color-gray);
-            padding: 1.5rem;
-            border-radius: 12px;
-            border: 1px solid #333;
-            max-width: 300px;
-            text-align: left;
-        }
-
-        .proof-item p {
-            font-size: 0.9rem;
-            font-style: italic;
-            margin-bottom: 1rem;
-        }
-
-        .proof-author {
-            color: var(--color-primary);
-            font-weight: 700;
-            font-size: 0.9rem;
-        }
-        
         /* Guarantee Section */
         .guarantee-section {
             margin-top: 4rem;
@@ -492,96 +456,6 @@
             font-size: 0.9rem;
             margin-top: 4rem;
         }
-
-        /* Modal Styles (For Application) */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 10000;
-            padding: 20px;
-        }
-
-        .modal-overlay.active {
-            display: flex;
-        }
-
-        .modal-content {
-            background: var(--color-gray);
-            border-radius: 16px;
-            padding: 2rem;
-            max-width: 500px;
-            width: 100%;
-            position: relative;
-            border: 2px solid var(--color-primary);
-            max-height: 90vh;
-            overflow-y: auto;
-            text-align: left;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: #fff;
-            cursor: pointer;
-        }
-
-        .modal-title {
-            text-align: center;
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--color-primary);
-            margin-bottom: 1rem;
-        }
-
-        .booking-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .form-group label {
-            font-size: 0.9rem;
-            color: var(--color-accent);
-            margin-bottom: 0.3rem;
-            display: block;
-        }
-
-        .form-group input, .form-group textarea, .form-group select {
-            width: 100%;
-            padding: 10px;
-            background: #1B1B1B;
-            border: 1px solid #444;
-            border-radius: 6px;
-            color: #fff;
-        }
-
-        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
-            outline: none;
-            border-color: var(--color-primary);
-        }
-
-        .submit-btn {
-            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
-            color: #fff;
-            padding: 12px;
-            border: none;
-            border-radius: 6px;
-            font-weight: 700;
-            cursor: pointer;
-            margin-top: 1rem;
-        }
-
 
         @keyframes gradientMove { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.02); } 100% { transform: scale(1); } }
@@ -698,6 +572,25 @@
                 <a href="https://buy.stripe.com/test_28E3cxeuW2VL48xbdB2sM03" class="cta-button primary" target="_blank">Get Clarity Now</a>
             </div>
 
+            <div class="product-card" style="border-color: var(--color-accent);">
+                <div class="badge" style="background: var(--color-accent); color: #000;">New Arrival</div>
+                <div class="product-icon">🚀</div>
+                <h3>Trinity Career Roadmap</h3>
+                <div class="price">$190</div>
+                <p class="description">
+                    <strong>Master Your Professional Destiny.</strong> Decode your Karma to understand exactly what you are here to do. We pinpoint promotion windows, analyze career switches, and provide specific remedies for success.
+                    <br><br><em style="font-size: 0.9rem; color: #999;">(Profession details collected after booking)</em>
+                </p>
+                <ul class="feature-list">
+                    <li>Karmic Purpose & "True Calling" Analysis</li>
+                    <li>Timing: When to push for Promotion</li>
+                    <li>"Should I Switch Career?" Chart Analysis</li>
+                    <li>Specific Vedic Career Remedies</li>
+                    <li>Professional Statistical Analysis</li>
+                </ul>
+                <a href="https://buy.stripe.com/test_bJe28t4Um3ZPdJ7bdB2sM06" class="cta-button" target="_blank" style="color: var(--color-accent); border-color: var(--color-accent);">Book Career Map</a>
+            </div>
+
             <div class="product-card">
                 <div class="product-icon">📜</div>
                 <h3>Complete Blueprint Analysis</h3>
@@ -713,24 +606,6 @@
                     <li>90-Min Strategy Call</li>
                 </ul>
                 <a href="https://buy.stripe.com/test_bJeeVfeuW2VLcF3a9x2sM04" class="cta-button" target="_blank">Book Analysis</a>
-            </div>
-
-            <div class="product-card" style="border-color: #FF4444;">
-                <div class="badge" style="background: #FF4444;">Application Only</div>
-                <div class="product-icon">🦁</div>
-                <h3>Elite Performance Coaching</h3>
-                <div class="price">Apply</div>
-                <p class="description">
-                    <strong>6 Weeks of Transformation.</strong> For serious operators earning $10k+/mo. We re-engineer your entire life and business around your blueprint.
-                </p>
-                <ul class="feature-list">
-                    <li>Everything in the Blueprint Analysis</li>
-                    <li>Weekly 1-on-1 Strategy Calls</li>
-                    <li>Custom 90-Day Action Plan</li>
-                    <li>90 Days Direct Access (Text/Voice)</li>
-                    <li><strong>Performance Guarantee Included</strong></li>
-                </ul>
-                <button class="cta-button" style="border-color: #FF4444; color: #FF4444;" onclick="openApplicationModal()">Apply Now</button>
             </div>
 
         </div>
@@ -766,82 +641,7 @@
         </div>
     </div>
 
-    <div id="applicationModal" class="modal-overlay">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeApplicationModal()">X</button>
-            <h2 class="modal-title">Elite Coaching Application</h2>
-            
-            <form class="booking-form" action="https://formspree.io/f/xqajdvon" method="POST">
-                
-                <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you">
-
-                <div class="form-group">
-                    <label>Your email:</label>
-                    <input type="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label>Full Name:</label>
-                    <input type="text" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label>Phone Number (include country code, e.g., +1, +44):</label>
-                    <input type="tel" name="phone" placeholder="+1 555-555-5555" required>
-                </div>
-                <div class="form-group">
-                    <label>Place of Birth (City, Country):</label>
-                    <input type="text" name="birthplace" required>
-                </div>
-                <div class="form-group">
-                    <label>Date of Birth:</label>
-                    <input type="date" name="birthdate" required>
-                </div>
-                <div class="form-group">
-                    <label>Time of Birth (Exact):</label>
-                    <input type="time" name="birthtime" required>
-                </div>
-                <div class="form-group">
-                    <label>Monthly Income:</label>
-                    <select name="revenue">
-                        <option value="0-3k">$0 - $3,000/mo</option>
-                        <option value="3k-5k">$3,000 - $5,000/mo</option>
-                        <option value="5k-10k">$5,000 - $10,000/mo</option>
-                        <option value="10k-50k">$10,000 - $50,000/mo</option>
-                        <option value="50k+">$50,000+/mo</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label>Your message (What outcome do you want to achieve?):</label>
-                    <textarea name="message" rows="3" required></textarea>
-                </div>
-                
-                <input type="hidden" name="_subject" value="New Elite Coaching Application">
-                
-                <button type="submit" class="submit-btn">Send Application</button>
-            </form>
-        </div>
-    </div>
-
     <script>
-        // Modal Logic
-        function openApplicationModal() {
-            document.getElementById('applicationModal').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeApplicationModal() {
-            document.getElementById('applicationModal').classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-        
-        // Close modal when clicking outside
-        document.getElementById('applicationModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeApplicationModal();
-            }
-        });
-
         // === SOCIAL PROOF POPUP LOGIC ===
         (function() {
             const purchases = [
@@ -850,8 +650,8 @@
                 { name: 'Mike', location: 'New York', product: 'Numerology Power Reading' },
                 { name: 'Sarah', location: 'London', product: 'Trinity Compatibility Reading' },
                 { name: 'Alex', location: 'Germany', product: 'Complete Blueprint Analysis' },
-                { name: 'David', location: 'Manchester', product: 'Trinity Compatibility Reading' },
-                { name: 'Fatima', location: 'Dubai', product: 'Elite Coaching Application' },
+                { name: 'David', location: 'Manchester', product: 'Trinity Career Roadmap' },
+                { name: 'Fatima', location: 'Dubai', product: 'Trinity Career Roadmap' },
                 { name: 'Chris', location: 'Australia', product: 'Numerology Power Reading' }
             ];
 
