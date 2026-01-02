@@ -402,17 +402,16 @@
             padding-top: 2rem;
         }
         
-        .guarantee-photo {
+.guarantee-photo {
             width: 80px;
             height: 80px;
-            border-radius: 50%;
+            border-radius: 50%; /* Keeps it circular */
             background: #111;
-            border: 2px solid var(--color-primary);
+            /* Border removed as requested */
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #888;
-            font-size: 0.8rem;
+            overflow: hidden; /* Ensures image clips perfectly to circle */
         }
         
         .guarantee-text {
